@@ -58,10 +58,11 @@
     "category": "systemes",
     "detailed_description": "Développement d'un serveur et client de communication collaborative (G-NWP-400).\n\nFonctionnalités principales :\n    - Serveur asynchrone non-bloquant gérant de multiples connexions simultanées avec select/poll.\n    - Architecture : Équipes (Teams), Canaux (Channels), Fils de discussion (Threads) et Messages privés (DMs).\n    - Protocole réseau binaire sur mesure et persistance des données sur disque.\n\nCompétences clés : Programmation réseau bas-niveau en C, sockets TCP, sérialisation binaire et gestion d'état serveur.",
     "technologies": [
-      "C",
+      "Rust",
+      "C++",
       "TCP/IP",
       "Sockets",
-      "select",
+      "Sérialisation",
       "Unix"
     ],
     "date": "2026",
