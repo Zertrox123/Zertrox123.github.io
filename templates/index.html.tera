@@ -2,9 +2,82 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/responsive.css">
+    <style>
+    /* ==========================================
+       WALKING DUCK ANIMATION (INLINE FOR ZERO CACHE)
+       ========================================== */
+    #duckContainer {
+        position: fixed;
+        bottom: 25px;
+        right: -80px;
+        z-index: 99999;
+        cursor: pointer;
+        user-select: none;
+        animation: duck-walk-horizontal 22s linear infinite;
+        pointer-events: auto;
+    }
+
+    @keyframes duck-walk-horizontal {
+        0% {
+            right: -80px;
+            transform: scaleX(1);
+        }
+        48% {
+            right: calc(100vw + 20px);
+            transform: scaleX(1);
+        }
+        50% {
+            right: calc(100vw + 20px);
+            transform: scaleX(-1);
+        }
+        98% {
+            right: -80px;
+            transform: scaleX(-1);
+        }
+        100% {
+            right: -80px;
+            transform: scaleX(1);
+        }
+    }
+
+    .duck-sprite {
+        display: inline-block;
+        animation: duck-waddle 0.45s ease-in-out infinite alternate;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+    }
+
+    @keyframes duck-waddle {
+        0% {
+            transform: translateY(0) rotate(-6deg);
+        }
+        100% {
+            transform: translateY(-8px) rotate(6deg);
+        }
+    }
+
+    .duck-bubble {
+        display: none;
+        position: absolute;
+        top: -34px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #161b22;
+        border: 1px solid #58a6ff;
+        color: #58a6ff;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 3px 10px;
+        border-radius: 12px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        pointer-events: none;
+    }
+    </style>
 </head>
 <body>
     <header class="main-header">
@@ -30,6 +103,7 @@
             </span>
         </span>
     </p>
+
     <h2>⚡ Systèmes & Concurrence</h2>
     <div class="projects-container">
     {% for project in projects %}
@@ -77,6 +151,31 @@
         {% endif %}
     {% endfor %}
     </div>
+
+    <!-- Walking Duck across the screen -->
+    <div id="duckContainer" title="Clique-moi ! 🦆">
+        <span class="duck-bubble" id="duckBubble">Coin coin ! 🦆</span>
+        <div class="duck-sprite">
+            <svg viewBox="0 0 64 64" width="56" height="56" style="display: block;">
+                <!-- Corps du canard -->
+                <ellipse cx="28" cy="42" rx="20" ry="14" fill="#facc15" />
+                <!-- Queue -->
+                <path d="M10 40 Q4 32 8 28 Q14 34 18 38 Z" fill="#facc15" />
+                <!-- Aile -->
+                <ellipse cx="26" cy="42" rx="10" ry="6" fill="#eab308" />
+                <!-- Tête -->
+                <circle cx="44" cy="24" r="12" fill="#facc15" />
+                <!-- Oeil -->
+                <circle cx="48" cy="22" r="2.5" fill="#1e293b" />
+                <circle cx="49" cy="21" r="0.8" fill="#ffffff" />
+                <!-- Bec -->
+                <path d="M54 24 Q64 26 55 30 Z" fill="#f97316" />
+                <!-- Pattes / Ombre -->
+                <ellipse cx="30" cy="56" rx="14" ry="2" fill="rgba(0, 0, 0, 0.3)" />
+            </svg>
+        </div>
+    </div>
+
     <script>
     const toggle = document.getElementById('crazy-toggle');
     const projects = document.querySelectorAll('.project-card');
@@ -109,31 +208,17 @@
         }
     });
 
+    // Duck Click Interaction
     const duck = document.getElementById('duckContainer');
     const bubble = document.getElementById('duckBubble');
     if (duck && bubble) {
         duck.addEventListener('click', () => {
-            bubble.classList.add('show');
-            setTimeout(() => bubble.classList.remove('show'), 2000);
+            bubble.style.display = 'block';
+            setTimeout(() => {
+                bubble.style.display = 'none';
+            }, 2000);
         });
     }
     </script>
-
-    <!-- Walking Duck -->
-    <div class="walking-duck-container" id="duckContainer" title="Coin coin ! 🦆">
-        <div class="duck">
-            <span class="duck-bubble" id="duckBubble">Coin coin ! 🦆</span>
-            <svg viewBox="0 0 64 64" width="48" height="48" style="display: block;">
-                <ellipse cx="28" cy="42" rx="20" ry="14" fill="#facc15" />
-                <path d="M10 40 Q4 32 8 28 Q14 34 18 38 Z" fill="#facc15" />
-                <ellipse cx="26" cy="42" rx="10" ry="6" fill="#eab308" />
-                <circle cx="44" cy="24" r="12" fill="#facc15" />
-                <circle cx="48" cy="22" r="2.5" fill="#1e293b" />
-                <circle cx="49" cy="21" r="0.8" fill="#ffffff" />
-                <path d="M54 24 Q64 26 55 30 Z" fill="#f97316" />
-                <ellipse cx="30" cy="56" rx="14" ry="2" fill="rgba(88, 166, 255, 0.2)" />
-            </svg>
-        </div>
-    </div>
 </body>
 </html>
