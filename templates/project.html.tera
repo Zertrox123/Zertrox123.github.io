@@ -21,7 +21,7 @@
             <div class="project-meta">
                 <span class="project-date">{{ project.date }}</span>
                 <span class="project-category category-{{ project.category }}">
-                    {% if project.category == "systemes" %}⚡ Systèmes{% elif project.category == "ia" %}🤖 IA & Data{% elif project.category == "web_outils" %}🛠️ Outils & Web{% else %}💼 Personnel{% endif %}
+                    {% if project.category == "systemes" %}Systèmes{% elif project.category == "ia" %}IA & Data{% elif project.category == "web_outils" %}Outils & Web{% else %}Personnel{% endif %}
                 </span>
             </div>
         </header>
@@ -30,7 +30,7 @@
             <p class="project-description">{{ project.detailed_description }}</p>
 
             <!-- Technologies utilisées -->
-            <h2>🛠️ Technologies</h2>
+            <h2>Technologies</h2>
             <div class="tech-tags">
                 {% for tech in project.technologies %}
                     <span class="tech-tag">{{ tech }}</span>

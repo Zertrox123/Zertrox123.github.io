@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/static/style.css?v=4">
-    <link rel="stylesheet" href="/static/responsive.css?v=4">
+    <link rel="stylesheet" href="/static/style.css?v=5">
+    <link rel="stylesheet" href="/static/responsive.css?v=5">
     <style>
     /* ==========================================
        MAIN HEADER & CRAZY SWITCH
@@ -158,23 +158,11 @@
         user-select: none;
         z-index: 100000;
     }
-
-    .no-projects-msg {
-        display: none;
-        color: #8b949e;
-        font-style: italic;
-        padding: 2rem;
-        text-align: center;
-        background: #161b22;
-        border-radius: 8px;
-        border: 1px dashed #30363d;
-        margin-top: 1rem;
-    }
     </style>
 </head>
 <body>
     <header class="main-header">
-        <h1>~/Portfolio_<span class="accent">dev</span> 🚀</h1>
+        <h1>~/Portfolio_<span class="accent">dev</span></h1>
         <div class="crazy-switch">
             <label class="switch">
                 <input type="checkbox" id="crazy-toggle">
@@ -198,108 +186,80 @@
         </span>
     </p>
 
-    <div class="portfolio-layout">
-        <!-- Sidebar Navigation Dock -->
-        <aside class="category-sidebar">
-            <div class="sidebar-title">Catégories</div>
-            <nav class="category-nav">
-                <button class="nav-tab active" data-category="all">
-                    <span class="tab-icon">⚡</span>
-                    <span class="tab-label">Tous les projets</span>
-                    <span class="tab-count" id="count-all">20</span>
-                </button>
-                <button class="nav-tab" data-category="tek1">
-                    <span class="tab-icon">🌱</span>
-                    <span class="tab-label">Projet année 1 (tek 1)</span>
-                    <span class="tab-count" id="count-tek1">3</span>
-                </button>
-                <button class="nav-tab" data-category="tek2">
-                    <span class="tab-icon">🚀</span>
-                    <span class="tab-label">Projet année 2 (tek 2)</span>
-                    <span class="tab-count" id="count-tek2">12</span>
-                </button>
-                <button class="nav-tab" data-category="perso">
-                    <span class="tab-icon">💼</span>
-                    <span class="tab-label">Projet perso</span>
-                    <span class="tab-count" id="count-perso">5</span>
-                </button>
-            </nav>
-        </aside>
+    <!-- Category Filter Tabs -->
+    <nav class="category-nav">
+        <button class="nav-tab active" data-category="all">Tous les projets</button>
+        <button class="nav-tab" data-category="tek1">Projet année 1 (tek 1)</button>
+        <button class="nav-tab" data-category="tek2">Projet année 2 (tek 2)</button>
+        <button class="nav-tab" data-category="perso">Projet perso</button>
+    </nav>
 
-        <!-- Main Project Content -->
-        <main class="main-content">
-            <section class="project-section" data-section="systemes">
-                <h2>⚡ Systèmes & Concurrence</h2>
-                <div class="projects-container">
-                    {% for project in projects %}
-                        {% if project.category == "systemes" %}
-                            {% set p_year = "tek2" %}
-                            {% if project.id == "my-top" or project.id == "my-sudo" %}
-                                {% set p_year = "tek1" %}
-                            {% endif %}
-                            <a href="/project/{{ project.id }}" class="project-card" data-year="{{ p_year }}">
-                                <h3>{{ project.name }}</h3>
-                                <p>{{ project.description }}</p>
-                            </a>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </section>
+    <section class="project-section" data-section="systemes">
+        <h2>Systèmes & Concurrence</h2>
+        <div class="projects-container">
+            {% for project in projects %}
+                {% if project.category == "systemes" %}
+                    {% set p_year = "tek2" %}
+                    {% if project.id == "my-top" or project.id == "my-sudo" %}
+                        {% set p_year = "tek1" %}
+                    {% endif %}
+                    <a href="/project/{{ project.id }}" class="project-card" data-year="{{ p_year }}">
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.description }}</p>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
 
-            <section class="project-section" data-section="ia">
-                <h2>🤖 Intelligence Artificielle & Data</h2>
-                <div class="projects-container">
-                    {% for project in projects %}
-                        {% if project.category == "ia" %}
-                            <a href="/project/{{ project.id }}" class="project-card" data-year="tek2">
-                                <h3>{{ project.name }}</h3>
-                                <p>{{ project.description }}</p>
-                            </a>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </section>
+    <section class="project-section" data-section="ia">
+        <h2>Intelligence Artificielle & Data</h2>
+        <div class="projects-container">
+            {% for project in projects %}
+                {% if project.category == "ia" %}
+                    <a href="/project/{{ project.id }}" class="project-card" data-year="tek2">
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.description }}</p>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
 
-            <section class="project-section" data-section="outils">
-                <h2>🛠️ Outils & Web</h2>
-                <div class="projects-container">
-                    {% for project in projects %}
-                        {% if project.category == "web_outils" or project.category == "scolaire" %}
-                            {% set p_year = "tek2" %}
-                            {% if project.id == "my-hunter" %}
-                                {% set p_year = "tek1" %}
-                            {% endif %}
-                            <a href="/project/{{ project.id }}" class="project-card" data-year="{{ p_year }}">
-                                <h3>{{ project.name }}</h3>
-                                <p>{{ project.description }}</p>
-                            </a>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </section>
+    <section class="project-section" data-section="outils">
+        <h2>Outils & Web</h2>
+        <div class="projects-container">
+            {% for project in projects %}
+                {% if project.category == "web_outils" or project.category == "scolaire" %}
+                    {% set p_year = "tek2" %}
+                    {% if project.id == "my-hunter" %}
+                        {% set p_year = "tek1" %}
+                    {% endif %}
+                    <a href="/project/{{ project.id }}" class="project-card" data-year="{{ p_year }}">
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.description }}</p>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
 
-            <section class="project-section" data-section="perso">
-                <h2>💼 Projets Perso</h2>
-                <div class="projects-container">
-                    {% for project in projects %}
-                        {% if project.category == "personnel" %}
-                            <a href="/project/{{ project.id }}" class="project-card" data-year="perso">
-                                <h3>{{ project.name }}</h3>
-                                <p>{{ project.description }}</p>
-                            </a>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </section>
-
-            <div id="no-projects" class="no-projects-msg">
-                Aucun projet trouvé dans cette catégorie.
-            </div>
-        </main>
-    </div>
+    <section class="project-section" data-section="perso">
+        <h2>Projets Perso</h2>
+        <div class="projects-container">
+            {% for project in projects %}
+                {% if project.category == "personnel" %}
+                    <a href="/project/{{ project.id }}" class="project-card" data-year="perso">
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.description }}</p>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
 
     <!-- Walking Duck across the screen at random Y coordinate -->
-    <div id="duckContainer" title="Clique-moi ! 🦆">
+    <div id="duckContainer" title="Clique-moi !">
         <div class="duck-sprite">
             <svg viewBox="0 0 64 64" width="56" height="56" style="display: block;">
                 <!-- Corps du canard -->
@@ -372,30 +332,6 @@
     const navTabs = document.querySelectorAll('.nav-tab');
     const projectCards = document.querySelectorAll('.project-card');
     const projectSections = document.querySelectorAll('.project-section');
-    const noProjectsMsg = document.getElementById('no-projects');
-
-    function updateCounts() {
-        let countTek1 = 0;
-        let countTek2 = 0;
-        let countPerso = 0;
-
-        projectCards.forEach(card => {
-            const year = card.getAttribute('data-year');
-            if (year === 'tek1') countTek1++;
-            else if (year === 'tek2') countTek2++;
-            else if (year === 'perso') countPerso++;
-        });
-
-        const elAll = document.getElementById('count-all');
-        const elTek1 = document.getElementById('count-tek1');
-        const elTek2 = document.getElementById('count-tek2');
-        const elPerso = document.getElementById('count-perso');
-
-        if (elAll) elAll.textContent = projectCards.length;
-        if (elTek1) elTek1.textContent = countTek1;
-        if (elTek2) elTek2.textContent = countTek2;
-        if (elPerso) elPerso.textContent = countPerso;
-    }
 
     function filterCategory(category) {
         navTabs.forEach(tab => {
@@ -406,8 +342,6 @@
             }
         });
 
-        let visibleCount = 0;
-
         projectSections.forEach(section => {
             const cards = section.querySelectorAll('.project-card');
             let sectionVisibleCards = 0;
@@ -417,7 +351,6 @@
                 if (category === 'all' || year === category) {
                     card.style.display = '';
                     sectionVisibleCards++;
-                    visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
@@ -430,10 +363,6 @@
             }
         });
 
-        if (noProjectsMsg) {
-            noProjectsMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
-        }
-
         if (history.replaceState) {
             history.replaceState(null, null, '#' + category);
         }
@@ -445,8 +374,6 @@
             filterCategory(cat);
         });
     });
-
-    updateCounts();
 
     const currentHash = window.location.hash.replace('#', '');
     if (['all', 'tek1', 'tek2', 'perso'].includes(currentHash)) {

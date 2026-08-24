@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Zertrox123</title>
-    <link rel="stylesheet" href="static/style.css?v=4">
-    <link rel="stylesheet" href="static/responsive.css?v=4">
+    <link rel="stylesheet" href="static/style.css?v=5">
+    <link rel="stylesheet" href="static/responsive.css?v=5">
     <style>
     /* ==========================================
        MAIN HEADER & CRAZY SWITCH
@@ -158,23 +158,11 @@
         user-select: none;
         z-index: 100000;
     }
-
-    .no-projects-msg {
-        display: none;
-        color: #8b949e;
-        font-style: italic;
-        padding: 2rem;
-        text-align: center;
-        background: #161b22;
-        border-radius: 8px;
-        border: 1px dashed #30363d;
-        margin-top: 1rem;
-    }
     </style>
 </head>
 <body>
     <header class="main-header">
-        <h1>~/Portfolio_<span class="accent">dev</span> 🚀</h1>
+        <h1>~/Portfolio_<span class="accent">dev</span></h1>
         <div class="crazy-switch">
             <label class="switch">
                 <input type="checkbox" id="crazy-toggle">
@@ -198,148 +186,120 @@
         </span>
     </p>
 
-    <div class="portfolio-layout">
-        <!-- Sidebar Navigation Dock -->
-        <aside class="category-sidebar">
-            <div class="sidebar-title">Catégories</div>
-            <nav class="category-nav">
-                <button class="nav-tab active" data-category="all">
-                    <span class="tab-icon">⚡</span>
-                    <span class="tab-label">Tous les projets</span>
-                    <span class="tab-count" id="count-all">20</span>
-                </button>
-                <button class="nav-tab" data-category="tek1">
-                    <span class="tab-icon">🌱</span>
-                    <span class="tab-label">Projet année 1 (tek 1)</span>
-                    <span class="tab-count" id="count-tek1">3</span>
-                </button>
-                <button class="nav-tab" data-category="tek2">
-                    <span class="tab-icon">🚀</span>
-                    <span class="tab-label">Projet année 2 (tek 2)</span>
-                    <span class="tab-count" id="count-tek2">12</span>
-                </button>
-                <button class="nav-tab" data-category="perso">
-                    <span class="tab-icon">💼</span>
-                    <span class="tab-label">Projet perso</span>
-                    <span class="tab-count" id="count-perso">5</span>
-                </button>
-            </nav>
-        </aside>
+    <!-- Category Filter Tabs -->
+    <nav class="category-nav">
+        <button class="nav-tab active" data-category="all">Tous les projets</button>
+        <button class="nav-tab" data-category="tek1">Projet année 1 (tek 1)</button>
+        <button class="nav-tab" data-category="tek2">Projet année 2 (tek 2)</button>
+        <button class="nav-tab" data-category="perso">Projet perso</button>
+    </nav>
 
-        <!-- Main Project Content -->
-        <main class="main-content">
-            <section class="project-section" data-section="systemes">
-                <h2>⚡ Systèmes & Concurrence</h2>
-                <div class="projects-container">
-                    <a href="project/zappy.html" class="project-card" data-year="tek2">
-                        <h3>Zappy</h3>
-                        <p>Jeu en réseau distribué : Serveur TCP en C, IA en C++/Python et client graphique</p>
-                    </a>
-                    <a href="project/the-plazza.html" class="project-card" data-year="tek2">
-                        <h3>The Plazza & Panoramix</h3>
-                        <p>Moteur de simulation haute concurrence en C++20 avec processus, IPC et Thread Pools</p>
-                    </a>
-                    <a href="project/corewar.html" class="project-card" data-year="tek2">
-                        <h3>Corewar</h3>
-                        <p>Machine virtuelle, ordonnanceur de processus et assembleur bytecode en C</p>
-                    </a>
-                    <a href="project/myteams.html" class="project-card" data-year="tek2">
-                        <h3>MyTeams</h3>
-                        <p>Plateforme collaborative distribuée multi-clients en C avec protocole binaire TCP</p>
-                    </a>
-                    <a href="project/myftp.html" class="project-card" data-year="tek2">
-                        <h3>MyFTP</h3>
-                        <p>Serveur FTP asynchrone conforme à la norme RFC 959 en C</p>
-                    </a>
-                    <a href="project/minishell.html" class="project-card" data-year="tek2">
-                        <h3>Minishell 2</h3>
-                        <p>Reproduction d'un shell Unix (Bash/Zsh) avec pipes, redirections et opérateurs logiques</p>
-                    </a>
-                    <a href="project/my-top.html" class="project-card" data-year="tek1">
-                        <h3>My Top</h3>
-                        <p>Reproduction de la commande "top" d'Unix avec parsing de /proc/</p>
-                    </a>
-                    <a href="project/my-sudo.html" class="project-card" data-year="tek1">
-                        <h3>My Sudo</h3>
-                        <p>Recréation de la commande "Sudo" avec gestion des privilèges et authentification</p>
-                    </a>
-                </div>
-            </section>
+    <section class="project-section" data-section="systemes">
+        <h2>Systèmes & Concurrence</h2>
+        <div class="projects-container">
+            <a href="project/zappy.html" class="project-card" data-year="tek2">
+                <h3>Zappy</h3>
+                <p>Jeu en réseau distribué : Serveur TCP en C, IA en C++/Python et client graphique</p>
+            </a>
+            <a href="project/the-plazza.html" class="project-card" data-year="tek2">
+                <h3>The Plazza & Panoramix</h3>
+                <p>Moteur de simulation haute concurrence en C++20 avec processus, IPC et Thread Pools</p>
+            </a>
+            <a href="project/corewar.html" class="project-card" data-year="tek2">
+                <h3>Corewar</h3>
+                <p>Machine virtuelle, ordonnanceur de processus et assembleur bytecode en C</p>
+            </a>
+            <a href="project/myteams.html" class="project-card" data-year="tek2">
+                <h3>MyTeams</h3>
+                <p>Plateforme collaborative distribuée multi-clients en C avec protocole binaire TCP</p>
+            </a>
+            <a href="project/myftp.html" class="project-card" data-year="tek2">
+                <h3>MyFTP</h3>
+                <p>Serveur FTP asynchrone conforme à la norme RFC 959 en C</p>
+            </a>
+            <a href="project/minishell.html" class="project-card" data-year="tek2">
+                <h3>Minishell 2</h3>
+                <p>Reproduction d'un shell Unix (Bash/Zsh) avec pipes, redirections et opérateurs logiques</p>
+            </a>
+            <a href="project/my-top.html" class="project-card" data-year="tek1">
+                <h3>My Top</h3>
+                <p>Reproduction de la commande "top" d'Unix avec parsing de /proc/</p>
+            </a>
+            <a href="project/my-sudo.html" class="project-card" data-year="tek1">
+                <h3>My Sudo</h3>
+                <p>Recréation de la commande "Sudo" avec gestion des privilèges et authentification</p>
+            </a>
+        </div>
+    </section>
 
-            <section class="project-section" data-section="ia">
-                <h2>🤖 Intelligence Artificielle & Data</h2>
-                <div class="projects-container">
-                    <a href="project/persona-ai.html" class="project-card" data-year="tek2">
-                        <h3>Persona AI</h3>
-                        <p>Agents conversationnels et modèles décisionnels basés sur le NLP</p>
-                    </a>
-                    <a href="project/starttrek-ai.html" class="project-card" data-year="tek2">
-                        <h3>Star Trek AI</h3>
-                        <p>Agent décisionnel autonome et navigation spatiale algorithmique</p>
-                    </a>
-                    <a href="project/cvrie.html" class="project-card" data-year="tek2">
-                        <h3>CVRIE (Computer Vision)</h3>
-                        <p>Reconnaissance et extraction d'informations par vision par ordinateur</p>
-                    </a>
-                    <a href="project/tardis.html" class="project-card" data-year="tek2">
-                        <h3>Tardis AI</h3>
-                        <p>IA prédictive des retards de trains à partir de données historiques</p>
-                    </a>
-                </div>
-            </section>
+    <section class="project-section" data-section="ia">
+        <h2>Intelligence Artificielle & Data</h2>
+        <div class="projects-container">
+            <a href="project/persona-ai.html" class="project-card" data-year="tek2">
+                <h3>Persona AI</h3>
+                <p>Agents conversationnels et modèles décisionnels basés sur le NLP</p>
+            </a>
+            <a href="project/starttrek-ai.html" class="project-card" data-year="tek2">
+                <h3>Star Trek AI</h3>
+                <p>Agent décisionnel autonome et navigation spatiale algorithmique</p>
+            </a>
+            <a href="project/cvrie.html" class="project-card" data-year="tek2">
+                <h3>CVRIE (Computer Vision)</h3>
+                <p>Reconnaissance et extraction d'informations par vision par ordinateur</p>
+            </a>
+            <a href="project/tardis.html" class="project-card" data-year="tek2">
+                <h3>Tardis AI</h3>
+                <p>IA prédictive des retards de trains à partir de données historiques</p>
+            </a>
+        </div>
+    </section>
 
-            <section class="project-section" data-section="outils">
-                <h2>🛠️ Outils & Web</h2>
-                <div class="projects-container">
-                    <a href="project/epytodo.html" class="project-card" data-year="tek2">
-                        <h3>EpyTodo</h3>
-                        <p>API REST web backend et gestion de tâches avec base de données MySQL</p>
-                    </a>
-                    <a href="project/codewash.html" class="project-card" data-year="tek2">
-                        <h3>CodeWash</h3>
-                        <p>Outil d'analyse statique, conformité et refactoring de code source</p>
-                    </a>
-                    <a href="project/my-hunter.html" class="project-card" data-year="tek1">
-                        <h3>My Hunter</h3>
-                        <p>Mini-jeu graphique 2D en C avec la bibliothèque CSFML</p>
-                    </a>
-                </div>
-            </section>
+    <section class="project-section" data-section="outils">
+        <h2>Outils & Web</h2>
+        <div class="projects-container">
+            <a href="project/epytodo.html" class="project-card" data-year="tek2">
+                <h3>EpyTodo</h3>
+                <p>API REST web backend et gestion de tâches avec base de données MySQL</p>
+            </a>
+            <a href="project/codewash.html" class="project-card" data-year="tek2">
+                <h3>CodeWash</h3>
+                <p>Outil d'analyse statique, conformité et refactoring de code source</p>
+            </a>
+            <a href="project/my-hunter.html" class="project-card" data-year="tek1">
+                <h3>My Hunter</h3>
+                <p>Mini-jeu graphique 2D en C avec la bibliothèque CSFML</p>
+            </a>
+        </div>
+    </section>
 
-            <section class="project-section" data-section="perso">
-                <h2>💼 Projets Perso</h2>
-                <div class="projects-container">
-                    <a href="project/my_portfolio.html" class="project-card" data-year="perso">
-                        <h3>Portfolio Web en Rust</h3>
-                        <p>Application web de portfolio développée en Rust avec Rocket et Tera</p>
-                    </a>
-                    <a href="project/proxyflow-project.html" class="project-card" data-year="perso">
-                        <h3>ProxyFlow</h3>
-                        <p>Outil de gestion, routage et analyse de flux réseau proxy</p>
-                    </a>
-                    <a href="project/cinedle.html" class="project-card" data-year="perso">
-                        <h3>Cinedle</h3>
-                        <p>Jeu web interactif de devinettes de films et logique de recommandations</p>
-                    </a>
-                    <a href="project/youtube-game.html" class="project-card" data-year="perso">
-                        <h3>Youtube Game</h3>
-                        <p>Bot Discord interactif avec système de jeu RPG et base MySQL</p>
-                    </a>
-                    <a href="project/geometry-dash.html" class="project-card" data-year="perso">
-                        <h3>Geometry Dash Recorder</h3>
-                        <p>Enregistreur et analyseur automatique de parties avec vision par ordinateur</p>
-                    </a>
-                </div>
-            </section>
-
-            <div id="no-projects" class="no-projects-msg">
-                Aucun projet trouvé dans cette catégorie.
-            </div>
-        </main>
-    </div>
+    <section class="project-section" data-section="perso">
+        <h2>Projets Perso</h2>
+        <div class="projects-container">
+            <a href="project/my_portfolio.html" class="project-card" data-year="perso">
+                <h3>Portfolio Web en Rust</h3>
+                <p>Application web de portfolio développée en Rust avec Rocket et Tera</p>
+            </a>
+            <a href="project/proxyflow-project.html" class="project-card" data-year="perso">
+                <h3>ProxyFlow</h3>
+                <p>Outil de gestion, routage et analyse de flux réseau proxy</p>
+            </a>
+            <a href="project/cinedle.html" class="project-card" data-year="perso">
+                <h3>Cinedle</h3>
+                <p>Jeu web interactif de devinettes de films et logique de recommandations</p>
+            </a>
+            <a href="project/youtube-game.html" class="project-card" data-year="perso">
+                <h3>Youtube Game</h3>
+                <p>Bot Discord interactif avec système de jeu RPG et base MySQL</p>
+            </a>
+            <a href="project/geometry-dash.html" class="project-card" data-year="perso">
+                <h3>Geometry Dash Recorder</h3>
+                <p>Enregistreur et analyseur automatique de parties avec vision par ordinateur</p>
+            </a>
+        </div>
+    </section>
 
     <!-- Walking Duck across the screen at random Y coordinate -->
-    <div id="duckContainer" title="Clique-moi ! 🦆">
+    <div id="duckContainer" title="Clique-moi !">
         <div class="duck-sprite">
             <svg viewBox="0 0 64 64" width="56" height="56" style="display: block;">
                 <!-- Corps du canard -->
@@ -367,10 +327,6 @@
     // ==========================================
     const toggle = document.getElementById('crazy-toggle');
     let crazyActive = false;
-
-    function getVisibleCards() {
-        return Array.from(document.querySelectorAll('.project-card')).filter(card => card.style.display !== 'none');
-    }
 
     let positions = Array.from(document.querySelectorAll('.project-card')).map(() => ({ x: 0, y: 0 }));
 
@@ -416,30 +372,6 @@
     const navTabs = document.querySelectorAll('.nav-tab');
     const projectCards = document.querySelectorAll('.project-card');
     const projectSections = document.querySelectorAll('.project-section');
-    const noProjectsMsg = document.getElementById('no-projects');
-
-    function updateCounts() {
-        let countTek1 = 0;
-        let countTek2 = 0;
-        let countPerso = 0;
-
-        projectCards.forEach(card => {
-            const year = card.getAttribute('data-year');
-            if (year === 'tek1') countTek1++;
-            else if (year === 'tek2') countTek2++;
-            else if (year === 'perso') countPerso++;
-        });
-
-        const elAll = document.getElementById('count-all');
-        const elTek1 = document.getElementById('count-tek1');
-        const elTek2 = document.getElementById('count-tek2');
-        const elPerso = document.getElementById('count-perso');
-
-        if (elAll) elAll.textContent = projectCards.length;
-        if (elTek1) elTek1.textContent = countTek1;
-        if (elTek2) elTek2.textContent = countTek2;
-        if (elPerso) elPerso.textContent = countPerso;
-    }
 
     function filterCategory(category) {
         navTabs.forEach(tab => {
@@ -450,8 +382,6 @@
             }
         });
 
-        let visibleCount = 0;
-
         projectSections.forEach(section => {
             const cards = section.querySelectorAll('.project-card');
             let sectionVisibleCards = 0;
@@ -461,7 +391,6 @@
                 if (category === 'all' || year === category) {
                     card.style.display = '';
                     sectionVisibleCards++;
-                    visibleCount++;
                 } else {
                     card.style.display = 'none';
                 }
@@ -473,10 +402,6 @@
                 section.style.display = (sectionVisibleCards > 0) ? '' : 'none';
             }
         });
-
-        if (noProjectsMsg) {
-            noProjectsMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
-        }
 
         if (history.replaceState) {
             history.replaceState(null, null, '#' + category);
@@ -490,9 +415,6 @@
         });
     });
 
-    updateCounts();
-
-    // Check hash on load
     const currentHash = window.location.hash.replace('#', '');
     if (['all', 'tek1', 'tek2', 'perso'].includes(currentHash)) {
         filterCategory(currentHash);
