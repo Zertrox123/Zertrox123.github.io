@@ -50,14 +50,14 @@
 <body>
     <header class="main-header">
         <h1>~/Portfolio_<span class="accent">dev</span> 🚀</h1>
+        <div class="crazy-switch">
+            <label class="switch">
+                <input type="checkbox" id="crazy-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span>Crazy Mode</span>
+        </div>
     </header>
-    <div class="crazy-switch">
-        <label class="switch">
-            <input type="checkbox" id="crazy-toggle">
-            <span class="slider round"></span>
-        </label>
-        <span>Crazy Mode</span>
-    </div>
     <p>
         Salut, je suis <b>{{ username }}</b>, un étudiant passionné par
         <span class="dynamic-lang">
