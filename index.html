@@ -138,43 +138,36 @@
         filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
     }
 
-    .duck-quack-bubble {
+    .duck-quack-text {
         position: fixed;
         z-index: 100000;
         pointer-events: none;
         user-select: none;
         font-family: 'Fira Code', monospace;
         font-size: 0.85rem;
-        font-weight: bold;
-        color: #facc15;
-        background: rgba(22, 27, 34, 0.9);
-        border: 1px solid #30363d;
-        border-radius: 12px;
-        padding: 0.25rem 0.65rem;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.6);
-        transform: translate(-50%, -100%);
-        animation: quack-pop 0.85s ease-out forwards;
+        font-style: italic;
+        color: #ffffff;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+        white-space: nowrap;
+        animation: quack-fast 0.45s ease-out forwards;
     }
 
-    @keyframes quack-pop {
+    @keyframes quack-fast {
         0% {
             opacity: 0;
-            transform: translate(-50%, -40%) scale(0.6);
+            transform: translate(-50%, 0) rotate(var(--rot, 0deg)) scale(0.6);
         }
-        20% {
+        25% {
             opacity: 1;
-            transform: translate(-50%, -90%) scale(1.1);
+            transform: translate(-50%, -12px) rotate(var(--rot, 0deg)) scale(1.1);
         }
-        40% {
-            transform: translate(-50%, -110%) scale(1);
-        }
-        80% {
+        50% {
             opacity: 1;
-            transform: translate(-50%, -150%) scale(1);
+            transform: translate(-50%, -22px) rotate(var(--rot, 0deg)) scale(1);
         }
         100% {
             opacity: 0;
-            transform: translate(-50%, -180%) scale(0.9);
+            transform: translate(-50%, -40px) rotate(var(--rot, 0deg)) scale(0.9);
         }
     }
 
@@ -811,22 +804,27 @@
             }
 
             const rect = duck.getBoundingClientRect();
-            const bubble = document.createElement('div');
-            bubble.className = 'duck-quack-bubble';
-            bubble.textContent = 'Coin coin !';
+            const quack = document.createElement('span');
+            quack.className = 'duck-quack-text';
+            quack.textContent = 'Coin coin';
 
-            // Random slight horizontal offset for natural feel
-            const offset = (Math.random() * 20 - 10);
-            bubble.style.left = (rect.left + rect.width / 2 + offset) + 'px';
-            bubble.style.top = (rect.top + 20) + 'px';
+            // Random orientation between -30deg and +30deg
+            const angle = (Math.random() * 60 - 30).toFixed(1);
+            quack.style.setProperty('--rot', `${angle}deg`);
 
-            document.body.appendChild(bubble);
+            // Random slight offset around the duck center
+            const offsetX = (Math.random() * 30 - 15);
+            const offsetY = (Math.random() * 20 - 10);
+            quack.style.left = (rect.left + rect.width / 2 + offsetX) + 'px';
+            quack.style.top = (rect.top + 15 + offsetY) + 'px';
+
+            document.body.appendChild(quack);
 
             setTimeout(() => {
-                if (bubble.parentNode) {
-                    bubble.parentNode.removeChild(bubble);
+                if (quack.parentNode) {
+                    quack.parentNode.removeChild(quack);
                 }
-            }, 850);
+            }, 460);
         }
 
         duck.addEventListener('pointerdown', triggerQuack);
