@@ -147,16 +147,116 @@
         }
     }
 
-    .duck-quack-text {
-        position: absolute;
-        pointer-events: none;
-        font-style: italic;
-        font-size: 0.75rem;
+    /* ==========================================
+       CATEGORY TABS & FILTER DROPDOWN
+       ========================================== */
+    .category-nav {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1.5rem 0 2rem 0;
+        border-bottom: 1px solid #30363d;
+        padding-bottom: 1rem;
+    }
+
+    .nav-tab {
+        background: #161b22;
+        color: #8b949e;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        padding: 0.5rem 0.95rem;
         font-family: 'Fira Code', monospace;
-        color: #ffffff;
-        white-space: nowrap;
+        font-size: 0.88rem;
+        cursor: pointer;
+        transition: all 0.15s ease;
         user-select: none;
-        z-index: 100000;
+    }
+
+    .nav-tab:hover {
+        color: #c9d1d9;
+        border-color: #58a6ff;
+        background: #21262d;
+    }
+
+    .nav-tab.active {
+        background: #1f6feb;
+        color: #ffffff;
+        border-color: #58a6ff;
+        font-weight: bold;
+    }
+
+    .filter-dropdown-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .filter-btn {
+        background: #161b22;
+        color: #8b949e;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        padding: 0.5rem 0.95rem;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.88rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        user-select: none;
+        transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover, .filter-btn.open {
+        color: #c9d1d9;
+        border-color: #58a6ff;
+        background: #21262d;
+    }
+
+    .filter-btn.active-filter {
+        background: rgba(31, 111, 235, 0.2);
+        border-color: #58a6ff;
+        color: #58a6ff;
+        font-weight: bold;
+    }
+
+    .filter-dropdown-menu {
+        display: none !important;
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        z-index: 99999;
+        min-width: 190px;
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        padding: 0.35rem 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .filter-dropdown-menu.show {
+        display: block !important;
+    }
+
+    .filter-option {
+        padding: 0.5rem 1rem;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.84rem;
+        color: #c9d1d9;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s;
+        user-select: none;
+    }
+
+    .filter-option:hover {
+        background: #21262d;
+        color: #58a6ff;
+    }
+
+    .filter-option.active {
+        background: rgba(31, 111, 235, 0.2);
+        color: #58a6ff;
+        font-weight: bold;
     }
     </style>
 </head>
@@ -188,29 +288,27 @@
 
     <!-- Category Filter Tabs & Filter Dropdown -->
     <nav class="category-nav">
-        <div class="nav-tabs-group">
-            <button class="nav-tab active" data-category="main">Projets principaux <span id="count-main">(8)</span></button>
-            <button class="nav-tab" data-category="tek1">Projet année 1 <span id="count-tek1">(18)</span></button>
-            <button class="nav-tab" data-category="tek2">Projet année 2 <span id="count-tek2">(15)</span></button>
-            <button class="nav-tab" data-category="perso">Projet perso <span id="count-perso">(10)</span></button>
+        <button class="nav-tab active" data-category="main">Projets principaux <span id="count-main">(9)</span></button>
+        <button class="nav-tab" data-category="tek1">Projet année 1 <span id="count-tek1">(18)</span></button>
+        <button class="nav-tab" data-category="tek2">Projet année 2 <span id="count-tek2">(15)</span></button>
+        <button class="nav-tab" data-category="perso">Projet perso <span id="count-perso">(10)</span></button>
 
-            <!-- Filter Dropdown Button -->
-            <div class="filter-dropdown-container">
-                <button type="button" class="nav-tab filter-btn" id="filterToggleBtn" title="Filtrer par langage">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-                    </svg>
-                    <span id="filterLabel">Filtre</span>
-                    <span class="dropdown-arrow">▾</span>
-                </button>
-                <div class="filter-dropdown-menu" id="filterDropdownMenu">
-                    <div class="filter-option active" data-lang="all">Tous les langages</div>
-                    <div class="filter-option" data-lang="c">C</div>
-                    <div class="filter-option" data-lang="cpp">C++</div>
-                    <div class="filter-option" data-lang="python">Python</div>
-                    <div class="filter-option" data-lang="rust">Rust</div>
-                    <div class="filter-option" data-lang="js">JavaScript / Web</div>
-                </div>
+        <!-- Filter Dropdown Button -->
+        <div class="filter-dropdown-container">
+            <button type="button" class="filter-btn" id="filterToggleBtn" title="Filtrer par langage">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                <span id="filterLabel">Filtre</span>
+                <span class="dropdown-arrow">▾</span>
+            </button>
+            <div class="filter-dropdown-menu" id="filterDropdownMenu">
+                <div class="filter-option active" data-lang="all">Tous les langages</div>
+                <div class="filter-option" data-lang="c">C</div>
+                <div class="filter-option" data-lang="cpp">C++</div>
+                <div class="filter-option" data-lang="python">Python</div>
+                <div class="filter-option" data-lang="rust">Rust</div>
+                <div class="filter-option" data-lang="js">JavaScript / Web</div>
             </div>
         </div>
     </nav>
