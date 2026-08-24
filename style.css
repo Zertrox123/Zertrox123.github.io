@@ -13,11 +13,19 @@ body {
    ========================================================================== */
 .category-nav {
     display: flex;
-    gap: 0.6rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
     margin: 1.5rem 0 2rem 0;
     flex-wrap: wrap;
     border-bottom: 1px solid #30363d;
     padding-bottom: 1rem;
+}
+
+.nav-tabs-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .nav-tab {
@@ -44,6 +52,33 @@ body {
     color: #ffffff;
     border-color: #58a6ff;
     font-weight: bold;
+}
+
+.lang-filter-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.88rem;
+    color: #8b949e;
+}
+
+.lang-select {
+    background-color: #161b22;
+    color: #58a6ff;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 0.45rem 0.8rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.lang-select:hover, .lang-select:focus {
+    border-color: #58a6ff;
+    background-color: #21262d;
 }
 
 h1, h2 {

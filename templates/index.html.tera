@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/static/style.css?v=7">
-    <link rel="stylesheet" href="/static/responsive.css?v=7">
+    <link rel="stylesheet" href="/static/style.css?v=8">
+    <link rel="stylesheet" href="/static/responsive.css?v=8">
     <style>
     /* ==========================================
        MAIN HEADER & CRAZY SWITCH
@@ -186,75 +186,88 @@
         </span>
     </p>
 
-    <!-- Category Filter Tabs -->
+    <!-- Category Filter Tabs & Language Filter -->
     <nav class="category-nav">
-        <button class="nav-tab active" data-category="main">Projets principaux <span id="count-main">(8)</span></button>
-        <button class="nav-tab" data-category="tek1">Projet année 1 <span id="count-tek1">(17)</span></button>
-        <button class="nav-tab" data-category="tek2">Projet année 2 <span id="count-tek2">(14)</span></button>
-        <button class="nav-tab" data-category="perso">Projet perso <span id="count-perso">(10)</span></button>
+        <div class="nav-tabs-group">
+            <button class="nav-tab active" data-category="main">Projets principaux <span id="count-main">(8)</span></button>
+            <button class="nav-tab" data-category="tek1">Projet année 1 <span id="count-tek1">(18)</span></button>
+            <button class="nav-tab" data-category="tek2">Projet année 2 <span id="count-tek2">(15)</span></button>
+            <button class="nav-tab" data-category="perso">Projet perso <span id="count-perso">(10)</span></button>
+        </div>
+        <div class="lang-filter-wrapper">
+            <label for="lang-select">Filtrer par :</label>
+            <select id="lang-select" class="lang-select">
+                <option value="all">Tous les langages</option>
+                <option value="c">C</option>
+                <option value="cpp">C++</option>
+                <option value="python">Python</option>
+                <option value="rust">Rust</option>
+                <option value="js">JavaScript / Web</option>
+            </select>
+        </div>
     </nav>
 
     <!-- 1. Systèmes & Bas-Niveau -->
     <section class="project-section" data-section="systemes">
         <h2>Systèmes & Bas-Niveau</h2>
         <div class="projects-container">
-            <a href="/project/zappy" class="project-card" data-year="tek2" data-featured="true">
+            <a href="/project/zappy" class="project-card" data-year="tek2" data-featured="true" data-lang="c,cpp,python">
                 <h3>Zappy</h3>
                 <p>Jeu en réseau distribué : Serveur TCP en C, IA en C++/Python et client graphique</p>
             </a>
-            <a href="/project/the-plazza" class="project-card" data-year="tek2" data-featured="true">
+            <a href="/project/the-plazza" class="project-card" data-year="tek2" data-featured="true" data-lang="cpp">
                 <h3>The Plazza & Panoramix</h3>
                 <p>Moteur de simulation haute concurrence en C++20 avec processus, IPC et Thread Pools</p>
             </a>
-            <a href="/project/corewar" class="project-card" data-year="tek2" data-featured="true">
+            <a href="/project/corewar" class="project-card" data-year="tek2" data-featured="true" data-lang="c">
                 <h3>Corewar</h3>
                 <p>Machine virtuelle, ordonnanceur de processus et assembleur bytecode en C</p>
             </a>
-            <a href="/project/myteams" class="project-card" data-year="tek2" data-featured="true">
+            <a href="/project/myteams" class="project-card" data-year="tek2" data-featured="true" data-lang="c">
                 <h3>MyTeams</h3>
                 <p>Plateforme collaborative distribuée multi-clients en C avec protocole binaire TCP</p>
             </a>
-            <a href="/project/myftp" class="project-card" data-year="tek2" data-featured="true">
+            <a href="/project/myftp" class="project-card" data-year="tek2" data-featured="true" data-lang="c">
                 <h3>MyFTP</h3>
                 <p>Serveur FTP asynchrone conforme à la norme RFC 959 en C</p>
             </a>
-            <a href="/project/minishell" class="project-card" data-year="tek2">
+            <a href="/project/minishell" class="project-card" data-year="tek2" data-lang="c">
                 <h3>Minishell 2</h3>
                 <p>Reproduction d'un shell Unix (Bash/Zsh) avec pipes, redirections et opérateurs logiques</p>
             </a>
-            <a href="/project/pdgrush4" class="project-card" data-year="tek2">
+            <a href="/project/pdgrush4" class="project-card" data-year="tek2" data-lang="c">
                 <h3>PDG Rush 4</h3>
                 <p>Implémentation d'un paradigme orienté objet dynamique en C pur</p>
             </a>
-            <a href="/project/my-top" class="project-card" data-year="tek1">
+            <a href="/project/my-top" class="project-card" data-year="tek1" data-lang="c">
                 <h3>My Top</h3>
                 <p>Reproduction de la commande "top" d'Unix avec parsing de /proc/</p>
             </a>
-            <a href="/project/my-sudo" class="project-card" data-year="tek1">
+            <a href="/project/my-sudo" class="project-card" data-year="tek1" data-lang="c">
                 <h3>My Sudo</h3>
                 <p>Recréation de la commande "Sudo" avec gestion des privilèges et authentification</p>
             </a>
-            <a href="/project/minishell1" class="project-card" data-year="tek1">
+            <a href="/project/minishell1" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Minishell 1</h3>
                 <p>Interpréteur de commandes Unix initial avec exécution et gestion des variables</p>
             </a>
-            <a href="/project/myls" class="project-card" data-year="tek1">
+            <a href="/project/myls" class="project-card" data-year="tek1" data-lang="c">
                 <h3>My LS</h3>
                 <p>Recréation complète de la commande Unix "ls" avec options et métadonnées fichiers</p>
             </a>
-            <a href="/project/navy" class="project-card" data-year="tek1">
+            <a href="/project/navy" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Navy</h3>
                 <p>Bataille navale multijoueur en terminal communiquant exclusivement par signaux Unix</p>
             </a>
-            <a href="/project/secured" class="project-card" data-year="tek1">
+            <a href="/project/secured" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Secured</h3>
                 <p>Table de hachage associative optimisée et sécurisée en langage C</p>
             </a>
-            <a href="/project/myprintf" class="project-card" data-year="tek1">
+            <a href="/project/myprintf" class="project-card" data-year="tek1" data-lang="c">
                 <h3>MyPrintf</h3>
                 <p>Réimplémentation complète de la fonction printf de la libc en C</p>
             </a>
-            <a href="/project/organized" class="project-card" data-year="tek1">
+            <a href="/project/organized" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Organized</h3>
                 <p>Gestionnaire d'inventaire avec listes chaînées et algorithmes de tri dynamique</p>
             </a>
@@ -265,31 +278,31 @@
     <section class="project-section" data-section="ia">
         <h2>Intelligence Artificielle & Agents</h2>
         <div class="projects-container">
-            <a href="/project/cvrie" class="project-card" data-year="tek2" data-featured="true">
+            <a href="/project/cvrie" class="project-card" data-year="tek2" data-featured="true" data-lang="python">
                 <h3>CVRIE (Computer Vision)</h3>
                 <p>Reconnaissance et extraction d'informations par vision par ordinateur</p>
             </a>
-            <a href="/project/persona-ai" class="project-card" data-year="tek2" data-featured="true">
+            <a href="/project/persona-ai" class="project-card" data-year="tek2" data-featured="true" data-lang="python">
                 <h3>Persona AI</h3>
                 <p>Agents conversationnels et modèles décisionnels basés sur le NLP</p>
             </a>
-            <a href="/project/starttrek-ai" class="project-card" data-year="tek2">
+            <a href="/project/starttrek-ai" class="project-card" data-year="tek2" data-lang="python">
                 <h3>Star Trek AI</h3>
                 <p>Agent décisionnel autonome et navigation spatiale algorithmique</p>
             </a>
-            <a href="/project/tardis" class="project-card" data-year="tek2">
+            <a href="/project/tardis" class="project-card" data-year="tek2" data-lang="python">
                 <h3>Tardis AI</h3>
                 <p>IA prédictive des retards de trains à partir de données historiques</p>
             </a>
-            <a href="/project/need4stek" class="project-card" data-year="tek1">
+            <a href="/project/need4stek" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Need4Stek</h3>
                 <p>Algorithme de conduite autonome de voiture sur circuit via capteur LiDAR</p>
             </a>
-            <a href="/project/local-ai" class="project-card" data-year="perso">
+            <a href="/project/local-ai" class="project-card" data-year="perso" data-lang="python">
                 <h3>Local AI</h3>
                 <p>Plateforme locale d'inférence et d'orchestration de modèles LLM hors-ligne</p>
             </a>
-            <a href="/project/minecraft-ai" class="project-card" data-year="perso">
+            <a href="/project/minecraft-ai" class="project-card" data-year="perso" data-lang="python">
                 <h3>Minecraft AI</h3>
                 <p>Agent autonome pour environnement voxel avec pathfinding 3D et planification</p>
             </a>
@@ -300,31 +313,31 @@
     <section class="project-section" data-section="graphisme">
         <h2>Graphisme 2D/3D & Jeux</h2>
         <div class="projects-container">
-            <a href="/project/my-hunter" class="project-card" data-year="tek1">
+            <a href="/project/my-hunter" class="project-card" data-year="tek1" data-lang="c">
                 <h3>My Hunter</h3>
                 <p>Mini-jeu graphique 2D en C avec la bibliothèque CSFML</p>
             </a>
-            <a href="/project/myradar" class="project-card" data-year="tek1">
+            <a href="/project/myradar" class="project-card" data-year="tek1" data-lang="c">
                 <h3>My Radar</h3>
                 <p>Simulation graphique de contrôle aérien avec détection de collisions en C CSFML</p>
             </a>
-            <a href="/project/myworld" class="project-card" data-year="tek1">
+            <a href="/project/myworld" class="project-card" data-year="tek1" data-lang="c">
                 <h3>My World</h3>
                 <p>Moteur de rendu de terrain 3D isométrique avec terraforming en temps réel</p>
             </a>
-            <a href="/project/sokoban" class="project-card" data-year="tek1">
+            <a href="/project/sokoban" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Sokoban</h3>
                 <p>Jeu de réflexion Sokoban développé en C avec la bibliothèque ncurses</p>
             </a>
-            <a href="/project/geometry-dash" class="project-card" data-year="perso">
+            <a href="/project/geometry-dash" class="project-card" data-year="perso" data-lang="python">
                 <h3>Geometry Dash Recorder</h3>
                 <p>Enregistreur et analyseur automatique de parties avec vision par ordinateur</p>
             </a>
-            <a href="/project/cinedle" class="project-card" data-year="perso">
+            <a href="/project/cinedle" class="project-card" data-year="perso" data-lang="js">
                 <h3>Cinedle</h3>
                 <p>Jeu web interactif de devinettes de films et logique de recommandations</p>
             </a>
-            <a href="/project/youtube-game" class="project-card" data-year="perso">
+            <a href="/project/youtube-game" class="project-card" data-year="perso" data-lang="python">
                 <h3>Youtube Game</h3>
                 <p>Bot Discord interactif avec système de jeu RPG et base MySQL</p>
             </a>
@@ -335,15 +348,15 @@
     <section class="project-section" data-section="web">
         <h2>Web, Backend & Réseau</h2>
         <div class="projects-container">
-            <a href="/project/my_portfolio" class="project-card" data-year="perso" data-featured="true">
+            <a href="/project/my_portfolio" class="project-card" data-year="perso" data-featured="true" data-lang="rust">
                 <h3>Portfolio Web en Rust</h3>
                 <p>Application web de portfolio développée en Rust avec Rocket et Tera</p>
             </a>
-            <a href="/project/proxyflow-project" class="project-card" data-year="perso" data-featured="true">
+            <a href="/project/proxyflow-project" class="project-card" data-year="perso" data-featured="true" data-lang="rust,python">
                 <h3>ProxyFlow</h3>
                 <p>Outil de gestion, routage et analyse de flux réseau proxy</p>
             </a>
-            <a href="/project/epytodo" class="project-card" data-year="tek2">
+            <a href="/project/epytodo" class="project-card" data-year="tek2" data-lang="js">
                 <h3>EpyTodo</h3>
                 <p>API REST web backend et gestion de tâches avec base de données MySQL</p>
             </a>
@@ -354,47 +367,47 @@
     <section class="project-section" data-section="outils">
         <h2>Outils, Algorithmes & Infrastructure</h2>
         <div class="projects-container">
-            <a href="/project/settingup" class="project-card" data-year="tek1">
+            <a href="/project/settingup" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Setting Up (BSQ)</h3>
                 <p>Algorithme d'optimisation 2D pour localiser le plus grand carré dans une grille</p>
             </a>
-            <a href="/project/piscine-c" class="project-card" data-year="tek1">
+            <a href="/project/piscine-c" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Exercices d'apprentissage (Piscine C)</h3>
                 <p>Immersion intensive : 13 journées (Days 01 à 13), Stumpers, Makefiles et structures de données</p>
             </a>
-            <a href="/project/amazed" class="project-card" data-year="tek1">
+            <a href="/project/amazed" class="project-card" data-year="tek1" data-lang="c">
                 <h3>A-Maze-D</h3>
                 <p>Algorithme de résolution de labyrinthe et recherche de chemin optimal</p>
             </a>
-            <a href="/project/maths" class="project-card" data-year="tek1">
+            <a href="/project/maths" class="project-card" data-year="tek1" data-lang="python,c">
                 <h3>Projets Mathématiques</h3>
                 <p>Calculs de trajectoires 3D, matrices, cryptographie et analyse (101 à 105)</p>
             </a>
-            <a href="/project/popeye" class="project-card" data-year="tek1">
+            <a href="/project/popeye" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Popeye & RobotFactory</h3>
                 <p>Conteneurisation d'architectures applicatives et microservices avec Docker</p>
             </a>
-            <a href="/project/piscine-cpp" class="project-card" data-year="tek2">
+            <a href="/project/piscine-cpp" class="project-card" data-year="tek2" data-lang="cpp">
                 <h3>Exercices d'apprentissage (Piscine C++)</h3>
                 <p>Immersion avancée : POO C++20, STL, smart pointers, templates et paradigmes déclaratifs</p>
             </a>
-            <a href="/project/codewash" class="project-card" data-year="tek2">
+            <a href="/project/codewash" class="project-card" data-year="tek2" data-lang="python">
                 <h3>CodeWash</h3>
                 <p>Outil d'analyse statique, conformité et refactoring de code source</p>
             </a>
-            <a href="/project/cuddle" class="project-card" data-year="tek2">
+            <a href="/project/cuddle" class="project-card" data-year="tek2" data-lang="c">
                 <h3>Cuddle & Chocolatine</h3>
                 <p>Pipeline CI/CD automatisé avec GitHub Actions et workflow de tests d'intégration</p>
             </a>
-            <a href="/project/rust-vm" class="project-card" data-year="perso">
+            <a href="/project/rust-vm" class="project-card" data-year="perso" data-lang="rust">
                 <h3>Rust VM</h3>
                 <p>Interpréteur de bytecode et machine virtuelle basée sur registres en Rust</p>
             </a>
-            <a href="/project/anti-ux" class="project-card" data-year="perso">
+            <a href="/project/anti-ux" class="project-card" data-year="perso" data-lang="js">
                 <h3>Anti-UX</h3>
                 <p>Application web interactive explorant les dark patterns et interfaces inversées</p>
             </a>
-            <a href="/project/hackathon-crypto" class="project-card" data-year="perso">
+            <a href="/project/hackathon-crypto" class="project-card" data-year="perso" data-lang="python">
                 <h3>Hackathon Crypto</h3>
                 <p>Projet de sécurité informatique et cryptanalyse développé en équipe</p>
             </a>
@@ -470,26 +483,54 @@
     });
 
     // ==========================================
-    // CATEGORY NAVIGATOR & DYNAMIC COUNTS
+    // CATEGORY & LANGUAGE FILTER
     // ==========================================
     const navTabs = document.querySelectorAll('.nav-tab');
     const projectSections = document.querySelectorAll('.project-section');
     const projectCards = document.querySelectorAll('.project-card');
+    const langSelect = document.getElementById('lang-select');
 
-    function updateCounts() {
+    let currentCategory = 'main';
+    let currentLang = 'all';
+
+    function applyFilters() {
         let countMain = 0;
         let countTek1 = 0;
         let countTek2 = 0;
         let countPerso = 0;
 
-        projectCards.forEach(card => {
-            const year = card.getAttribute('data-year');
-            const isFeatured = card.getAttribute('data-featured') === 'true';
+        projectSections.forEach(section => {
+            const cards = section.querySelectorAll('.project-card');
+            let sectionVisibleCards = 0;
 
-            if (isFeatured) countMain++;
-            if (year === 'tek1') countTek1++;
-            if (year === 'tek2') countTek2++;
-            if (year === 'perso') countPerso++;
+            cards.forEach(card => {
+                const year = card.getAttribute('data-year');
+                const isFeatured = card.getAttribute('data-featured') === 'true';
+                const cardLangs = (card.getAttribute('data-lang') || '').split(',');
+
+                const matchCat = (currentCategory === 'main' && isFeatured) ||
+                                 (currentCategory === 'tek1' && year === 'tek1') ||
+                                 (currentCategory === 'tek2' && year === 'tek2') ||
+                                 (currentCategory === 'perso' && year === 'perso');
+
+                const matchLang = (currentLang === 'all') || cardLangs.includes(currentLang);
+
+                if (matchCat && matchLang) {
+                    card.style.display = '';
+                    sectionVisibleCards++;
+                } else {
+                    card.style.display = 'none';
+                }
+
+                if (matchLang) {
+                    if (isFeatured) countMain++;
+                    if (year === 'tek1') countTek1++;
+                    if (year === 'tek2') countTek2++;
+                    if (year === 'perso') countPerso++;
+                }
+            });
+
+            section.style.display = (sectionVisibleCards > 0) ? '' : 'none';
         });
 
         const elMain = document.getElementById('count-main');
@@ -501,67 +542,34 @@
         if (elTek1) elTek1.textContent = `(${countTek1})`;
         if (elTek2) elTek2.textContent = `(${countTek2})`;
         if (elPerso) elPerso.textContent = `(${countPerso})`;
-    }
-
-    function filterCategory(category) {
-        navTabs.forEach(tab => {
-            if (tab.getAttribute('data-category') === category) {
-                tab.classList.add('active');
-            } else {
-                tab.classList.remove('active');
-            }
-        });
-
-        projectSections.forEach(section => {
-            const cards = section.querySelectorAll('.project-card');
-            let sectionVisibleCards = 0;
-
-            cards.forEach(card => {
-                const year = card.getAttribute('data-year');
-                const isFeatured = card.getAttribute('data-featured') === 'true';
-
-                let shouldShow = false;
-                if (category === 'main') {
-                    shouldShow = isFeatured;
-                } else if (category === 'tek1') {
-                    shouldShow = (year === 'tek1');
-                } else if (category === 'tek2') {
-                    shouldShow = (year === 'tek2');
-                } else if (category === 'perso') {
-                    shouldShow = (year === 'perso');
-                }
-
-                if (shouldShow) {
-                    card.style.display = '';
-                    sectionVisibleCards++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            section.style.display = (sectionVisibleCards > 0) ? '' : 'none';
-        });
 
         if (history.replaceState) {
-            history.replaceState(null, null, '#' + category);
+            history.replaceState(null, null, '#' + currentCategory);
         }
     }
 
     navTabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            const cat = tab.getAttribute('data-category');
-            filterCategory(cat);
+            currentCategory = tab.getAttribute('data-category');
+            navTabs.forEach(t => t.classList.toggle('active', t === tab));
+            applyFilters();
         });
     });
 
-    updateCounts();
+    if (langSelect) {
+        langSelect.addEventListener('change', () => {
+            currentLang = langSelect.value;
+            applyFilters();
+        });
+    }
 
     const currentHash = window.location.hash.replace('#', '');
     if (['main', 'tek1', 'tek2', 'perso'].includes(currentHash)) {
-        filterCategory(currentHash);
-    } else {
-        filterCategory('main');
+        currentCategory = currentHash;
+        navTabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-category') === currentCategory));
     }
+
+    applyFilters();
 
     // ==========================================
     // WANDERING DUCK WITH LARGE TOUCH HITBOX

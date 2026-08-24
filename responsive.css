@@ -110,6 +110,31 @@ html, body {
         width: 100%;
     }
 
+    .category-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+
+    .nav-tabs-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .lang-filter-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 0.2rem;
+    }
+
+    .lang-select {
+        flex-grow: 1;
+        max-width: 220px;
+    }
+
     .project-card {
         flex: 1 1 100%;
         width: 100%;
