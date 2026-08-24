@@ -9,7 +9,6 @@
 <body>
     <header class="main-header">
         <h1>~/Portfolio_<span class="accent">dev</span> 🚀</h1>
-        <a href="/admin/login" class="admin-login-btn">🔐 Admin</a>
     </header>
     <div class="crazy-switch">
         <label class="switch">
