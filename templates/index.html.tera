@@ -189,8 +189,8 @@
     <!-- Category Filter Tabs -->
     <nav class="category-nav">
         <button class="nav-tab active" data-category="main">Projets principaux</button>
-        <button class="nav-tab" data-category="tek1">Projet année 1 (tek 1)</button>
-        <button class="nav-tab" data-category="tek2">Projet année 2 (tek 2)</button>
+        <button class="nav-tab" data-category="tek1">Projet année 1</button>
+        <button class="nav-tab" data-category="tek2">Projet année 2</button>
         <button class="nav-tab" data-category="perso">Projet perso</button>
     </nav>
 
