@@ -138,12 +138,43 @@
         filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
     }
 
-    @keyframes duck-waddle {
+    .duck-quack-bubble {
+        position: fixed;
+        z-index: 100000;
+        pointer-events: none;
+        user-select: none;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.85rem;
+        font-weight: bold;
+        color: #facc15;
+        background: rgba(22, 27, 34, 0.9);
+        border: 1px solid #30363d;
+        border-radius: 12px;
+        padding: 0.25rem 0.65rem;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.6);
+        transform: translate(-50%, -100%);
+        animation: quack-pop 0.85s ease-out forwards;
+    }
+
+    @keyframes quack-pop {
         0% {
-            transform: translateY(0) rotate(-6deg);
+            opacity: 0;
+            transform: translate(-50%, -40%) scale(0.6);
+        }
+        20% {
+            opacity: 1;
+            transform: translate(-50%, -90%) scale(1.1);
+        }
+        40% {
+            transform: translate(-50%, -110%) scale(1);
+        }
+        80% {
+            opacity: 1;
+            transform: translate(-50%, -150%) scale(1);
         }
         100% {
-            transform: translateY(-8px) rotate(6deg);
+            opacity: 0;
+            transform: translate(-50%, -180%) scale(0.9);
         }
     }
 
@@ -774,56 +805,28 @@
         requestAnimationFrame(animateDuck);
 
         function triggerQuack(e) {
-            if (e && e.type === 'pointerdown') {
+            if (e) {
                 e.preventDefault();
-            }
-            const quack = document.createElement('span');
-            quack.className = 'duck-quack-text';
-            quack.textContent = 'Coin coin';
-
-            const angle = Math.random() * 60 - 30;
-            const startX = Math.random() * 80 - 40;
-            const startY = Math.random() * 50 - 35;
-            let currentX = startX;
-            let currentY = startY;
-            let scale = 0.6;
-            let opacity = 1;
-
-            quack.style.left = '50px';
-            quack.style.top = '45px';
-            quack.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${angle}deg) scale(${scale})`;
-            quack.style.opacity = opacity;
-
-            duck.appendChild(quack);
-
-            let frame = 0;
-            const totalFrames = 26;
-
-            function animateQuack() {
-                frame++;
-                const progress = frame / totalFrames;
-
-                if (progress < 0.3) {
-                    scale = 0.6 + (progress / 0.3) * 0.45;
-                } else if (progress < 0.5) {
-                    scale = 1.05 - ((progress - 0.3) / 0.2) * 0.05;
-                } else {
-                    opacity = 1 - ((progress - 0.5) / 0.5);
-                }
-
-                currentY -= 1.0;
-
-                quack.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${angle}deg) scale(${scale})`;
-                quack.style.opacity = Math.max(0, opacity);
-
-                if (frame < totalFrames) {
-                    requestAnimationFrame(animateQuack);
-                } else {
-                    if (quack.parentNode) quack.parentNode.removeChild(quack);
-                }
+                e.stopPropagation();
             }
 
-            requestAnimationFrame(animateQuack);
+            const rect = duck.getBoundingClientRect();
+            const bubble = document.createElement('div');
+            bubble.className = 'duck-quack-bubble';
+            bubble.textContent = 'Coin coin !';
+
+            // Random slight horizontal offset for natural feel
+            const offset = (Math.random() * 20 - 10);
+            bubble.style.left = (rect.left + rect.width / 2 + offset) + 'px';
+            bubble.style.top = (rect.top + 20) + 'px';
+
+            document.body.appendChild(bubble);
+
+            setTimeout(() => {
+                if (bubble.parentNode) {
+                    bubble.parentNode.removeChild(bubble);
+                }
+            }, 850);
         }
 
         duck.addEventListener('pointerdown', triggerQuack);
