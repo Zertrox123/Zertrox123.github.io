@@ -80,6 +80,21 @@ body {
     transform: rotate(180deg);
 }
 
+.filter-btn.active-filter {
+    background: rgba(31, 111, 235, 0.2) !important;
+    border-color: #58a6ff !important;
+    color: #58a6ff !important;
+    font-weight: bold;
+}
+
+.filter-btn.active-filter svg {
+    stroke: #58a6ff !important;
+}
+
+.filter-btn.active-filter .dropdown-arrow {
+    color: #58a6ff !important;
+}
+
 .filter-dropdown-menu {
     display: none;
     position: absolute;

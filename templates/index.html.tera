@@ -214,10 +214,18 @@
     }
 
     .filter-btn.active-filter {
-        background: rgba(31, 111, 235, 0.2);
-        border-color: #58a6ff;
-        color: #58a6ff;
+        background: rgba(31, 111, 235, 0.2) !important;
+        border-color: #58a6ff !important;
+        color: #58a6ff !important;
         font-weight: bold;
+    }
+
+    .filter-btn.active-filter svg {
+        stroke: #58a6ff !important;
+    }
+
+    .filter-btn.active-filter .dropdown-arrow {
+        color: #58a6ff !important;
     }
 
     .filter-dropdown-menu {
@@ -682,12 +690,12 @@
                 currentLang = option.getAttribute('data-lang');
                 filterOptions.forEach(opt => opt.classList.toggle('active', opt === option));
                 
+                // Keep the label text strictly as "Filtre" and toggle color via active-filter class
+                filterLabel.textContent = 'Filtre';
                 if (currentLang === 'all') {
-                    filterLabel.textContent = 'Filtre';
-                    filterToggleBtn.classList.remove('active');
+                    filterToggleBtn.classList.remove('active-filter');
                 } else {
-                    filterLabel.textContent = `Filtre: ${option.textContent.trim()}`;
-                    filterToggleBtn.classList.add('active');
+                    filterToggleBtn.classList.add('active-filter');
                 }
 
                 filterDropdownMenu.classList.remove('show');
