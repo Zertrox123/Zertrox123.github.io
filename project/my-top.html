@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Top - Détails</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="stylesheet" href="../static/responsive.css">
-    <style>
-        .project-description {
-            white-space: pre-wrap;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/style.css?v=7">
+    <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
 <body>
     <div class="project-detail">
@@ -20,38 +15,30 @@
         <header class="project-header">
             <h1>My Top</h1>
             <div class="project-meta">
-                <span class="project-date">2024</span>
-                <span class="project-category category-systemes">Systèmes</span>
+                <span class="project-date">2025</span>
+                <span class="project-category category-systemes">Systèmes Unix</span>
             </div>
         </header>
-        <section class="project-content">
-            <h2>📝 Description</h2>
-            <p class="project-description">Reprogrammation en langage C de l'utilitaire top sous Unix pour comprendre le noyau et la gestion des processus.
+
+        <div class="project-content">
+            <h2>Description du projet</h2>
+            <div class="project-description">Recréation de la commande Unix "top" permettant de monitorer en temps réel les processus et les ressources système.
 
 Fonctionnalités principales :
-    - Lecture et parsing des métriques du système de fichiers virtuel /proc/.
-    - Monitoring temps réel : PID, état des processus, charge CPU, consommation RAM et nom de commande.
-    - Rafraîchissement automatique et tri interactif.</p>
+- Parsing direct du pseudo-système de fichiers /proc (stat, status, meminfo, uptime)
+- Affichage dynamique de l'usage CPU, de la consommation RAM et du nombre de threads par processus
+- Interface ncurses rafraîchie à intervalle régulier avec options de tri par PID, CPU% et mémoire</div>
 
-            <h2>Technologies</h2>
+            <h2>Technologies utilisées</h2>
             <div class="tech-tags">
-                <span class="tech-tag">C</span>
-                <span class="tech-tag">Unix</span>
-                <span class="tech-tag">/proc</span>
-                <span class="tech-tag">Systems</span>
+                <span class="tech-tag">C</span>\n                <span class="tech-tag">Unix</span>\n                <span class="tech-tag">/proc</span>\n                <span class="tech-tag">ncurses</span>\n                <span class="tech-tag">System Monitoring</span>
             </div>
 
-            <h2>🔗 Liens</h2>
+            <h2>Liens</h2>
             <div class="project-links">
-                <a href="https://github.com/Zertrox123" target="_blank" class="project-link github-link">
-                    📦 Voir sur GitHub
-                </a>
+                <a href="https://github.com/Zertrox123/mytop" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
             </div>
-        </section>
+        </div>
     </div>
-
-    <footer>
-        © 2025 Omar — Fait avec ❤️ et 🦀 Rocket
-    </footer>
 </body>
 </html>

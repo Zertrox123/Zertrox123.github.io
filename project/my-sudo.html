@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Sudo - Détails</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="stylesheet" href="../static/responsive.css">
-    <style>
-        .project-description {
-            white-space: pre-wrap;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/style.css?v=7">
+    <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
 <body>
     <div class="project-detail">
@@ -21,37 +16,29 @@
             <h1>My Sudo</h1>
             <div class="project-meta">
                 <span class="project-date">2025</span>
-                <span class="project-category category-systemes">Systèmes</span>
+                <span class="project-category category-systemes">Sécurité & Systèmes</span>
             </div>
         </header>
-        <section class="project-content">
-            <h2>📝 Description</h2>
-            <p class="project-description">Reprogrammation en langage C du mécanisme d'élévation de privilèges sous Unix.
+
+        <div class="project-content">
+            <h2>Description du projet</h2>
+            <div class="project-description">Recréation de la commande "sudo" permettant l'élévation de privilèges sous Linux.
 
 Fonctionnalités principales :
-    - Authentification utilisateur par mot de passe.
-    - Vérification des droits dans les fichiers de configuration sudoers.
-    - Exécution des commandes avec privilèges root temporaires et gestion d'erreurs sécurisée.</p>
+- Vérification des droits d'accès dans le fichier de configuration /etc/sudoers
+- Authentification sécurisée de l'utilisateur via la bibliothèque PAM (Pluggable Authentication Modules)
+- Exécution de commandes avec les privilèges root via setuid et setgid tout en isolant l'environnement d'exécution</div>
 
-            <h2>Technologies</h2>
+            <h2>Technologies utilisées</h2>
             <div class="tech-tags">
-                <span class="tech-tag">C</span>
-                <span class="tech-tag">Unix</span>
-                <span class="tech-tag">Security</span>
-                <span class="tech-tag">Authentication</span>
+                <span class="tech-tag">C</span>\n                <span class="tech-tag">Security</span>\n                <span class="tech-tag">PAM</span>\n                <span class="tech-tag">setuid</span>\n                <span class="tech-tag">Privilege Escalation</span>\n                <span class="tech-tag">Linux</span>
             </div>
 
-            <h2>🔗 Liens</h2>
+            <h2>Liens</h2>
             <div class="project-links">
-                <a href="https://github.com/Zertrox123" target="_blank" class="project-link github-link">
-                    📦 Voir sur GitHub
-                </a>
+                <a href="https://github.com/Zertrox123/mysudo" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
             </div>
-        </section>
+        </div>
     </div>
-
-    <footer>
-        © 2025 Omar — Fait avec ❤️ et 🦀 Rocket
-    </footer>
 </body>
 </html>

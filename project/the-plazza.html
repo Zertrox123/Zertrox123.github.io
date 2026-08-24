@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Plazza & Panoramix - Détails</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="stylesheet" href="../static/responsive.css">
-    <style>
-        .project-description {
-            white-space: pre-wrap;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/style.css?v=7">
+    <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
 <body>
     <div class="project-detail">
@@ -21,41 +16,29 @@
             <h1>The Plazza & Panoramix</h1>
             <div class="project-meta">
                 <span class="project-date">2026</span>
-                <span class="project-category category-systemes">Systèmes</span>
+                <span class="project-category category-systemes">Systèmes & Concurrence</span>
             </div>
         </header>
-        <section class="project-content">
-            <h2>📝 Description</h2>
-            <p class="project-description">Projets de programmation concurrente (G-CCP-400) simulant des systèmes distribués à forte charge sans deadlocks ni race conditions.
+
+        <div class="project-content">
+            <h2>Description du projet</h2>
+            <div class="project-description">Projets de programmation concurrente simulant des systèmes distribués à forte charge sans deadlocks ni race conditions.
 
 Fonctionnalités principales :
-    - The Plazza : Réception centrale répartissant des commandes sur plusieurs processus cuisines enfants via Named Pipes et Sockets de domaine Unix. Thread Pool optimisé avec mutex, sémaphores et variables de condition.
-    - Panoramix : Modélisation et synchronisation multithread stricte en C/C++ (problème des philosophes/druide).
-    - Load balancing dynamique et gestion automatisée des ressources.
+- The Plazza : Réception centrale répartissant des commandes sur plusieurs processus cuisines enfants via Named Pipes et Sockets de domaine Unix. Thread Pool optimisé avec mutex, sémaphores et variables de condition
+- Panoramix : Modélisation et synchronisation multithread stricte en C/C++
+- Load balancing dynamique et gestion automatisée des ressources</div>
 
-Compétences clés : C++20 moderne, threads POSIX, sémaphores, communication inter-processus (IPC) et architectures asynchrones.</p>
-
-            <h2>Technologies</h2>
+            <h2>Technologies utilisées</h2>
             <div class="tech-tags">
-                <span class="tech-tag">C++20</span>
-                <span class="tech-tag">Multithreading</span>
-                <span class="tech-tag">IPC</span>
-                <span class="tech-tag">Pipes</span>
-                <span class="tech-tag">Thread Pools</span>
-                <span class="tech-tag">POSIX</span>
+                <span class="tech-tag">C++20</span>\n                <span class="tech-tag">Multithreading</span>\n                <span class="tech-tag">IPC</span>\n                <span class="tech-tag">Pipes</span>\n                <span class="tech-tag">Thread Pools</span>\n                <span class="tech-tag">POSIX</span>
             </div>
 
-            <h2>🔗 Liens</h2>
+            <h2>Liens</h2>
             <div class="project-links">
-                <a href="https://github.com/Zertrox123" target="_blank" class="project-link github-link">
-                    📦 Voir sur GitHub
-                </a>
+                <a href="https://github.com/Zertrox123/theplazza" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
             </div>
-        </section>
+        </div>
     </div>
-
-    <footer>
-        © 2025 Omar — Fait avec ❤️ et 🦀 Rocket
-    </footer>
 </body>
 </html>

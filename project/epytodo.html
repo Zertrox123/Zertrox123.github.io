@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EpyTodo - Détails</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="stylesheet" href="../static/responsive.css">
-    <style>
-        .project-description {
-            white-space: pre-wrap;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/style.css?v=7">
+    <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
 <body>
     <div class="project-detail">
@@ -21,38 +16,29 @@
             <h1>EpyTodo</h1>
             <div class="project-meta">
                 <span class="project-date">2025</span>
-                <span class="project-category category-web_outils">Outils & Web</span>
+                <span class="project-category category-web_outils">Web & Backend</span>
             </div>
         </header>
-        <section class="project-content">
-            <h2>📝 Description</h2>
-            <p class="project-description">Application web backend (B-WEB-200) structurée autour d'une architecture MVC pour la gestion d'utilisateurs et de tâches.
+
+        <div class="project-content">
+            <h2>Description du projet</h2>
+            <div class="project-description">API REST backend complète pour une application de gestion de tâches (TODO list) avec authentification sécurisée.
 
 Fonctionnalités principales :
-    - Authentification sécurisée par tokens JWT et hashage de mots de passe (bcrypt).
-    - Endpoints RESTful complets pour les opérations CRUD sur les utilisateurs et tâches.
-    - Connexion et requêtes optimisées vers une base relationnelle MySQL.</p>
+- Endpoints RESTful pour la gestion des utilisateurs et des tâches (CRUD complet)
+- Authentification par tokens JWT et hachage sécurisé des mots de passe (bcrypt)
+- Persistance des données dans une base relationnelle MySQL avec requêtes préparées</div>
 
-            <h2>Technologies</h2>
+            <h2>Technologies utilisées</h2>
             <div class="tech-tags">
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">JWT</span>
-                <span class="tech-tag">REST API</span>
+                <span class="tech-tag">Node.js</span>\n                <span class="tech-tag">Express</span>\n                <span class="tech-tag">MySQL</span>\n                <span class="tech-tag">REST API</span>\n                <span class="tech-tag">JWT</span>\n                <span class="tech-tag">Backend</span>
             </div>
 
-            <h2>🔗 Liens</h2>
+            <h2>Liens</h2>
             <div class="project-links">
-                <a href="https://github.com/Zertrox123" target="_blank" class="project-link github-link">
-                    📦 Voir sur GitHub
-                </a>
+                <a href="https://github.com/Zertrox123/epytodo" class="project-link category-web_outils" target="_blank">Voir sur GitHub</a>
             </div>
-        </section>
+        </div>
     </div>
-
-    <footer>
-        © 2025 Omar — Fait avec ❤️ et 🦀 Rocket
-    </footer>
 </body>
 </html>
