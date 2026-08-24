@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/static/responsive.css">
     <style>
     /* ==========================================
-       RANDOM 2D WANDERING DUCK & QUACK POP ANIMATION
+       RANDOM 2D WANDERING DUCK
        ========================================== */
     #duckContainer {
         position: fixed;
@@ -23,7 +23,6 @@
         display: inline-block;
         animation: duck-waddle 0.4s ease-in-out infinite alternate;
         filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
-        transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     @keyframes duck-waddle {
@@ -35,40 +34,16 @@
         }
     }
 
-    .duck-quack-pop {
+    .duck-quack-text {
         position: absolute;
         pointer-events: none;
+        font-style: italic;
+        font-size: 0.78rem;
         font-family: 'Fira Code', monospace;
-        font-size: 0.85rem;
-        font-weight: bold;
         color: #58a6ff;
-        background: rgba(22, 27, 34, 0.95);
-        border: 1px solid #58a6ff;
-        padding: 4px 12px;
-        border-radius: 14px;
         white-space: nowrap;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.8);
+        user-select: none;
         z-index: 100000;
-        animation: quack-pop-in-out 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    }
-
-    @keyframes quack-pop-in-out {
-        0% {
-            opacity: 0;
-            transform: translate(var(--dx), var(--dy)) scale(0) rotate(var(--rot-start));
-        }
-        25% {
-            opacity: 1;
-            transform: translate(var(--dx), calc(var(--dy) - 15px)) scale(1.2) rotate(var(--rot-mid));
-        }
-        70% {
-            opacity: 1;
-            transform: translate(var(--dx), calc(var(--dy) - 25px)) scale(1) rotate(var(--rot-mid));
-        }
-        100% {
-            opacity: 0;
-            transform: translate(var(--dx), calc(var(--dy) - 45px)) scale(0.3) rotate(var(--rot-end));
-        }
     }
     </style>
 </head>
@@ -238,46 +213,55 @@
 
         requestAnimationFrame(animateDuck);
 
-        // Click interaction: Pop in / Pop out random "Coin coin !" text around duck
-        const quackTexts = ["Coin coin ! 🦆", "Coin ! 🦆", "Coin-coin !", "QUACK ! 🦆", "Coin !", "🦆 Coin coin !"];
+        // Click interaction: Pure JS animation for small italic "Coin coin"
+        duck.addEventListener('click', () => {
+            const quack = document.createElement('span');
+            quack.className = 'duck-quack-text';
+            quack.textContent = 'Coin coin';
 
-        duck.addEventListener('click', (e) => {
-            // Little elastic jump animation on duck
-            const sprite = duck.querySelector('.duck-sprite');
-            if (sprite) {
-                sprite.style.transform = 'scale(1.3) translateY(-12px)';
-                setTimeout(() => { sprite.style.transform = ''; }, 180);
-            }
+            const startX = (Math.random() - 0.5) * 70; // -35px to +35px
+            const startY = -15 - Math.random() * 25;   // -15px to -40px
+            let currentX = startX;
+            let currentY = startY;
+            let scale = 0.5;
+            let opacity = 1;
 
-            // Create floating pop in / pop out text
-            const quack = document.createElement('div');
-            quack.className = 'duck-quack-pop';
-            
-            const randomText = quackTexts[Math.floor(Math.random() * quackTexts.length)];
-            quack.textContent = randomText;
-
-            // Random offset and tilt around the duck
-            const offsetX = (Math.random() - 0.5) * 110; // -55px to +55px
-            const offsetY = -20 - Math.random() * 50;    // -20px to -70px
-            const rotStart = (Math.random() - 0.5) * 30 + 'deg';
-            const rotMid = (Math.random() - 0.5) * 20 + 'deg';
-            const rotEnd = (Math.random() - 0.5) * 40 + 'deg';
-
-            quack.style.setProperty('--dx', `${offsetX}px`);
-            quack.style.setProperty('--dy', `${offsetY}px`);
-            quack.style.setProperty('--rot-start', rotStart);
-            quack.style.setProperty('--rot-mid', rotMid);
-            quack.style.setProperty('--rot-end', rotEnd);
-
-            quack.style.left = '15px';
+            quack.style.left = '20px';
             quack.style.top = '10px';
+            quack.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+            quack.style.opacity = opacity;
 
             duck.appendChild(quack);
 
-            // Cleanup after animation completes
-            setTimeout(() => {
-                if (quack.parentNode) quack.parentNode.removeChild(quack);
-            }, 1200);
+            let frame = 0;
+            const totalFrames = 45; // ~750ms
+
+            function animateQuack() {
+                frame++;
+                const progress = frame / totalFrames;
+
+                // Pop-in scale
+                if (progress < 0.25) {
+                    scale = 0.5 + (progress / 0.25) * 0.6; // 0.5 -> 1.1
+                } else if (progress < 0.4) {
+                    scale = 1.1 - ((progress - 0.25) / 0.15) * 0.1; // 1.1 -> 1.0
+                } else {
+                    opacity = 1 - ((progress - 0.4) / 0.6); // fade out
+                }
+
+                currentY -= 0.6; // float upwards smoothly
+
+                quack.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+                quack.style.opacity = Math.max(0, opacity);
+
+                if (frame < totalFrames) {
+                    requestAnimationFrame(animateQuack);
+                } else {
+                    if (quack.parentNode) quack.parentNode.removeChild(quack);
+                }
+            }
+
+            requestAnimationFrame(animateQuack);
         });
 
         window.addEventListener('resize', () => {
