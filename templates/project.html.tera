@@ -16,7 +16,7 @@
             <div class="project-meta">
                 <span class="project-date">{{ project.date }}</span>
                 <span class="project-category category-{{ project.category }}">
-                    {% if project.category == "scolaire" %}🎓 Scolaire{% else %}💼 Personnel{% endif %}
+                    {% if project.category == "systemes" %}⚡ Systèmes{% elif project.category == "ia" %}🤖 IA & Data{% elif project.category == "web_outils" %}🛠️ Outils & Web{% else %}💼 Personnel{% endif %}
                 </span>
             </div>
         </header>

@@ -30,10 +30,10 @@
             </span>
         </span>
     </p>
-    <h2>🎓 Projets Scolaires</h2>
+    <h2>⚡ Systèmes & Concurrence</h2>
     <div class="projects-container">
     {% for project in projects %}
-        {% if project.category == "scolaire" %}
+        {% if project.category == "systemes" %}
         <a href="/project/{{ project.id }}" class="project-card">
             <h3>{{ project.name }}</h3>
             <p>{{ project.description }}</p>
@@ -41,6 +41,31 @@
         {% endif %}
     {% endfor %}
     </div>
+
+    <h2>🤖 Intelligence Artificielle & Data</h2>
+    <div class="projects-container">
+    {% for project in projects %}
+        {% if project.category == "ia" %}
+        <a href="/project/{{ project.id }}" class="project-card">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+        </a>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <h2>🛠️ Outils & Web</h2>
+    <div class="projects-container">
+    {% for project in projects %}
+        {% if project.category == "web_outils" %}
+        <a href="/project/{{ project.id }}" class="project-card">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+        </a>
+        {% endif %}
+    {% endfor %}
+    </div>
+
     <h2>💼 Projets Perso</h2>
     <div class="projects-container">
     {% for project in projects %}

@@ -201,8 +201,19 @@ body .dynamic-lang .ticker .word {
     font-weight: bold;
 }
 
-.category-scolaire {
+.category-scolaire,
+.category-systemes {
     background-color: #1f6feb;
+    color: white;
+}
+
+.category-ia {
+    background-color: #8957e5;
+    color: white;
+}
+
+.category-web_outils {
+    background-color: #d29922;
     color: white;
 }
 
