@@ -38,9 +38,9 @@
         position: absolute;
         pointer-events: none;
         font-style: italic;
-        font-size: 0.78rem;
+        font-size: 0.68rem;
         font-family: 'Fira Code', monospace;
-        color: #58a6ff;
+        color: #ffffff;
         white-space: nowrap;
         user-select: none;
         z-index: 100000;
@@ -213,45 +213,49 @@
 
         requestAnimationFrame(animateDuck);
 
-        // Click interaction: Pure JS animation for small italic "Coin coin"
+        // Click interaction: White italic "Coin coin" with random angle (max 30deg) and snappy animation
         duck.addEventListener('click', () => {
             const quack = document.createElement('span');
             quack.className = 'duck-quack-text';
             quack.textContent = 'Coin coin';
 
-            const startX = (Math.random() - 0.5) * 70; // -35px to +35px
-            const startY = -15 - Math.random() * 25;   // -15px to -40px
+            // Angle aléatoire entre -30° et +30°
+            const angle = Math.random() * 60 - 30;
+
+            // Spawn aléatoire autour du canard
+            const startX = Math.random() * 80 - 40; // -40px à +40px
+            const startY = Math.random() * 50 - 35; // -35px à +15px
             let currentX = startX;
             let currentY = startY;
-            let scale = 0.5;
+            let scale = 0.6;
             let opacity = 1;
 
             quack.style.left = '20px';
-            quack.style.top = '10px';
-            quack.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+            quack.style.top = '15px';
+            quack.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${angle}deg) scale(${scale})`;
             quack.style.opacity = opacity;
 
             duck.appendChild(quack);
 
             let frame = 0;
-            const totalFrames = 45; // ~750ms
+            const totalFrames = 28; // ~460ms (animation rapide et vive)
 
             function animateQuack() {
                 frame++;
                 const progress = frame / totalFrames;
 
-                // Pop-in scale
-                if (progress < 0.25) {
-                    scale = 0.5 + (progress / 0.25) * 0.6; // 0.5 -> 1.1
-                } else if (progress < 0.4) {
-                    scale = 1.1 - ((progress - 0.25) / 0.15) * 0.1; // 1.1 -> 1.0
+                // Pop-in rapide
+                if (progress < 0.3) {
+                    scale = 0.6 + (progress / 0.3) * 0.45; // 0.6 -> 1.05
+                } else if (progress < 0.5) {
+                    scale = 1.05 - ((progress - 0.3) / 0.2) * 0.05; // 1.05 -> 1.0
                 } else {
-                    opacity = 1 - ((progress - 0.4) / 0.6); // fade out
+                    opacity = 1 - ((progress - 0.5) / 0.5); // fade out
                 }
 
-                currentY -= 0.6; // float upwards smoothly
+                currentY -= 0.9; // flottement vers le haut
 
-                quack.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+                quack.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${angle}deg) scale(${scale})`;
                 quack.style.opacity = Math.max(0, opacity);
 
                 if (frame < totalFrames) {
