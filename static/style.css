@@ -254,6 +254,7 @@ body .dynamic-lang .ticker .word {
     font-size: 1.1rem;
     color: #c9d1d9;
     margin-bottom: 2rem;
+    white-space: pre-line;
 }
 
 .tech-tags {
