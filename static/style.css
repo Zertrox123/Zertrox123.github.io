@@ -273,13 +273,14 @@ body .dynamic-lang .ticker .word {
     border: 1px solid #30363d;
     font-family: 'Fira Code', monospace;
     cursor: default;
-    height: 1.5vw;
-    transition: all 0.1s ease-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-out;
 }
 
 .tech-tag:hover {
-    margin-top: 1vh;
-    transition: all 0.1s ease-out;
+    transform: translateY(-2px);
     color: #fff;
 }
 
