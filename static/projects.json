@@ -4,7 +4,7 @@
     "name": "Zappy",
     "description": "Jeu en réseau distribué : Serveur TCP en C, IA en C++/Python et client graphique",
     "category": "systemes",
-    "detailed_description": "Projet de synthèse de 2ème année (G-YEP-400) simulant un monde virtuel temps réel où des équipes d'agents IA s'affrontent pour collecter des ressources et évoluer.\n\nComposants de l'architecture :\n1. Serveur réseau en C : Gestion multi-clients asynchrone non-bloquante avec multiplexage I/O (select), protocole TCP et boucle de jeu cadencée.\n2. Client IA autonome : Algorithme décisionnel d'exploration, communication inter-drones par broadcast audio et coordination d'équipes pour rituels d'élévation.\n3. Visualiseur graphique : Rendu visuel 3D/2D temps réel du monde et des actions.\n\nCompétences clés : Programmation système, sockets réseau, concurrence, IA distribuée et protocoles clients/serveurs.",
+    "detailed_description": "Projet de synthèse de 2ème année (G-YEP-400) simulant un monde virtuel temps réel où des équipes d'agents IA s'affrontent pour collecter des ressources et évoluer.\n\nComposants de l'architecture :\n    1. Serveur réseau en C : Gestion multi-clients asynchrone non-bloquante avec multiplexage I/O (select), protocole TCP et boucle de jeu cadencée.\n    2. Client IA autonome : Algorithme décisionnel d'exploration, communication inter-drones par broadcast audio et coordination d'équipes pour rituels d'élévation.\n    3. Visualiseur graphique : Rendu visuel 3D/2D temps réel du monde et des actions.\n\nCompétences clés : Programmation système, sockets réseau, concurrence, IA distribuée et protocoles clients/serveurs.",
     "technologies": [
       "C",
       "C++",
@@ -22,7 +22,7 @@
     "name": "The Plazza & Panoramix",
     "description": "Moteur de simulation haute concurrence en C++20 avec processus, IPC et Thread Pools",
     "category": "systemes",
-    "detailed_description": "Projets de programmation concurrente (G-CCP-400) simulant des systèmes distribués à forte charge sans deadlocks ni race conditions.\n\nFonctionnalités principales :\n- The Plazza : Réception centrale répartissant des commandes sur plusieurs processus cuisines enfants via Named Pipes et Sockets de domaine Unix. Thread Pool optimisé avec mutex, sémaphores et variables de condition.\n- Panoramix : Modélisation et synchronisation multithread stricte en C/C++ (problème des philosophes/druide).\n- Load balancing dynamique et gestion automatisée des ressources.\n\nCompétences clés : C++20 moderne, threads POSIX, sémaphores, communication inter-processus (IPC) et architectures asynchrones.",
+    "detailed_description": "Projets de programmation concurrente (G-CCP-400) simulant des systèmes distribués à forte charge sans deadlocks ni race conditions.\n\nFonctionnalités principales :\n    - The Plazza : Réception centrale répartissant des commandes sur plusieurs processus cuisines enfants via Named Pipes et Sockets de domaine Unix. Thread Pool optimisé avec mutex, sémaphores et variables de condition.\n    - Panoramix : Modélisation et synchronisation multithread stricte en C/C++ (problème des philosophes/druide).\n    - Load balancing dynamique et gestion automatisée des ressources.\n\nCompétences clés : C++20 moderne, threads POSIX, sémaphores, communication inter-processus (IPC) et architectures asynchrones.",
     "technologies": [
       "C++20",
       "Multithreading",
@@ -39,7 +39,7 @@
     "name": "Corewar",
     "description": "Machine virtuelle, ordonnanceur de processus et assembleur bytecode en C",
     "category": "systemes",
-    "detailed_description": "Projet d'émulation bas-niveau (B-CPE-200) simulant une arène mémoire circulaire de 6 Ko où plusieurs programmes champions s'affrontent en exécutant du bytecode assembleur.\n\nFonctionnalités principales :\n- Interprétation et ordonnancement dynamique des processus exécutés en temps réel avec compteurs de cycles et gestion des temps d'instructions.\n- Gestion de l'arène mémoire circulaire et prévention des collisions d'adressage.\n- Assembleur personnalisé (.s vers binaire exécutable .cor) avec parsing de labels et d'opcodes.\n\nCompétences clés : C avancé, manipulation de pointeurs, encodage binaire et architecture machine virtuelle.",
+    "detailed_description": "Projet d'émulation bas-niveau (B-CPE-200) simulant une arène mémoire circulaire de 6 Ko où plusieurs programmes champions s'affrontent en exécutant du bytecode assembleur.\n\nFonctionnalités principales :\n    - Interprétation et ordonnancement dynamique des processus exécutés en temps réel avec compteurs de cycles et gestion des temps d'instructions.\n    - Gestion de l'arène mémoire circulaire et prévention des collisions d'adressage.\n    - Assembleur personnalisé (.s vers binaire exécutable .cor) avec parsing de labels et d'opcodes.\n\nCompétences clés : C avancé, manipulation de pointeurs, encodage binaire et architecture machine virtuelle.",
     "technologies": [
       "C",
       "ASM",
@@ -56,7 +56,7 @@
     "name": "MyTeams",
     "description": "Plateforme collaborative distribuée multi-clients en C avec protocole binaire TCP",
     "category": "systemes",
-    "detailed_description": "Développement d'un serveur et client de communication collaborative (G-NWP-400).\n\nFonctionnalités principales :\n- Serveur asynchrone non-bloquant gérant de multiples connexions simultanées avec select/poll.\n- Architecture : Équipes (Teams), Canaux (Channels), Fils de discussion (Threads) et Messages privés (DMs).\n- Protocole réseau binaire sur mesure et persistance des données sur disque.\n\nCompétences clés : Programmation réseau bas-niveau en C, sockets TCP, sérialisation binaire et gestion d'état serveur.",
+    "detailed_description": "Développement d'un serveur et client de communication collaborative (G-NWP-400).\n\nFonctionnalités principales :\n    - Serveur asynchrone non-bloquant gérant de multiples connexions simultanées avec select/poll.\n    - Architecture : Équipes (Teams), Canaux (Channels), Fils de discussion (Threads) et Messages privés (DMs).\n    - Protocole réseau binaire sur mesure et persistance des données sur disque.\n\nCompétences clés : Programmation réseau bas-niveau en C, sockets TCP, sérialisation binaire et gestion d'état serveur.",
     "technologies": [
       "C",
       "TCP/IP",
@@ -73,7 +73,7 @@
     "name": "MyFTP",
     "description": "Serveur FTP asynchrone conforme à la norme RFC 959 en C",
     "category": "systemes",
-    "detailed_description": "Implémentation complète d'un serveur de transfert de fichiers (G-NWP-400) respectant la spécification RFC 959.\n\nFonctionnalités principales :\n- Connexion de contrôle (port 21) et connexions de données dynamiques (modes PASV et PORT).\n- Implémentation des commandes standard : USER, PASS, CWD, CDUP, QUIT, DELE, PWD, PASV, PORT, HELP, NOOP, RETR, STOR, LIST.\n- Gestion des utilisateurs et isolation sécurisée des répertoires.\n\nCompétences clés : Protocoles RFC internet, sockets TCP doubles et transferts de données asynchrones.",
+    "detailed_description": "Implémentation complète d'un serveur de transfert de fichiers (G-NWP-400) respectant la spécification RFC 959.\n\nFonctionnalités principales :\n    - Connexion de contrôle (port 21) et connexions de données dynamiques (modes PASV et PORT).\n    - Implémentation des commandes standard : USER, PASS, CWD, CDUP, QUIT, DELE, PWD, PASV, PORT, HELP, NOOP, RETR, STOR, LIST.\n    - Gestion des utilisateurs et isolation sécurisée des répertoires.\n\nCompétences clés : Protocoles RFC internet, sockets TCP doubles et transferts de données asynchrones.",
     "technologies": [
       "C",
       "RFC 959",
@@ -89,7 +89,7 @@
     "name": "Minishell 2",
     "description": "Reproduction d'un shell Unix (Bash/Zsh) avec pipes, redirections et opérateurs logiques",
     "category": "systemes",
-    "detailed_description": "Interpréteur de commandes Unix complet en langage C (B-PSU-200).\n\nFonctionnalités principales :\n- Prompt interactif avec historique et parsing de ligne de commande.\n- Exécution des commandes via fork, execve et waitpid.\n- Gestion des pipes multiples (|), redirections (<, >, >>, <<) et séparateurs (; , &&, ||).\n- Builtins internes : cd, env, setenv, unsetenv, exit, echo, export, alias.\n- Gestion des signaux Unix et libération intégrale de la mémoire.",
+    "detailed_description": "Interpréteur de commandes Unix complet en langage C (B-PSU-200).\n\nFonctionnalités principales :\n    - Prompt interactif avec historique et parsing de ligne de commande.\n    - Exécution des commandes via fork, execve et waitpid.\n    - Gestion des pipes multiples (|), redirections (<, >, >>, <<) et séparateurs (; , &&, ||).\n    - Builtins internes : cd, env, setenv, unsetenv, exit, echo, export, alias.\n    - Gestion des signaux Unix et libération intégrale de la mémoire.",
     "technologies": [
       "C",
       "Unix",
@@ -105,7 +105,7 @@
     "name": "My Top",
     "description": "Reproduction de la commande \"top\" d'Unix avec parsing de /proc/",
     "category": "systemes",
-    "detailed_description": "Reprogrammation en langage C de l'utilitaire top sous Unix pour comprendre le noyau et la gestion des processus.\n\nFonctionnalités principales :\n- Lecture et parsing des métriques du système de fichiers virtuel /proc/.\n- Monitoring temps réel : PID, état des processus, charge CPU, consommation RAM et nom de commande.\n- Rafraîchissement automatique et tri interactif.",
+    "detailed_description": "Reprogrammation en langage C de l'utilitaire top sous Unix pour comprendre le noyau et la gestion des processus.\n\nFonctionnalités principales :\n    - Lecture et parsing des métriques du système de fichiers virtuel /proc/.\n    - Monitoring temps réel : PID, état des processus, charge CPU, consommation RAM et nom de commande.\n    - Rafraîchissement automatique et tri interactif.",
     "technologies": [
       "C",
       "Unix",
@@ -120,7 +120,7 @@
     "name": "My Sudo",
     "description": "Recréation de la commande \"Sudo\" avec gestion des privilèges et authentification",
     "category": "systemes",
-    "detailed_description": "Reprogrammation en langage C du mécanisme d'élévation de privilèges sous Unix.\n\nFonctionnalités principales :\n- Authentification utilisateur par mot de passe.\n- Vérification des droits dans les fichiers de configuration sudoers.\n- Exécution des commandes avec privilèges root temporaires et gestion d'erreurs sécurisée.",
+    "detailed_description": "Reprogrammation en langage C du mécanisme d'élévation de privilèges sous Unix.\n\nFonctionnalités principales :\n    - Authentification utilisateur par mot de passe.\n    - Vérification des droits dans les fichiers de configuration sudoers.\n    - Exécution des commandes avec privilèges root temporaires et gestion d'erreurs sécurisée.",
     "technologies": [
       "C",
       "Unix",
@@ -135,7 +135,7 @@
     "name": "Persona AI",
     "description": "Agents conversationnels et modèles décisionnels basés sur le NLP",
     "category": "ia",
-    "detailed_description": "Projet d'intelligence artificielle (G-AIA-410) axé sur la création d'agents intelligents autonomes capables d'interagir et de prendre des décisions selon un profil de personnalité prédéfini.\n\nFonctionnalités principales :\n- Intégration de modèles de traitement du langage naturel (NLP) pour analyser les intentions et le contexte.\n- Arbres de décisions et gestion de mémoire contextuelle pour les interactions longues.\n- Évaluation des réponses générées et ajustement de cohérence comportementale.",
+    "detailed_description": "Projet d'intelligence artificielle (G-AIA-410) axé sur la création d'agents intelligents autonomes capables d'interagir et de prendre des décisions selon un profil de personnalité prédéfini.\n\nFonctionnalités principales :\n    - Intégration de modèles de traitement du langage naturel (NLP) pour analyser les intentions et le contexte.\n    - Arbres de décisions et gestion de mémoire contextuelle pour les interactions longues.\n    - Évaluation des réponses générées et ajustement de cohérence comportementale.",
     "technologies": [
       "Python",
       "NLP",
@@ -151,7 +151,7 @@
     "name": "Star Trek AI",
     "description": "Agent décisionnel autonome et navigation spatiale algorithmique",
     "category": "ia",
-    "detailed_description": "Projet d'intelligence artificielle (G-AIA-401) implémentant des algorithmes heuristiques et de recherche pour guider un vaisseau autonome dans un univers dynamique et hostile.\n\nFonctionnalités principales :\n- Algorithmes de pathfinding (A*, Dijkstra) et évitement d'obstacles en temps réel.\n- Prise de décision sous contraintes énergétiques et gestion optimale des ressources.\n- Stratégies d'évaluation tactique et simulations prédictives.",
+    "detailed_description": "Projet d'intelligence artificielle (G-AIA-401) implémentant des algorithmes heuristiques et de recherche pour guider un vaisseau autonome dans un univers dynamique et hostile.\n\nFonctionnalités principales :\n    - Algorithmes de pathfinding (A*, Dijkstra) et évitement d'obstacles en temps réel.\n    - Prise de décision sous contraintes énergétiques et gestion optimale des ressources.\n    - Stratégies d'évaluation tactique et simulations prédictives.",
     "technologies": [
       "Python",
       "AI",
@@ -167,7 +167,7 @@
     "name": "CVRIE (Computer Vision)",
     "description": "Reconnaissance et extraction d'informations par vision par ordinateur",
     "category": "ia",
-    "detailed_description": "Projet d'intelligence artificielle (G-AIA-400) spécialisé dans le traitement d'images et la reconnaissance de formes.\n\nFonctionnalités principales :\n- Traitement d'images numériques (filtrage, détection de contours, seuillage adaptatif) avec OpenCV.\n- Extraction automatique de zones d'intérêt et classification d'éléments visuels.\n- Pipelines de prétraitement pour optimiser la précision des modèles de détection.",
+    "detailed_description": "Projet d'intelligence artificielle (G-AIA-400) spécialisé dans le traitement d'images et la reconnaissance de formes.\n\nFonctionnalités principales :\n    - Traitement d'images numériques (filtrage, détection de contours, seuillage adaptatif) avec OpenCV.\n    - Extraction automatique de zones d'intérêt et classification d'éléments visuels.\n    - Pipelines de prétraitement pour optimiser la précision des modèles de détection.",
     "technologies": [
       "Python",
       "OpenCV",
@@ -182,7 +182,7 @@
     "name": "Tardis AI",
     "description": "IA prédictive des retards de trains à partir de données historiques",
     "category": "ia",
-    "detailed_description": "Modèle de machine learning supervisé en Python pour l'analyse prédictive.\n\nFonctionnalités principales :\n- Nettoyage et préparation de jeux de données réels avec Pandas et NumPy.\n- Entraînement de modèles de régression et classification pour prédire les retards ferroviaires.\n- Évaluation statistique des performances et visualisations graphiques.",
+    "detailed_description": "Modèle de machine learning supervisé en Python pour l'analyse prédictive.\n\nFonctionnalités principales :\n    - Nettoyage et préparation de jeux de données réels avec Pandas et NumPy.\n    - Entraînement de modèles de régression et classification pour prédire les retards ferroviaires.\n    - Évaluation statistique des performances et visualisations graphiques.",
     "technologies": [
       "Python",
       "Pandas",
@@ -197,7 +197,7 @@
     "name": "EpyTodo",
     "description": "API REST web backend et gestion de tâches avec base de données MySQL",
     "category": "web_outils",
-    "detailed_description": "Application web backend (B-WEB-200) structurée autour d'une architecture MVC pour la gestion d'utilisateurs et de tâches.\n\nFonctionnalités principales :\n- Authentification sécurisée par tokens JWT et hashage de mots de passe (bcrypt).\n- Endpoints RESTful complets pour les opérations CRUD sur les utilisateurs et tâches.\n- Connexion et requêtes optimisées vers une base relationnelle MySQL.",
+    "detailed_description": "Application web backend (B-WEB-200) structurée autour d'une architecture MVC pour la gestion d'utilisateurs et de tâches.\n\nFonctionnalités principales :\n    - Authentification sécurisée par tokens JWT et hashage de mots de passe (bcrypt).\n    - Endpoints RESTful complets pour les opérations CRUD sur les utilisateurs et tâches.\n    - Connexion et requêtes optimisées vers une base relationnelle MySQL.",
     "technologies": [
       "Node.js",
       "Express",
@@ -228,7 +228,7 @@
     "name": "My Hunter",
     "description": "Mini-jeu graphique 2D en C avec la bibliothèque CSFML",
     "category": "web_outils",
-    "detailed_description": "Développement d'un jeu vidéo interactif en langage C avec la bibliothèque CSFML.\n\nFonctionnalités principales :\n- Fenêtrage, boucle de jeu temps réel (gameloop) et limitation du framerate.\n- Gestion des entrées clavier/souris pour viser et tirer sur des cibles mobiles.\n- Animations graphiques, sons immersifs et calcul du score.",
+    "detailed_description": "Développement d'un jeu vidéo interactif en langage C avec la bibliothèque CSFML.\n\nFonctionnalités principales :\n    - Fenêtrage, boucle de jeu temps réel (gameloop) et limitation du framerate.\n    - Gestion des entrées clavier/souris pour viser et tirer sur des cibles mobiles.\n    - Animations graphiques, sons immersifs et calcul du score.",
     "technologies": [
       "C",
       "CSFML",
@@ -243,7 +243,7 @@
     "name": "Portfolio Web en Rust",
     "description": "Application web de portfolio développée en Rust avec Rocket et Tera",
     "category": "personnel",
-    "detailed_description": "Conception d'un portfolio complet et performant en langage Rust avec le framework web Rocket.\n\nFonctionnalités principales :\n- Routes asynchrones et moteur de templates dynamiques Tera.\n- Espace d'administration pour la gestion dynamique des projets.\n- Interface utilisateur moderne avec Crazy Mode et rendu responsive.",
+    "detailed_description": "Conception d'un portfolio complet et performant en langage Rust avec le framework web Rocket.\n\nFonctionnalités principales :\n    - Routes asynchrones et moteur de templates dynamiques Tera.\n    - Espace d'administration pour la gestion dynamique des projets.\n    - Interface utilisateur moderne avec Crazy Mode et rendu responsive.",
     "technologies": [
       "Rust",
       "Rocket",
@@ -289,7 +289,7 @@
     "name": "Youtube Game",
     "description": "Bot Discord interactif avec système de jeu RPG et base MySQL",
     "category": "personnel",
-    "detailed_description": "Bot Discord personnel développé en Python avec persistance des données sur serveur MySQL.\n\nFonctionnalités principales :\n- Interactions et commandes asynchrones via l'API Discord.\n- Système de progression de joueurs, gestion d'inventaire, économie virtuelle et classements.\n- Communication optimisée et sécurisée avec la base de données relationnelle.",
+    "detailed_description": "Bot Discord personnel développé en Python avec persistance des données sur serveur MySQL.\n\nFonctionnalités principales :\n    - Interactions et commandes asynchrones via l'API Discord.\n    - Système de progression de joueurs, gestion d'inventaire, économie virtuelle et classements.\n    - Communication optimisée et sécurisée avec la base de données relationnelle.",
     "technologies": [
       "Python",
       "MySQL",
@@ -304,7 +304,7 @@
     "name": "Geometry Dash Recorder",
     "description": "Enregistreur et analyseur automatique de parties avec vision par ordinateur",
     "category": "personnel",
-    "detailed_description": "Outil d'automatisation en Python pour la capture de gameplay et la journalisation d'événements.\n\nFonctionnalités principales :\n- Détection automatique du début et fin de run par analyse d'images en direct.\n- Enregistrement vidéo en tâche de fond avec accélération FFmpeg.\n- Logger d'inputs clavier/souris avec timestamps précis pour relecture et analyses.",
+    "detailed_description": "Outil d'automatisation en Python pour la capture de gameplay et la journalisation d'événements.\n\nFonctionnalités principales :\n    - Détection automatique du début et fin de run par analyse d'images en direct.\n    - Enregistrement vidéo en tâche de fond avec accélération FFmpeg.\n    - Logger d'inputs clavier/souris avec timestamps précis pour relecture et analyses.",
     "technologies": [
       "Python",
       "OpenCV",

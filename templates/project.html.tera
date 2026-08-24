@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/static/responsive.css">
     <style>
         .project-description {
-            white-space: pre-line;
+            white-space: pre-wrap;
         }
     </style>
 </head>
