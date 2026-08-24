@@ -2,15 +2,14 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="stylesheet" href="static/responsive.css">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/responsive.css">
 </head>
 <body>
     <header class="main-header">
         <h1>~/Portfolio_<span class="accent">dev</span> 🚀</h1>
-        <a href="admin.html" class="admin-login-btn">🔐 Admin</a>
+        <a href="/admin/login" class="admin-login-btn">🔐 Admin</a>
     </header>
     <div class="crazy-switch">
         <label class="switch">
@@ -20,7 +19,7 @@
         <span>Crazy Mode</span>
     </div>
     <p>
-        Salut, je suis <b>Omar</b>, un étudiant passionné par
+        Salut, je suis <b>{{ username }}</b>, un étudiant passionné par
         <span class="dynamic-lang">
             <span class="ticker">
                 <span class="word">Python</span>
@@ -34,41 +33,25 @@
     </p>
     <h2>🎓 Projets Scolaires</h2>
     <div class="projects-container">
-        <a href="project/my-top.html" class="project-card">
-            <h3>My Top</h3>
-            <p>Reproduction de la commande "top" de Linux</p>
+    {% for project in projects %}
+        {% if project.category == "scolaire" %}
+        <a href="/project/{{ project.id }}" class="project-card">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
         </a>
-        <a href="project/my-sudo.html" class="project-card">
-            <h3>My Sudo</h3>
-            <p>Recréation de la commande "Sudo"</p>
-        </a>
-        <a href="project/minishell.html" class="project-card">
-            <h3>Minishell</h3>
-            <p>Reproduction d'un shell linux</p>
-        </a>
-        <a href="project/tardis.html" class="project-card">
-            <h3>Tardis</h3>
-            <p>Création d'une IA prédictive à partir d'un Excel</p>
-        </a>
-        <a href="project/my-hunter.html" class="project-card">
-            <h3>My Hunter</h3>
-            <p>Création d'un Shooter Game</p>
-        </a>
+        {% endif %}
+    {% endfor %}
     </div>
     <h2>💼 Projets Perso</h2>
     <div class="projects-container">
-        <a href="project/my_portfolio.html" class="project-card">
-            <h3>Portfolio</h3>
-            <p>Creation d'un portfolio en Rust</p>
+    {% for project in projects %}
+        {% if project.category == "personnel" %}
+        <a href="/project/{{ project.id }}" class="project-card">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
         </a>
-        <a href="project/youtube-game.html" class="project-card">
-            <h3>Youtube Game</h3>
-            <p>Un bot discord consistant en un jeu RPG Youtubeur</p>
-        </a>
-        <a href="project/geometry-dash.html" class="project-card">
-            <h3>Geometry Dash Recorder</h3>
-            <p>Auto Recorder pour Geometry Dash</p>
-        </a>
+        {% endif %}
+    {% endfor %}
     </div>
     <script>
     const toggle = document.getElementById('crazy-toggle');

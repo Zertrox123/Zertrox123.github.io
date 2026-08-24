@@ -1,107 +1,317 @@
 [
   {
-    "id": "my-top",
-    "name": "My Top",
-    "description": "Reproduction de la commande \"top\" de Linux",
+    "id": "zappy",
+    "name": "Zappy",
+    "description": "Jeu en réseau distribué : Serveur TCP en C, IA en C++/Python et client graphique",
     "category": "scolaire",
-    "detailed_description": "Ce projet consistait à reprogrammer en langage C la commande top d’Unix. L’objectif était de comprendre en profondeur le fonctionnement d’un système d’exploitation et la manière dont il gère les processus, l’utilisation du CPU et de la mémoire.\r\n\r\nNotre programme devait: Afficher en temps réel la liste des processus en cours d’exécution; indiquer leur PID, leur état, leur utilisation CPU et mémoire, ainsi que le nom de la commande associée; mettre en place un rafraîchissement périodique des informations (comme dans la commande top originale); Offrir des options de tri (par exemple par consommation CPU ou mémoire). Les objectifs pédagogiques etant: Approfondir la maîtrise du langage C; Manipuler les fichiers spéciaux du répertoire /proc/ pour extraire les informations système; Comprendre le fonctionnement bas niveau des processus Unix et de leur gestion; Développer des compétences en optimisation, car l’affichage devait rester fluide et réactif malgré le volume de données.",
+    "detailed_description": "Projet de synthèse de 2ème année (G-YEP-400) simulant un monde virtuel temps réel où des équipes d'agents IA s'affrontent pour collecter des ressources et évoluer jusqu'au niveau maximum.\n\nComposants de l'architecture :\n1. Serveur réseau en C : Gestion multi-clients asynchrone non-bloquante avec multiplexage I/O (select), protocole de communication TCP et boucle de jeu cadencée par unité de temps (frequence).\n2. Client IA autonome : Algorithme décisionnel d'exploration, communication inter-drones par broadcast audio et coordination d'équipes pour rituels d'élévation.\n3. Visualiseur graphique : Rendu visuel 3D/2D temps réel du monde et des actions des entités.\n\nCompétences clés : Programmation système, sockets réseau, concurrence, algorithmes d'IA distribuée et protocoles clients/serveurs robustes.",
     "technologies": [
       "C",
-      "Unix"
+      "C++",
+      "Python",
+      "TCP/IP",
+      "select",
+      "Network Protocol",
+      "AI"
     ],
-    "date": "2024",
-    "github": "http://github.com"
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
   },
   {
-    "id": "my_portfolio",
-    "name": "Portfolio",
-    "description": "Creation d'un portfolio en Rust",
-    "category": "personnel",
-    "detailed_description": "Dans le cadre de mon apprentissage de Rust, j’ai développé un portfolio interactif permettant de présenter mes projets et mes compétences. Contrairement à une simple page statique, l’objectif était d’utiliser Rust pour gérer la structure et la logique côté serveur, tout en proposant une interface web moderne.\r\nLes caractéristiques principales étant: Développer avec Rust et un framework web (Rocket); Mise en place d’un système de templates dynamiques pour l’affichage des projets; Gestion de données (projets, descriptions, liens GitHub) à partir de fichiers JSON; Interface responsive avec une mise en valeur claire des compétences. Les Objectifs du projet: Mettre en pratique les bases de Rust dans un projet concret; Découvrir la programmation web côté serveur en Rust; Créer un outil personnel réutilisable et extensible pour présenter mes projets.",
+    "id": "the-plazza",
+    "name": "The Plazza & Panoramix",
+    "description": "Moteur de simulation haute concurrence en C++20 avec processus, IPC et Thread Pools",
+    "category": "scolaire",
+    "detailed_description": "Projets de programmation concurrente (G-CCP-400) simulant des systèmes distribués à forte charge sans deadlocks ni race conditions.\n\nFonctionnalités principales :\n- The Plazza : Gestion d'une réception centrale qui répartit des commandes sur plusieurs processus cuisines enfants via Named Pipes (FIFOs) et Sockets de domaine Unix. Chaque cuisine gère un Thread Pool de cuisiniers avec des mutex, sémaphores et variables de condition.\n- Panoramix : Modélisation et résolution du problème des philosophes / druide avec synchronisation multithread stricte en C/C++.\n- Load balancing dynamique et arrêt automatique des processus inactifs.\n\nCompétences clés : C++20 moderne, threads POSIX, sémaphores, communication inter-processus (IPC) et architectures asynchrones.",
     "technologies": [
-      "Rust",
-      "Rocket",
-      "CSS",
-      "HTML",
-      "Tera"
+      "C++20",
+      "Multithreading",
+      "IPC",
+      "Pipes",
+      "Thread Pools",
+      "POSIX"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "corewar",
+    "name": "Corewar",
+    "description": "Machine virtuelle, ordonnanceur de processus et assembleur bytecode en C",
+    "category": "scolaire",
+    "detailed_description": "Projet d'émulation bas-niveau (B-CPE-200) simulant une arène mémoire circulaire de 6 Ko où plusieurs programmes champions s'affrontent en exécutant du bytecode assembleur.\n\nFonctionnalités principales :\n- Interprétation et ordonnancement dynamique des processus exécutés en temps réel avec compteurs de cycles et gestion des temps d'instructions (live, ld, st, add, sub, and, or, xor, zjmp, ldi, sti, fork, lfork, aff).\n- Gestion de l'arène mémoire circulaire et prévention des collisions d'adressage.\n- Assembleur personnalisé (.s vers binaire exécutable .cor) avec gestion des labels, directes et indirectes.\n\nCompétences clés : C avancé, manipulation de pointeurs, encodage binaire, arithmétique des pointeurs et architecture machine virtuelle.",
+    "technologies": [
+      "C",
+      "ASM",
+      "Bytecode",
+      "Virtual Machine",
+      "Scheduling",
+      "Unix"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "myteams",
+    "name": "MyTeams",
+    "description": "Plateforme collaborative distribuée multi-clients en C avec protocole binaire TCP",
+    "category": "scolaire",
+    "detailed_description": "Développement d'un serveur et d'un client de communication collaborative (G-NWP-400) similaire à Microsoft Teams ou Slack.\n\nFonctionnalités principales :\n- Serveur asynchrone non-bloquant gérant des dizaines de connexions simultanées grâce à select/poll.\n- Architecture hiérarchique : Équipes (Teams), Canaux (Channels), Fils de discussion (Threads) et Messages.\n- Support des messages privés directs (DMs), historique et persistance des données sur disque.\n- Protocole réseau binaire sur mesure et respect strict des spécifications de réponses et codes de statut.\n\nCompétences clés : Programmation réseau bas-niveau en C, sockets TCP, sérialisation de structures binaires et gestion d'état serveur.",
+    "technologies": [
+      "C",
+      "TCP/IP",
+      "Sockets",
+      "select",
+      "I/O Multiplexing",
+      "Unix"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "myftp",
+    "name": "MyFTP",
+    "description": "Serveur FTP asynchrone conforme à la norme RFC 959 en C",
+    "category": "scolaire",
+    "detailed_description": "Implémentation complète d'un serveur de transfert de fichiers (G-NWP-400) respectant la spécification officielle RFC 959.\n\nFonctionnalités principales :\n- Gestion de la connexion de contrôle (port 21) et de la connexion de données dynamique (modes PASV et PORT).\n- Implémentation des commandes standard : USER, PASS, CWD, CDUP, QUIT, DELE, PWD, PASV, PORT, HELP, NOOP, RETR, STOR, LIST.\n- Gestion des utilisateurs anonymes et authentifiés avec isolation des répertoires.\n\nCompétences clés : Protocoles RFC internet, sockets TCP doubles, multiplexage et gestion des transferts de flux de données.",
+    "technologies": [
+      "C",
+      "RFC 959",
+      "TCP/IP",
+      "Sockets",
+      "Unix"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "persona-ai",
+    "name": "Persona AI & NLP",
+    "description": "Agents conversationnels et modèles décisionnels basés sur le traitement du langage naturel",
+    "category": "scolaire",
+    "detailed_description": "Projet d'intelligence artificielle (G-AIA-410) axé sur la création d'agents intelligents autonomes capables d'interagir et de prendre des décisions selon un profil de personnalité prédéfini.\n\nFonctionnalités principales :\n- Intégration de modèles de traitement du langage naturel (NLP) pour analyser les intentions et le contexte.\n- Arbres de décisions et gestion de mémoire contextuelle pour les interactions longues.\n- Évaluation des réponses générées et ajustement des paramètres de cohérence comportementale.",
+    "technologies": [
+      "Python",
+      "NLP",
+      "AI",
+      "PyTorch",
+      "Scikit-Learn"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "starttrek-ai",
+    "name": "Star Trek AI",
+    "description": "Agent décisionnel autonome et navigation spatiale algorithmique",
+    "category": "scolaire",
+    "detailed_description": "Projet d'intelligence artificielle (G-AIA-401) implémentant des algorithmes heuristiques et de recherche pour guider un vaisseau autonome dans un univers dynamique et hostile.\n\nFonctionnalités principales :\n- Algorithmes de pathfinding (A*, Dijkstra) et évitement d'obstacles en temps réel.\n- Prise de décision sous contraintes énergétiques et gestion optimale des ressources du vaisseau.\n- Stratégies d'évaluation tactique et simulations prédictives des mouvements adverses.",
+    "technologies": [
+      "Python",
+      "AI",
+      "Pathfinding",
+      "Heuristics",
+      "Algorithms"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "cvrie",
+    "name": "CVRIE (Computer Vision)",
+    "description": "Reconnaissance et extraction d'informations par vision par ordinateur",
+    "category": "scolaire",
+    "detailed_description": "Projet d'intelligence artificielle (G-AIA-400) spécialisé dans le traitement d'images et la reconnaissance de formes.\n\nFonctionnalités principales :\n- Traitement d'images numériques (filtrage, détection de contours, seuillage adaptatif, morphologie mathématique) avec OpenCV.\n- Extraction automatique de zones d'intérêt et classification d'éléments visuels.\n- Pipelines de prétraitement pour maximiser la précision des modèles de détection.",
+    "technologies": [
+      "Python",
+      "OpenCV",
+      "Computer Vision",
+      "NumPy"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "minishell",
+    "name": "Minishell 2",
+    "description": "Reproduction d'un shell Unix (Bash/Zsh) avec pipes, redirections et opérateurs logiques",
+    "category": "scolaire",
+    "detailed_description": "Interpréteur de commandes Unix complet en langage C (B-PSU-200).\n\nFonctionnalités principales :\n- Prompt interactif avec historique et parsing avancé de la ligne de commande.\n- Exécution des commandes systèmes via fork, execve et waitpid.\n- Gestion des pipes multiples (|), des redirections (<, >, >>, <<) et des séparateurs/opérateurs logiques (; , &&, ||).\n- Builtins internes : cd, env, setenv, unsetenv, exit, echo, export, alias.\n- Gestion rigoureuse des signaux (SIGINT, SIGTSTP) et libération intégrale de la mémoire.",
+    "technologies": [
+      "C",
+      "Unix",
+      "Pipes",
+      "Process Management",
+      "IPC"
     ],
     "date": "2025",
-    "github": "http://github.com"
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "epytodo",
+    "name": "EpyTodo",
+    "description": "API REST web backend et gestion de tâches avec base de données MySQL",
+    "category": "scolaire",
+    "detailed_description": "Application web backend (B-WEB-200) structurée autour d'une architecture MVC pour la gestion d'utilisateurs et de tâches.\n\nFonctionnalités principales :\n- Authentification sécurisée par tokens JWT et hashage de mots de passe (bcrypt).\n- Endpoints RESTful complets pour les opérations CRUD sur les utilisateurs et tâches.\n- Connexion et requêtes optimisées vers une base de données relationnelle MySQL.",
+    "technologies": [
+      "Node.js",
+      "Express",
+      "MySQL",
+      "JWT",
+      "REST API"
+    ],
+    "date": "2025",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "codewash",
+    "name": "CodeWash",
+    "description": "Outil d'analyse statique, conformité et refactoring de code source",
+    "category": "scolaire",
+    "detailed_description": "Utilitaire d'ingénierie logicielle (G-ING-400) analysant les arbres syntaxiques pour vérifier le respect des normes de codage, détecter les mauvaises pratiques et optimiser les structures de code.",
+    "technologies": [
+      "Python",
+      "Static Analysis",
+      "Parsing",
+      "Tooling"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "my-top",
+    "name": "My Top",
+    "description": "Reproduction de la commande \"top\" d'Unix avec extraction des métriques système",
+    "category": "scolaire",
+    "detailed_description": "Reprogrammation en langage C de l'utilitaire top sous Unix pour comprendre le noyau et la gestion des processus.\n\nFonctionnalités principales :\n- Lecture et parsing des fichiers virtuels du système de fichiers /proc/.\n- Monitoring temps réel : PID, état des processus, utilisation CPU, consommation RAM et nom de commande.\n- Rafraîchissement automatique et tri interactif selon la charge.",
+    "technologies": [
+      "C",
+      "Unix",
+      "/proc",
+      "Systems"
+    ],
+    "date": "2024",
+    "github": "https://github.com/Zertrox123"
   },
   {
     "id": "my-sudo",
     "name": "My Sudo",
-    "description": "Recréation de la commande \"Sudo\"",
+    "description": "Recréation de la commande \"Sudo\" avec vérification des privilèges et authentification",
     "category": "scolaire",
-    "detailed_description": "Ce projet consistait à reprogrammer en langage C la commande sudo de Linux. L’objectif était de comprendre le fonctionnement des systèmes d’authentification sous Unix et les mécanismes permettant d’exécuter des commandes avec des privilèges élevés de manière sécurisée.\r\n\r\nNotre programme devait : demander le mot de passe de l’utilisateur avant l’exécution ; vérifier les droits en consultant un fichier de configuration (type /etc/sudoers simplifié) ; exécuter la commande demandée avec les privilèges administrateur uniquement si l’utilisateur était autorisé ; gérer les erreurs comme un mot de passe incorrect, une absence de droits ou une commande invalide.\r\n\r\nLes objectifs pédagogiques étant : approfondir la maîtrise du langage C ; manipuler la gestion des droits et privilèges utilisateurs sous Linux ; comprendre le fonctionnement bas niveau de l’authentification et de l’exécution sécurisée ; développer des compétences en gestion des erreurs et sécurité dans un programme système.",
+    "detailed_description": "Reprogrammation en langage C du mécanisme d'élévation de privilèges sous Unix.\n\nFonctionnalités principales :\n- Authentification utilisateur par mot de passe sécurisé.\n- Vérification des droits dans les fichiers de configuration sudoers.\n- Exécution des commandes avec privilèges root temporaires et gestion d'erreurs sécurisée.",
     "technologies": [
       "C",
-      "Unix"
+      "Unix",
+      "Security",
+      "Authentication"
     ],
     "date": "2025",
-    "github": "http://github.com"
-  },
-  {
-    "id": "minishell",
-    "name": "Minishell",
-    "description": "Reproduction d'un shell linux",
-    "category": "scolaire",
-    "detailed_description": "Ce projet consistait à reprogrammer en langage C un shell minimaliste inspiré des shells Unix (bash/zsh). L’objectif était de comprendre le fonctionnement d’un interpréteur de commandes, la gestion des processus et des entrées/sorties dans un système d’exploitation.\r\n\r\nNotre programme devait : afficher un prompt interactif ; interpréter et exécuter les commandes saisies par l’utilisateur ; gérer les chemins et variables d’environnement ; supporter les redirections d’entrées/sorties et les pipes ; implémenter des commandes internes de base (cd, exit, echo, pwd, env, export, unset).\r\n\r\nLes objectifs pédagogiques étant : approfondir la maîtrise du langage C ; comprendre la gestion des processus et la communication inter-processus (IPC) ; manipuler les appels systèmes Unix comme fork, exec, pipe et dup2 ; développer des compétences en gestion de la mémoire et en conception d’outils système robustes.",
-    "technologies": [
-      "C"
-    ],
-    "date": "2025",
-    "github": "http://github.com"
-  },
-  {
-    "id": "youtube-game",
-    "name": "Youtube Game",
-    "description": "Un bot discord consistant en un jeu RPG Youtubeur",
-    "category": "personnel",
-    "detailed_description": "Ce projet consistait à développer en Python un bot Discord personnel nommé \"Youtube Game\". L’objectif était d’intégrer un système de jeu interactif directement dans Discord, tout en manipulant une base de données pour stocker et gérer les informations des utilisateurs.\r\n\r\nNotre programme devait : interagir avec les utilisateurs via des commandes Discord ; proposer un système de jeu lié à YouTube et à la progression des joueurs ; enregistrer et gérer les données des utilisateurs dans une base MySQL ; assurer la persistance des scores, statistiques et classements ; gérer la communication entre le bot et la base de données de manière sécurisée et optimisée.\r\n\r\nLes objectifs pédagogiques étant : renforcer la maîtrise du langage Python ; apprendre à concevoir et déployer un bot Discord ; manipuler une base de données relationnelle MySQL pour stocker et organiser des données persistantes ; développer des compétences en gestion d’événements asynchrones et en intégration d’API externes.",
-    "technologies": [
-      "Python",
-      "MySQL"
-    ],
-    "date": "2020",
-    "github": "http://github.com"
+    "github": "https://github.com/Zertrox123"
   },
   {
     "id": "tardis",
-    "name": "Tardis",
-    "description": "Création d'une IA prédictive à partir d'un Excel",
+    "name": "Tardis AI",
+    "description": "IA prédictive des retards de trains à partir de données historiques",
     "category": "scolaire",
-    "detailed_description": "Ce projet consistait à développer une IA prédictive capable d’anticiper les retards de trains à partir d’un fichier Excel de données historiques. L’objectif était d’appliquer des méthodes de machine learning pour analyser des données réelles et fournir des prédictions fiables.\r\n\r\nNotre programme devait : extraire et nettoyer les données contenues dans un fichier Excel ; entraîner un modèle de prédiction à partir des caractéristiques disponibles (horaires, trajets, conditions, etc.) ; évaluer la précision des prédictions en comparant les résultats du modèle avec les données réelles ; générer des rapports ou visualisations permettant d’interpréter facilement les résultats.\r\n\r\nLes objectifs pédagogiques étant : approfondir la maîtrise du Python et des bibliothèques de data science (pandas, scikit-learn) ; apprendre à manipuler et prétraiter des données brutes issues d’Excel ; comprendre les principes fondamentaux du machine learning supervisé ; développer des compétences en évaluation de modèles et en communication de résultats à travers des visualisations.",
+    "detailed_description": "Modèle de machine learning supervisé en Python pour l'analyse prédictive.\n\nFonctionnalités principales :\n- Nettoyage et préparation de datasets réels massifs avec Pandas et NumPy.\n- Entraînement de modèles de régression et classification pour prédire les retards ferroviaires.\n- Évaluation statistique des performances et visualisations graphiques des résultats.",
     "technologies": [
       "Python",
-      "Pandas"
+      "Pandas",
+      "Scikit-Learn",
+      "Data Science"
     ],
     "date": "2025",
-    "github": "http://github.com"
+    "github": "https://github.com/Zertrox123"
   },
   {
     "id": "my-hunter",
     "name": "My Hunter",
-    "description": "Création d'un Shooter Game",
+    "description": "Mini-jeu graphique 2D en C avec la bibliothèque CSFML",
     "category": "scolaire",
-    "detailed_description": "Ce projet consistait à développer en langage C avec la bibliothèque CSFML un mini-jeu en vue à la première personne. L’objectif était de mettre en place un contrôle basique d’un fusil dans un environnement graphique simple, afin de se familiariser avec la gestion d’événements et de rendus en 2D/3D simplifiée.\r\n\r\nNotre programme devait : afficher une fenêtre de jeu avec une arme visible en première personne ; gérer les entrées clavier et souris pour viser et tirer ; animer le mouvement du fusil lors des tirs ; ajouter des effets visuels et/ou sonores pour renforcer l’immersion ; assurer une boucle de jeu fluide avec gestion du temps réel.\r\n\r\nLes objectifs pédagogiques étant : approfondir la maîtrise du langage C ; apprendre à utiliser CSFML pour créer des rendus interactifs ; comprendre la gestion des entrées utilisateur (clavier/souris) ; développer des compétences en conception d’un gameplay simple en vue première personne.",
+    "detailed_description": "Développement d'un jeu vidéo interactif en langage C avec la bibliothèque CSFML.\n\nFonctionnalités principales :\n- Fenêtrage, gestion de la boucle de jeu temps réel (gameloop) et limitation du framerate.\n- Gestion des entrées clavier/souris pour viser et tirer sur des cibles mobiles.\n- Animations graphiques, sons immersifs et système de score.",
     "technologies": [
       "C",
-      "CSFML"
+      "CSFML",
+      "Game Dev",
+      "Graphics"
     ],
     "date": "2023",
-    "github": "http://github.com"
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "my_portfolio",
+    "name": "Portfolio Web en Rust",
+    "description": "Application web de portfolio développée en Rust avec Rocket et Tera",
+    "category": "personnel",
+    "detailed_description": "Conception d'un portfolio complet et performant en langage Rust avec le framework web Rocket.\n\nFonctionnalités principales :\n- Routes asynchrones et moteur de templates dynamiques Tera.\n- Espace d'administration sécurisé pour la gestion dynamique des projets.\n- Interface utilisateur moderne avec Crazy Mode et rendu responsive.",
+    "technologies": [
+      "Rust",
+      "Rocket",
+      "Tera",
+      "HTML",
+      "CSS"
+    ],
+    "date": "2025",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "proxyflow-project",
+    "name": "ProxyFlow",
+    "description": "Outil de gestion, routage et analyse de flux réseau proxy",
+    "category": "personnel",
+    "detailed_description": "Projet d'ingénierie réseau permettant d'intercepter, analyser et router le trafic applicatif à travers des tunnels proxy sécurisés avec journalisation détaillée des métriques de débit et de latence.",
+    "technologies": [
+      "Python",
+      "Networking",
+      "AsyncIO",
+      "Proxy"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "cinedle",
+    "name": "Cinedle",
+    "description": "Jeu web interactif de devinettes de films et logique de recommandations",
+    "category": "personnel",
+    "detailed_description": "Application web ludique inspirée de Wordle adaptée au cinéma, interrogeant des bases de données de films et analysant les indices (acteurs, réalisateurs, années, genres) pour guider le joueur vers la solution.",
+    "technologies": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Web API"
+    ],
+    "date": "2026",
+    "github": "https://github.com/Zertrox123"
+  },
+  {
+    "id": "youtube-game",
+    "name": "Youtube Game",
+    "description": "Bot Discord interactif avec système de jeu RPG et base MySQL",
+    "category": "personnel",
+    "detailed_description": "Bot Discord personnel développé en Python avec persistance des données sur serveur MySQL.\n\nFonctionnalités principales :\n- Interactions et commandes asynchrones via l'API Discord.\n- Système de progression de joueurs, gestion d'inventaire, économie virtuelle et classements.\n- Communication optimisée et sécurisée avec la base de données relationnelle.",
+    "technologies": [
+      "Python",
+      "MySQL",
+      "Discord API",
+      "AsyncIO"
+    ],
+    "date": "2020",
+    "github": "https://github.com/Zertrox123"
   },
   {
     "id": "geometry-dash",
     "name": "Geometry Dash Recorder",
-    "description": "Auto Recorder pour Geometry Dash",
+    "description": "Enregistreur et analyseur automatique de parties avec vision par ordinateur",
     "category": "personnel",
-    "detailed_description": "Ce projet consistait à développer en Python un enregistreur automatique pour Geometry Dash. L’objectif était d’automatiser la capture des runs (vidéo et/ou inputs) afin d’analyser les parties, de créer des replays ou d’archiver des performances sans intervention manuelle.\r\n\r\nNotre programme devait : détecter automatiquement le début et la fin d’un run dans le jeu (via reconnaissance d’écran ou écoute d’événements) ; enregistrer la vidéo du gameplay en temps réel (ex. via ffmpeg, mss ou pyautogui) et/ou logger les inputs clavier/souris avec timestamps ; sauvegarder les fichiers de manière structurée (date, niveau, score) ; proposer une option de replay/relecture en rejouant les inputs ou en ouvrant la vidéo ; gérer les performances pour minimiser l’impact sur le jeu (encodage en arrière-plan, framerate contrôlé).\r\n\r\nLes objectifs pédagogiques étant : approfondir la maîtrise du langage Python ; apprendre l’automatisation et la capture d’écran/vidéo (intégration de ffmpeg/bibliothèques natives) ; manipuler la capture d’inputs et la sérialisation de données temporelles ; découvrir des techniques basiques de traitement d’images pour la détection d’événements dans le jeu ; développer des compétences en optimisation et en gestion de fichiers multimédias.",
+    "detailed_description": "Outil d'automatisation en Python pour la capture de gameplay et la journalisation d'événements.\n\nFonctionnalités principales :\n- Détection automatique du début et fin de run par analyse d'images en direct.\n- Enregistrement vidéo en tâche de fond avec accélération FFmpeg.\n- Logger d'inputs clavier/souris avec timestamps précis pour relecture et analyses.",
     "technologies": [
-      "Python"
+      "Python",
+      "OpenCV",
+      "FFmpeg",
+      "Automation"
     ],
     "date": "2025",
-    "github": "http://github.com"
+    "github": "https://github.com/Zertrox123"
   }
 ]
