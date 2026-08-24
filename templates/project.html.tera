@@ -29,7 +29,7 @@
             <h2>📝 Description</h2>
             <p class="project-description">{{ project.detailed_description }}</p>
 
-            <!-- Technologies utilisées -->
+            
             <h2>Technologies</h2>
             <div class="tech-tags">
                 {% for tech in project.technologies %}
@@ -37,7 +37,7 @@
                 {% endfor %}
             </div>
 
-            <!-- Liens -->
+            
             <h2>🔗 Liens</h2>
             <div class="project-links">
                 <a href="{{ project.github }}" target="_blank" class="project-link github-link">

@@ -1,9 +1,5 @@
-/* ==========================================================================
-   RESPONSIVE DESIGN POUR PORTFOLIO
-   Fidélité totale au design original (Thème sombre #0d1117, Fira Code, cartes & tags)
-   ========================================================================== */
 
-/* Ajustements universels de sécurité */
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -13,7 +9,6 @@ html, body {
     width: 100%;
 }
 
-/* Correction tags techniques */
 .tech-tag {
     height: auto !important;
     min-height: 28px;
@@ -28,7 +23,6 @@ html, body {
     transform: translateY(-2px);
 }
 
-/* Tablettes et écrans intermédiaires (<= 900px) */
 @media (max-width: 900px) {
     body {
         padding: 1.5rem 1.2rem;
@@ -48,7 +42,6 @@ html, body {
     }
 }
 
-/* Mobiles et petits écrans (<= 640px) */
 @media (max-width: 640px) {
     body {
         padding: 1rem 0.8rem;
@@ -143,7 +136,7 @@ html, body {
         font-size: 0.85rem;
     }
 
-    /* Page détaillée d'un projet */
+    
     .project-detail {
         padding: 0;
         width: 100%;

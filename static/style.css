@@ -8,9 +8,6 @@ body {
     line-height: 1.6;
 }
 
-/* ==========================================================================
-   CATEGORY NAVIGATION TABS (MINIMALIST UNIX STYLE)
-   ========================================================================== */
 .category-nav {
     display: flex;
     justify-content: space-between;
@@ -629,9 +626,6 @@ input:checked + .slider:before {
     transform: translateX(21px);
 }
 
-/* ==========================================================================
-   WALKING DUCK ANIMATION
-   ========================================================================== */
 .walking-duck-container {
     position: fixed;
     bottom: 15px;

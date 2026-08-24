@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="/static/style.css?v=8">
     <link rel="stylesheet" href="/static/responsive.css?v=8">
     <style>
-    /* ==========================================
-       MAIN HEADER & CRAZY SWITCH
-       ========================================== */
+    
     .main-header {
         display: flex;
         justify-content: space-between;
@@ -117,9 +115,7 @@
         }
     }
 
-    /* ==========================================
-       RANDOM 2D WANDERING DUCK WITH LARGE HITBOX
-       ========================================== */
+    
     #duckContainer {
         position: fixed;
         z-index: 99999;
@@ -171,9 +167,7 @@
         }
     }
 
-    /* ==========================================
-       CATEGORY TABS & FILTER DROPDOWN
-       ========================================== */
+    
     .category-nav {
         display: flex;
         align-items: center;
@@ -321,14 +315,14 @@
         </span>
     </p>
 
-    <!-- Category Filter Tabs & Filter Dropdown -->
+    
     <nav class="category-nav">
         <button class="nav-tab active" data-category="main">Projets principaux <span id="count-main">(9)</span></button>
         <button class="nav-tab" data-category="tek1">Projet année 1 <span id="count-tek1">(18)</span></button>
         <button class="nav-tab" data-category="tek2">Projet année 2 <span id="count-tek2">(15)</span></button>
         <button class="nav-tab" data-category="perso">Projet perso <span id="count-perso">(10)</span></button>
 
-        <!-- Filter Dropdown Button -->
+        
         <div class="filter-dropdown-container">
             <button type="button" class="filter-btn" id="filterToggleBtn" title="Filtrer par langage">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -348,7 +342,7 @@
         </div>
     </nav>
 
-    <!-- 1. Systèmes & Bas-Niveau -->
+    
     <section class="project-section" data-section="systemes">
         <h2>Systèmes & Bas-Niveau</h2>
         <div class="projects-container">
@@ -415,7 +409,7 @@
         </div>
     </section>
 
-    <!-- 2. Intelligence Artificielle & Agents -->
+    
     <section class="project-section" data-section="ia">
         <h2>Intelligence Artificielle & Agents</h2>
         <div class="projects-container">
@@ -450,7 +444,7 @@
         </div>
     </section>
 
-    <!-- 3. Graphisme 2D/3D & Jeux -->
+    
     <section class="project-section" data-section="graphisme">
         <h2>Graphisme 2D/3D & Jeux</h2>
         <div class="projects-container">
@@ -485,7 +479,7 @@
         </div>
     </section>
 
-    <!-- 4. Web, Backend & Réseau -->
+    
     <section class="project-section" data-section="web">
         <h2>Web, Backend & Réseau</h2>
         <div class="projects-container">
@@ -504,7 +498,7 @@
         </div>
     </section>
 
-    <!-- 5. Outils, Algorithmes & Infrastructure -->
+    
     <section class="project-section" data-section="outils">
         <h2>Outils, Algorithmes & Infrastructure</h2>
         <div class="projects-container">
@@ -555,38 +549,35 @@
         </div>
     </section>
 
-    <!-- Message si aucun projet ne correspond au filtre -->
+    
     <div id="no-projects-msg" style="display: none; text-align: center; color: #8b949e; padding: 3.5rem 1rem; font-family: 'Fira Code', monospace; font-size: 0.95rem; border: 1px dashed #30363d; border-radius: 8px; margin: 2rem 0;">
         Aucun projet ne correspond à ce filtre pour cette catégorie.
     </div>
 
-    <!-- Walking Duck across the screen at random Y coordinate -->
+    
     <div id="duckContainer" title="Clique-moi !">
         <div class="duck-sprite">
             <svg viewBox="0 0 64 64" width="56" height="56" style="display: block;">
-                <!-- Corps du canard -->
+                
                 <ellipse cx="28" cy="42" rx="20" ry="14" fill="#facc15" />
-                <!-- Queue -->
+                
                 <path d="M10 40 Q4 32 8 28 Q14 34 18 38 Z" fill="#facc15" />
-                <!-- Aile -->
+                
                 <ellipse cx="26" cy="42" rx="10" ry="6" fill="#eab308" />
-                <!-- Tête -->
+                
                 <circle cx="44" cy="24" r="12" fill="#facc15" />
-                <!-- Oeil -->
+                
                 <circle cx="48" cy="22" r="2.5" fill="#1e293b" />
                 <circle cx="49" cy="21" r="0.8" fill="#ffffff" />
-                <!-- Bec -->
+                
                 <path d="M54 24 Q64 26 55 30 Z" fill="#f97316" />
-                <!-- Pattes / Ombre -->
+                
                 <ellipse cx="30" cy="56" rx="14" ry="2" fill="rgba(0, 0, 0, 0.3)" />
             </svg>
         </div>
     </div>
 
     <script>
-    // ==========================================
-    // CRAZY MODE TOGGLE
-    // ==========================================
     const toggle = document.getElementById('crazy-toggle');
     let crazyActive = false;
 
@@ -628,9 +619,6 @@
         }
     });
 
-    // ==========================================
-    // CATEGORY & LANGUAGE FILTER
-    // ==========================================
     const categoryTabs = document.querySelectorAll('.nav-tab[data-category]');
     const projectSections = document.querySelectorAll('.project-section');
     const projectCards = document.querySelectorAll('.project-card');
@@ -714,7 +702,6 @@
         });
     });
 
-    // Toggle filter dropdown menu
     if (filterToggleBtn && filterDropdownMenu) {
         filterToggleBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -728,7 +715,6 @@
                 currentLang = option.getAttribute('data-lang');
                 filterOptions.forEach(opt => opt.classList.toggle('active', opt === option));
                 
-                // Keep the label text strictly as "Filtre" and toggle color via active-filter class
                 filterLabel.textContent = 'Filtre';
                 if (currentLang === 'all') {
                     filterToggleBtn.classList.remove('active-filter');
@@ -742,7 +728,6 @@
             });
         });
 
-        // Close on click outside
         document.addEventListener('click', () => {
             filterDropdownMenu.classList.remove('show');
             filterToggleBtn.classList.remove('open');
@@ -757,9 +742,6 @@
 
     applyFilters();
 
-    // ==========================================
-    // WANDERING DUCK WITH LARGE TOUCH HITBOX
-    // ==========================================
     (function initDuck() {
         const duck = document.getElementById('duckContainer');
         if (!duck) return;
@@ -808,11 +790,9 @@
             quack.className = 'duck-quack-text';
             quack.textContent = 'Coin coin';
 
-            // Random orientation between -30deg and +30deg
             const angle = (Math.random() * 60 - 30).toFixed(1);
             quack.style.setProperty('--rot', `${angle}deg`);
 
-            // Random slight offset around the duck center
             const offsetX = (Math.random() * 30 - 15);
             const offsetY = (Math.random() * 20 - 10);
             quack.style.left = (rect.left + rect.width / 2 + offsetX) + 'px';
