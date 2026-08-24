@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Zertrox123</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/responsive.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>~/Portfolio_<span class="accent">dev</span> 🚀</h1>
+    </header>
+    <div class="crazy-switch">
+        <label class="switch">
+            <input type="checkbox" id="crazy-toggle">
+            <span class="slider round"></span>
+        </label>
+        <span>Crazy Mode</span>
+    </div>
+    <p>
+        Salut, je suis <b>Omar</b>, un étudiant passionné par
+        <span class="dynamic-lang">
+            <span class="ticker">
+                <span class="word">Python</span>
+                <span class="word">C</span>
+                <span class="word">Git</span>
+                <span class="word">MySQL</span>
+                <span class="word">Linux</span>
+                <span class="word">Rust</span>
+            </span>
+        </span>
+    </p>
+
+    <h2>⚡ Systèmes & Concurrence</h2>
+    <div class="projects-container">
+        <a href="project/zappy.html" class="project-card">
+            <h3>Zappy</h3>
+            <p>Jeu en réseau distribué : Serveur TCP en C, IA en C++/Python et client graphique</p>
+        </a>
+        <a href="project/the-plazza.html" class="project-card">
+            <h3>The Plazza & Panoramix</h3>
+            <p>Moteur de simulation haute concurrence en C++20 avec processus, IPC et Thread Pools</p>
+        </a>
+        <a href="project/corewar.html" class="project-card">
+            <h3>Corewar</h3>
+            <p>Machine virtuelle, ordonnanceur de processus et assembleur bytecode en C</p>
+        </a>
+        <a href="project/myteams.html" class="project-card">
+            <h3>MyTeams</h3>
+            <p>Plateforme collaborative distribuée multi-clients en C avec protocole binaire TCP</p>
+        </a>
+        <a href="project/myftp.html" class="project-card">
+            <h3>MyFTP</h3>
+            <p>Serveur FTP asynchrone conforme à la norme RFC 959 en C</p>
+        </a>
+        <a href="project/minishell.html" class="project-card">
+            <h3>Minishell 2</h3>
+            <p>Reproduction d'un shell Unix (Bash/Zsh) avec pipes, redirections et opérateurs logiques</p>
+        </a>
+        <a href="project/my-top.html" class="project-card">
+            <h3>My Top</h3>
+            <p>Reproduction de la commande "top" d'Unix avec parsing de /proc/</p>
+        </a>
+        <a href="project/my-sudo.html" class="project-card">
+            <h3>My Sudo</h3>
+            <p>Recréation de la commande "Sudo" avec gestion des privilèges et authentification</p>
+        </a>
+    </div>
+
+    <h2>🤖 Intelligence Artificielle & Data</h2>
+    <div class="projects-container">
+        <a href="project/persona-ai.html" class="project-card">
+            <h3>Persona AI</h3>
+            <p>Agents conversationnels et modèles décisionnels basés sur le NLP</p>
+        </a>
+        <a href="project/starttrek-ai.html" class="project-card">
+            <h3>Star Trek AI</h3>
+            <p>Agent décisionnel autonome et navigation spatiale algorithmique</p>
+        </a>
+        <a href="project/cvrie.html" class="project-card">
+            <h3>CVRIE (Computer Vision)</h3>
+            <p>Reconnaissance et extraction d'informations par vision par ordinateur</p>
+        </a>
+        <a href="project/tardis.html" class="project-card">
+            <h3>Tardis AI</h3>
+            <p>IA prédictive des retards de trains à partir de données historiques</p>
+        </a>
+    </div>
+
+    <h2>🛠️ Outils & Web</h2>
+    <div class="projects-container">
+        <a href="project/epytodo.html" class="project-card">
+            <h3>EpyTodo</h3>
+            <p>API REST web backend et gestion de tâches avec base de données MySQL</p>
+        </a>
+        <a href="project/codewash.html" class="project-card">
+            <h3>CodeWash</h3>
+            <p>Outil d'analyse statique, conformité et refactoring de code source</p>
+        </a>
+        <a href="project/my-hunter.html" class="project-card">
+            <h3>My Hunter</h3>
+            <p>Mini-jeu graphique 2D en C avec la bibliothèque CSFML</p>
+        </a>
+    </div>
+
+    <h2>💼 Projets Perso</h2>
+    <div class="projects-container">
+        <a href="project/my_portfolio.html" class="project-card">
+            <h3>Portfolio Web en Rust</h3>
+            <p>Application web de portfolio développée en Rust avec Rocket et Tera</p>
+        </a>
+        <a href="project/proxyflow-project.html" class="project-card">
+            <h3>ProxyFlow</h3>
+            <p>Outil de gestion, routage et analyse de flux réseau proxy</p>
+        </a>
+        <a href="project/cinedle.html" class="project-card">
+            <h3>Cinedle</h3>
+            <p>Jeu web interactif de devinettes de films et logique de recommandations</p>
+        </a>
+        <a href="project/youtube-game.html" class="project-card">
+            <h3>Youtube Game</h3>
+            <p>Bot Discord interactif avec système de jeu RPG et base MySQL</p>
+        </a>
+        <a href="project/geometry-dash.html" class="project-card">
+            <h3>Geometry Dash Recorder</h3>
+            <p>Enregistreur et analyseur automatique de parties avec vision par ordinateur</p>
+        </a>
+    </div>
+
+    <script>
+    const toggle = document.getElementById('crazy-toggle');
+    const projects = document.querySelectorAll('.project-card');
+    let crazyActive = false;
+
+    const positions = Array.from(projects).map(() => ({ x: 0, y: 0 }));
+
+    function randomOffset(max = 2) {
+        return Math.random() * max * 2 - max;
+    }
+    function animateProjects() {
+        if (!crazyActive) return;
+
+        projects.forEach((proj, i) => {
+            positions[i].x += randomOffset();
+            positions[i].y += randomOffset();
+            proj.style.transform = `translate(${positions[i].x}px, ${positions[i].y}px)`;
+        });
+
+        requestAnimationFrame(animateProjects);
+    }
+    toggle.addEventListener('change', () => {
+        crazyActive = toggle.checked;
+
+        if (crazyActive) {
+            animateProjects();
+        } else {
+            positions.forEach(pos => { pos.x = 0; pos.y = 0; });
+            projects.forEach(proj => proj.style.transform = 'translate(0,0)');
+        }
+    });
+    </script>
+</body>
+</html>
