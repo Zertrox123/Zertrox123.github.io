@@ -22,18 +22,17 @@
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Projets d'ingénierie logicielle axés sur la programmation concurrente, la synchronisation de threads et la communication inter-processus sans deadlocks.
+            <div class="project-description">Projets en C et C++ axés sur la programmation multi-threads et la communication entre processus.
 
 Détails des projets :
-- The Plazza (C++20) : Simulation distribuée d'une pizzeria. Une réception centrale répartit les commandes sur des processus cuisines enfants via Named Pipes (FIFO) ou sockets UNIX. Chaque cuisine gère un thread pool de cuisiniers, une régénération périodique des stocks et un arrêt automatique en cas d'inactivité prolongée.
-- Panoramix (C) : Résolution du problème des producteurs-consommateurs (druide et villageois) avec threads POSIX, mutex et sémaphores pour arbitrer l'accès à une ressource partagée sans famine ni blocage.</div>
+- The Plazza (C++20) : Simulation d'une pizzeria. Une réception centrale reçoit les commandes et les répartit aux cuisines via des Named Pipes (FIFO) ou des sockets Unix. Chaque cuisine gère plusieurs cuisiniers avec des threads et prépare les pizzas en parallèle.
+- Panoramix (C) : Gestion de threads et de ressources partagées (villageois et potion magique) avec des mutex et des sémaphores pour éviter les blocages.</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C++20</span>
                 <span class="tech-tag">C</span>
-                <span class="tech-tag">Multithreading</span>
-                <span class="tech-tag">POSIX Threads</span>
+                <span class="tech-tag">Threads</span>
                 <span class="tech-tag">IPC</span>
                 <span class="tech-tag">Named Pipes</span>
                 <span class="tech-tag">Mutex</span>

@@ -22,12 +22,12 @@
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Jeu de simulation en réseau d'un monde virtuel où plusieurs équipes d'intelligences artificielles s'affrontent pour collecter des ressources et monter de niveau grâce à des rituels d'élévation.
+            <div class="project-description">Jeu de simulation en réseau d'un monde virtuel où plusieurs équipes d'intelligences artificielles s'affrontent pour collecter des ressources et monter de niveau.
 
 Architecture du projet :
-- Serveur TCP en Rust : Gestion réseau asynchrone non-bloquante avec multiplexage, cadencement par ticks, boucle de jeu temps réel et synchronisation de l'état de la carte.
-- Client IA en Python : Algorythme autonome de survie, exploration de la grille, collecte de minéraux et coordination d'équipe via broadcast audio.
-- Client graphique en C++20 avec SFML : Rendu 2D temps réel affichant la carte, les ressources, les déplacements des joueurs et les animations des rituels.</div>
+- Serveur TCP en Rust : Gestion réseau multi-clients avec select, boucle de jeu en temps réel et synchronisation de la carte.
+- Client IA en Python : Algorythme autonome d'exploration de la grille, collecte de ressources et communication d'équipe par broadcast audio.
+- Client graphique en C++20 avec SFML : Rendu 2D en temps réel affichant la carte, les ressources, les déplacements et les animations.</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
@@ -37,7 +37,6 @@ Architecture du projet :
                 <span class="tech-tag">SFML</span>
                 <span class="tech-tag">TCP/IP</span>
                 <span class="tech-tag">Sockets</span>
-                <span class="tech-tag">Multiplexage</span>
                 <span class="tech-tag">Protocole Réseau</span>
             </div>
         </div>

@@ -4,7 +4,7 @@
     "name": "Zappy",
     "description": "Jeu en réseau distribué : Serveur TCP en C, IA en C++/Python et client graphique",
     "category": "systemes",
-    "detailed_description": "Projet de synthèse de 2ème année (G-YEP-400) simulant un monde virtuel temps réel où des équipes d'agents IA s'affrontent pour collecter des ressources et évoluer.\n\nComposants de l'architecture :\n    1. Serveur réseau en C : Gestion multi-clients asynchrone non-bloquante avec multiplexage I/O (select), protocole TCP et boucle de jeu cadencée.\n    2. Client IA autonome : Algorithme décisionnel d'exploration, communication inter-drones par broadcast audio et coordination d'équipes pour rituels d'élévation.\n    3. Visualiseur graphique : Rendu visuel 3D/2D temps réel du monde et des actions.\n\nCompétences clés : Programmation système, sockets réseau, concurrence, IA distribuée et protocoles clients/serveurs.",
+    "detailed_description": "Projet de synthèse de 2ème année (G-YEP-400) simulant un monde virtuel temps réel où des équipes d'agents IA s'affrontent pour collecter des ressources et évoluer.\n\nComposants de l'architecture :\n    1. Serveur réseau en C : Gestion multi-clients avec select, protocole TCP et boucle de jeu cadencée.\n    2. Client IA autonome : Algorythme d'exploration, communication inter-drones par broadcast audio et coordination d'équipes.\n    3. Visualiseur graphique : Rendu visuel temps réel du monde et des actions.",
     "technologies": [
       "C",
       "C++",
@@ -62,7 +62,6 @@
       "TCP/IP",
       "Sockets",
       "select",
-      "I/O Multiplexing",
       "Unix"
     ],
     "date": "2026",

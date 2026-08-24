@@ -22,11 +22,11 @@
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Plateforme de messagerie instantanée collaborative multi-utilisateurs (style Slack / Microsoft Teams) basée sur une architecture client-serveur TCP.
+            <div class="project-description">Plateforme de messagerie instantanée (style Slack / Teams) basée sur une architecture client-serveur en TCP.
 
 Architecture du système :
-- Serveur en Rust : Gestion réseau asynchrone non-bloquante pour accueillir plusieurs clients en simultané, structuration hiérarchique des données (équipes, canaux, threads, commentaires, messages privés) et persistance sur disque.
-- Client CLI en C++20 : Interface interactive en ligne de commande permettant de s'authentifier, créer et rejoindre des canaux, échanger des messages en direct et recevoir les notifications d'événements.</div>
+- Serveur en Rust : Gestion réseau multi-clients, organisation des données (équipes, canaux, messages privés) et sauvegarde automatique sur disque.
+- Client en C++20 : Interface en ligne de commande pour se connecter, rejoindre des canaux, échanger des messages en direct et recevoir les notifications.</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
@@ -36,7 +36,6 @@ Architecture du système :
                 <span class="tech-tag">Sockets</span>
                 <span class="tech-tag">CLI</span>
                 <span class="tech-tag">Protocole Réseau</span>
-                <span class="tech-tag">Sérialisation</span>
             </div>
         </div>
     </div>
