@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/static/style.css?v=3">
-    <link rel="stylesheet" href="/static/responsive.css?v=3">
+    <link rel="stylesheet" href="/static/style.css?v=4">
+    <link rel="stylesheet" href="/static/responsive.css?v=4">
     <style>
     /* ==========================================
        MAIN HEADER & CRAZY SWITCH
@@ -127,7 +127,7 @@
         user-select: none;
         pointer-events: auto;
         will-change: left, top, transform;
-        padding: 30px; /* Grande hitbox tactile sur mobile */
+        padding: 30px;
         margin: -30px;
         touch-action: manipulation;
     }
@@ -158,6 +158,18 @@
         user-select: none;
         z-index: 100000;
     }
+
+    .no-projects-msg {
+        display: none;
+        color: #8b949e;
+        font-style: italic;
+        padding: 2rem;
+        text-align: center;
+        background: #161b22;
+        border-radius: 8px;
+        border: 1px dashed #30363d;
+        margin-top: 1rem;
+    }
     </style>
 </head>
 <body>
@@ -171,7 +183,8 @@
             <span>Crazy Mode</span>
         </div>
     </header>
-    <p>
+
+    <p style="margin-bottom: 1.5rem;">
         Salut, je suis <b>{{ username }}</b>, un étudiant passionné par
         <span class="dynamic-lang">
             <span class="ticker">
@@ -185,52 +198,104 @@
         </span>
     </p>
 
-    <h2>⚡ Systèmes & Concurrence</h2>
-    <div class="projects-container">
-    {% for project in projects %}
-        {% if project.category == "systemes" %}
-        <a href="/project/{{ project.id }}" class="project-card">
-            <h3>{{ project.name }}</h3>
-            <p>{{ project.description }}</p>
-        </a>
-        {% endif %}
-    {% endfor %}
-    </div>
+    <div class="portfolio-layout">
+        <!-- Sidebar Navigation Dock -->
+        <aside class="category-sidebar">
+            <div class="sidebar-title">Catégories</div>
+            <nav class="category-nav">
+                <button class="nav-tab active" data-category="all">
+                    <span class="tab-icon">⚡</span>
+                    <span class="tab-label">Tous les projets</span>
+                    <span class="tab-count" id="count-all">20</span>
+                </button>
+                <button class="nav-tab" data-category="tek1">
+                    <span class="tab-icon">🌱</span>
+                    <span class="tab-label">Projet année 1 (tek 1)</span>
+                    <span class="tab-count" id="count-tek1">3</span>
+                </button>
+                <button class="nav-tab" data-category="tek2">
+                    <span class="tab-icon">🚀</span>
+                    <span class="tab-label">Projet année 2 (tek 2)</span>
+                    <span class="tab-count" id="count-tek2">12</span>
+                </button>
+                <button class="nav-tab" data-category="perso">
+                    <span class="tab-icon">💼</span>
+                    <span class="tab-label">Projet perso</span>
+                    <span class="tab-count" id="count-perso">5</span>
+                </button>
+            </nav>
+        </aside>
 
-    <h2>🤖 Intelligence Artificielle & Data</h2>
-    <div class="projects-container">
-    {% for project in projects %}
-        {% if project.category == "ia" %}
-        <a href="/project/{{ project.id }}" class="project-card">
-            <h3>{{ project.name }}</h3>
-            <p>{{ project.description }}</p>
-        </a>
-        {% endif %}
-    {% endfor %}
-    </div>
+        <!-- Main Project Content -->
+        <main class="main-content">
+            <section class="project-section" data-section="systemes">
+                <h2>⚡ Systèmes & Concurrence</h2>
+                <div class="projects-container">
+                    {% for project in projects %}
+                        {% if project.category == "systemes" %}
+                            {% set p_year = "tek2" %}
+                            {% if project.id == "my-top" or project.id == "my-sudo" %}
+                                {% set p_year = "tek1" %}
+                            {% endif %}
+                            <a href="/project/{{ project.id }}" class="project-card" data-year="{{ p_year }}">
+                                <h3>{{ project.name }}</h3>
+                                <p>{{ project.description }}</p>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
 
-    <h2>🛠️ Outils & Web</h2>
-    <div class="projects-container">
-    {% for project in projects %}
-        {% if project.category == "web_outils" %}
-        <a href="/project/{{ project.id }}" class="project-card">
-            <h3>{{ project.name }}</h3>
-            <p>{{ project.description }}</p>
-        </a>
-        {% endif %}
-    {% endfor %}
-    </div>
+            <section class="project-section" data-section="ia">
+                <h2>🤖 Intelligence Artificielle & Data</h2>
+                <div class="projects-container">
+                    {% for project in projects %}
+                        {% if project.category == "ia" %}
+                            <a href="/project/{{ project.id }}" class="project-card" data-year="tek2">
+                                <h3>{{ project.name }}</h3>
+                                <p>{{ project.description }}</p>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
 
-    <h2>💼 Projets Perso</h2>
-    <div class="projects-container">
-    {% for project in projects %}
-        {% if project.category == "personnel" %}
-        <a href="/project/{{ project.id }}" class="project-card">
-            <h3>{{ project.name }}</h3>
-            <p>{{ project.description }}</p>
-        </a>
-        {% endif %}
-    {% endfor %}
+            <section class="project-section" data-section="outils">
+                <h2>🛠️ Outils & Web</h2>
+                <div class="projects-container">
+                    {% for project in projects %}
+                        {% if project.category == "web_outils" or project.category == "scolaire" %}
+                            {% set p_year = "tek2" %}
+                            {% if project.id == "my-hunter" %}
+                                {% set p_year = "tek1" %}
+                            {% endif %}
+                            <a href="/project/{{ project.id }}" class="project-card" data-year="{{ p_year }}">
+                                <h3>{{ project.name }}</h3>
+                                <p>{{ project.description }}</p>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="project-section" data-section="perso">
+                <h2>💼 Projets Perso</h2>
+                <div class="projects-container">
+                    {% for project in projects %}
+                        {% if project.category == "personnel" %}
+                            <a href="/project/{{ project.id }}" class="project-card" data-year="perso">
+                                <h3>{{ project.name }}</h3>
+                                <p>{{ project.description }}</p>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+
+            <div id="no-projects" class="no-projects-msg">
+                Aucun projet trouvé dans cette catégorie.
+            </div>
+        </main>
     </div>
 
     <!-- Walking Duck across the screen at random Y coordinate -->
@@ -257,45 +322,147 @@
     </div>
 
     <script>
+    // ==========================================
+    // CRAZY MODE TOGGLE
+    // ==========================================
     const toggle = document.getElementById('crazy-toggle');
-    const projects = document.querySelectorAll('.project-card');
     let crazyActive = false;
 
-    const positions = Array.from(projects).map(() => ({ x: 0, y: 0 }));
+    let positions = Array.from(document.querySelectorAll('.project-card')).map(() => ({ x: 0, y: 0 }));
 
     function randomOffset(max = 2) {
         return Math.random() * max * 2 - max;
     }
+
     function animateProjects() {
         if (!crazyActive) return;
 
-        projects.forEach((proj, i) => {
-            positions[i].x += randomOffset();
-            positions[i].y += randomOffset();
+        const allCards = document.querySelectorAll('.project-card');
+        allCards.forEach((proj, i) => {
+            if (proj.style.display === 'none') return;
+            if (!positions[i]) positions[i] = { x: 0, y: 0 };
+            positions[i].x += randomOffset(1.5);
+            positions[i].y += randomOffset(1.5);
+
+            positions[i].x = Math.max(-20, Math.min(20, positions[i].x));
+            positions[i].y = Math.max(-20, Math.min(20, positions[i].y));
+
             proj.style.transform = `translate(${positions[i].x}px, ${positions[i].y}px)`;
         });
 
         requestAnimationFrame(animateProjects);
     }
+
     toggle.addEventListener('change', () => {
         crazyActive = toggle.checked;
 
         if (crazyActive) {
             animateProjects();
         } else {
-            positions.forEach(pos => { pos.x = 0; pos.y = 0; });
-            projects.forEach(proj => proj.style.transform = 'translate(0,0)');
+            document.querySelectorAll('.project-card').forEach((proj) => {
+                proj.style.transform = 'translate(0px, 0px)';
+            });
+            positions = Array.from(document.querySelectorAll('.project-card')).map(() => ({ x: 0, y: 0 }));
         }
     });
 
-    // Wandering Duck Animation with Random Y Coordinate across whole screen
-    (function() {
+    // ==========================================
+    // CATEGORY NAVIGATOR / FILTER
+    // ==========================================
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectSections = document.querySelectorAll('.project-section');
+    const noProjectsMsg = document.getElementById('no-projects');
+
+    function updateCounts() {
+        let countTek1 = 0;
+        let countTek2 = 0;
+        let countPerso = 0;
+
+        projectCards.forEach(card => {
+            const year = card.getAttribute('data-year');
+            if (year === 'tek1') countTek1++;
+            else if (year === 'tek2') countTek2++;
+            else if (year === 'perso') countPerso++;
+        });
+
+        const elAll = document.getElementById('count-all');
+        const elTek1 = document.getElementById('count-tek1');
+        const elTek2 = document.getElementById('count-tek2');
+        const elPerso = document.getElementById('count-perso');
+
+        if (elAll) elAll.textContent = projectCards.length;
+        if (elTek1) elTek1.textContent = countTek1;
+        if (elTek2) elTek2.textContent = countTek2;
+        if (elPerso) elPerso.textContent = countPerso;
+    }
+
+    function filterCategory(category) {
+        navTabs.forEach(tab => {
+            if (tab.getAttribute('data-category') === category) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        let visibleCount = 0;
+
+        projectSections.forEach(section => {
+            const cards = section.querySelectorAll('.project-card');
+            let sectionVisibleCards = 0;
+
+            cards.forEach(card => {
+                const year = card.getAttribute('data-year');
+                if (category === 'all' || year === category) {
+                    card.style.display = '';
+                    sectionVisibleCards++;
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (category === 'all') {
+                section.style.display = '';
+            } else {
+                section.style.display = (sectionVisibleCards > 0) ? '' : 'none';
+            }
+        });
+
+        if (noProjectsMsg) {
+            noProjectsMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
+        }
+
+        if (history.replaceState) {
+            history.replaceState(null, null, '#' + category);
+        }
+    }
+
+    navTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const cat = tab.getAttribute('data-category');
+            filterCategory(cat);
+        });
+    });
+
+    updateCounts();
+
+    const currentHash = window.location.hash.replace('#', '');
+    if (['all', 'tek1', 'tek2', 'perso'].includes(currentHash)) {
+        filterCategory(currentHash);
+    }
+
+    // ==========================================
+    // WANDERING DUCK WITH LARGE TOUCH HITBOX
+    // ==========================================
+    (function initDuck() {
         const duck = document.getElementById('duckContainer');
         if (!duck) return;
 
         let posX = window.innerWidth + 80;
         let posY = Math.random() * (window.innerHeight - 150) + 40;
-        let direction = -1; // -1: left, 1: right
+        let direction = -1;
         let speed = 2.4;
 
         duck.style.top = posY + 'px';
@@ -326,7 +493,6 @@
 
         requestAnimationFrame(animateDuck);
 
-        // Click & Touch interaction: White italic "Coin coin" with random angle (max 30deg) and snappy animation
         function triggerQuack(e) {
             if (e && e.type === 'pointerdown') {
                 e.preventDefault();
@@ -335,12 +501,9 @@
             quack.className = 'duck-quack-text';
             quack.textContent = 'Coin coin';
 
-            // Angle aléatoire entre -30° et +30°
             const angle = Math.random() * 60 - 30;
-
-            // Spawn aléatoire autour du canard
-            const startX = Math.random() * 80 - 40; // -40px à +40px
-            const startY = Math.random() * 50 - 35; // -35px à +15px
+            const startX = Math.random() * 80 - 40;
+            const startY = Math.random() * 50 - 35;
             let currentX = startX;
             let currentY = startY;
             let scale = 0.6;
@@ -354,22 +517,21 @@
             duck.appendChild(quack);
 
             let frame = 0;
-            const totalFrames = 26; // ~420ms (animation rapide et vive)
+            const totalFrames = 26;
 
             function animateQuack() {
                 frame++;
                 const progress = frame / totalFrames;
 
-                // Pop-in rapide
                 if (progress < 0.3) {
-                    scale = 0.6 + (progress / 0.3) * 0.45; // 0.6 -> 1.05
+                    scale = 0.6 + (progress / 0.3) * 0.45;
                 } else if (progress < 0.5) {
-                    scale = 1.05 - ((progress - 0.3) / 0.2) * 0.05; // 1.05 -> 1.0
+                    scale = 1.05 - ((progress - 0.3) / 0.2) * 0.05;
                 } else {
-                    opacity = 1 - ((progress - 0.5) / 0.5); // fade out
+                    opacity = 1 - ((progress - 0.5) / 0.5);
                 }
 
-                currentY -= 1.0; // flottement vers le haut
+                currentY -= 1.0;
 
                 quack.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${angle}deg) scale(${scale})`;
                 quack.style.opacity = Math.max(0, opacity);
