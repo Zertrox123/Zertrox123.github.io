@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Trek AI - Détails</title>
+    <title>Star Trek AI (Reinforcement Learning) - Détails</title>
     <link rel="stylesheet" href="../static/style.css?v=7">
     <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
@@ -13,35 +13,33 @@
             <a href="../index.html" class="back-link">← Retour au portfolio</a>
         </div>
         <header class="project-header">
-            <h1>Star Trek AI</h1>
+            <h1>Star Trek AI (Reinforcement Learning)</h1>
             <div class="project-meta">
                 <span class="project-date">2026</span>
-                <span class="project-category category-ia">IA & Navigation Spatiale</span>
+                <span class="project-category category-ia">Intelligence Artificielle</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Système décisionnel autonome pour la navigation et l'optimisation de trajectoires d'un vaisseau spatial dans un univers simulé.
+            <div class="project-description">Projet d'intelligence artificielle centré sur l'apprentissage par renforcement (Reinforcement Learning) appliqué au contrôle autonome d'agents dans des environnements de simulation physique.
 
-Fonctionnalités principales :
-- Algorithmes de recherche de chemin optimal (A*, Dijkstra) appliqués à un espace multidimensionnel avec obstacles gravitationnels
-- Prise de décision dynamique en temps réel : gestion de l'énergie, évitement de dangers et priorisation d'objectifs
-- Moteur de simulation d'événements</div>
+Algorithmes implémentés et étudiés :
+- Deep Q-Network (DQN) : Réseau de neurones profonds (Keras / TensorFlow) entraîné avec replay buffer et target network pour stabiliser l'apprentissage sur les environnements Gymnasium (LunarLander, CartPole, MountainCar).
+- Q-Learning tabulaire : Résolution par table de valeurs d'action avec politique d'exploration epsilon-greedy.
+- SARSA : Algorithme d'apprentissage on-policy pour comparer la convergence et la robustesse des trajectoires apprises.
+- Évaluation des performances : Analyse des courbes de récompenses cumulées et optimisation des hyperparamètres (taux d'apprentissage, facteur d'actualisation gamma, decay d'epsilon).</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
                 <span class="tech-tag">Python</span>
-                <span class="tech-tag">AI</span>
-                <span class="tech-tag">Pathfinding</span>
-                <span class="tech-tag">A*</span>
-                <span class="tech-tag">Decision Making</span>
-                <span class="tech-tag">Simulation</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/starttrek" class="project-link category-ia" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">Keras</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">Gymnasium</span>
+                <span class="tech-tag">Reinforcement Learning</span>
+                <span class="tech-tag">DQN</span>
+                <span class="tech-tag">Q-Learning</span>
+                <span class="tech-tag">NumPy</span>
             </div>
         </div>
     </div>

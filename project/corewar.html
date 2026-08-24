@@ -15,33 +15,28 @@
         <header class="project-header">
             <h1>Corewar</h1>
             <div class="project-meta">
-                <span class="project-date">2026</span>
+                <span class="project-date">2025</span>
                 <span class="project-category category-systemes">Systèmes & Machine Virtuelle</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Projet d'émulation bas-niveau simulant une arène mémoire circulaire de 6 Ko où plusieurs programmes champions s'affrontent en exécutant du bytecode assembleur.
+            <div class="project-description">Projet d'émulation bas niveau simulant une arène mémoire partagée où s'affrontent des programmes champions écrits en assembleur.
 
-Fonctionnalités principales :
-- Interprétation et ordonnancement dynamique des processus exécutés en temps réel avec compteurs de cycles
-- Gestion de l'arène mémoire circulaire et prévention des collisions d'adressage
-- Assembleur personnalisé (.s vers binaire exécutable .cor) avec parsing de labels et d'opcodes</div>
+Composants du projet :
+- Assembleur (asm) : Analyse syntaxique et traduction du code source assembleur (.s) en bytecode exécutable (.cor), avec gestion des labels, opcodes et calcul des offsets relatifs.
+- Machine Virtuelle (corewar) : Émulation d'une arène mémoire circulaire de 6 Ko, ordonnancement des processus par cycles d'horloge, décodage des instructions et détection du dernier champion survivant.</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
-                <span class="tech-tag">ASM</span>
+                <span class="tech-tag">Assembleur</span>
                 <span class="tech-tag">Bytecode</span>
-                <span class="tech-tag">Virtual Machine</span>
-                <span class="tech-tag">Scheduling</span>
+                <span class="tech-tag">Machine Virtuelle</span>
+                <span class="tech-tag">Gestion Mémoire</span>
+                <span class="tech-tag">Ordonnancement</span>
                 <span class="tech-tag">Unix</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/corewar" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
             </div>
         </div>
     </div>

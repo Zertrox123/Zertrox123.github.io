@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navy - Détails</title>
+    <title>Navy - Details</title>
     <link rel="stylesheet" href="../static/style.css?v=7">
     <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
@@ -15,32 +15,25 @@
         <header class="project-header">
             <h1>Navy</h1>
             <div class="project-meta">
-                <span class="project-date">2025</span>
-                <span class="project-category category-systemes">Signaux Unix & IPC</span>
+                <span class="project-date">2024</span>
+                <span class="project-category category-systemes">Systemes Unix</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Bataille navale multijoueur au tour par tour communicant exclusivement par signaux UNIX.
+            <div class="project-description">Jeu de bataille navale en C ou deux processus communiquent par signaux Unix (B-PSU-100).
 
-Fonctionnalités principales :
-- Communication inter-processus via SIGUSR1 et SIGUSR2
-- Encodage binaire des coordonnées et accusés de réception
-- Interface terminal claire avec grille de flotte et de tirs</div>
+Chaque joueur lance son processus avec un fichier de placement de bateaux. La communication se fait uniquement par SIGUSR1 et SIGUSR2, ce qui oblige a encoder les coordonnees de tir bit par bit via les signaux.
 
-            <h2>Technologies utilisées</h2>
+Gestion du tour par tour, detection des touches/coules et affichage des grilles dans le terminal.</div>
+
+            <h2>Technologies utilisees</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
-                <span class="tech-tag">Signals</span>
-                <span class="tech-tag">SIGUSR1/2</span>
+                <span class="tech-tag">Unix Signals</span>
                 <span class="tech-tag">IPC</span>
-                <span class="tech-tag">Unix</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/navy" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">Makefile</span>
             </div>
         </div>
     </div>

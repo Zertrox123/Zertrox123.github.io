@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Need4Stek - Détails</title>
+    <title>need4stek - Details</title>
     <link rel="stylesheet" href="../static/style.css?v=7">
     <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
@@ -13,34 +13,27 @@
             <a href="../index.html" class="back-link">← Retour au portfolio</a>
         </div>
         <header class="project-header">
-            <h1>Need4Stek</h1>
+            <h1>need4stek</h1>
             <div class="project-meta">
                 <span class="project-date">2025</span>
-                <span class="project-category category-systemes">IA & Véhicule Autonome</span>
+                <span class="project-category category-ia">IA &amp; Algorithmique</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Algorithme de conduite autonome pour véhicule sur circuit dans le simulateur CoppeliaSim.
+            <div class="project-description">Voiture autonome en C qui doit rouler le plus longtemps possible sur un circuit sans toucher les murs (B-AIA-100).
 
-Fonctionnalités principales :
-- Communication bidirectionnelle par pipes standard
-- Traitement télémétrique LiDAR 32 faisceaux en temps réel
-- Évitement d'obstacles et ajustement dynamique de la vitesse selon les virages</div>
+Le programme recoit les donnees des capteurs de distance (lidars) via stdin et renvoie les commandes de direction et de vitesse via stdout. L'algo doit analyser les distances aux murs pour adapter la trajectoire en temps reel.
 
-            <h2>Technologies utilisées</h2>
+Le challenge c'est de trouver le bon equilibre entre vitesse et precision pour pas se crasher dans les virages serres.</div>
+
+            <h2>Technologies utilisees</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
-                <span class="tech-tag">LiDAR</span>
                 <span class="tech-tag">Autonomous Driving</span>
-                <span class="tech-tag">Simulation</span>
-                <span class="tech-tag">Algorithms</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/need4stek" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">Lidar Processing</span>
+                <span class="tech-tag">Makefile</span>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Radar - Détails</title>
+    <title>MyRadar - Details</title>
     <link rel="stylesheet" href="../static/style.css?v=7">
     <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
@@ -13,34 +13,27 @@
             <a href="../index.html" class="back-link">← Retour au portfolio</a>
         </div>
         <header class="project-header">
-            <h1>My Radar</h1>
+            <h1>MyRadar</h1>
             <div class="project-meta">
                 <span class="project-date">2025</span>
-                <span class="project-category category-systemes">Graphisme 2D & Simulation</span>
+                <span class="project-category category-systemes">Graphisme 2D</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Simulation graphique 2D de contrôle aérien avec détection de collisions en C CSFML.
+            <div class="project-description">Simulateur de trafic aerien en 2D avec la CSFML (B-MUL-100).
 
-Fonctionnalités principales :
-- Déplacement simultané de centaines d'avions avec calcul vectoriel de trajectoires
-- Tours de contrôle avec zones de sécurité circulaires
-- Optimisation des tests de collision par quadtree spatial</div>
+Le programme affiche une carte avec des avions qui se deplacent en temps reel vers leur destination. Il faut gerer les zones d'exclusion aerienne (les avions doivent les contourner ou s'ils y entrent ils disparaissent) et detecter les collisions entre avions.
 
-            <h2>Technologies utilisées</h2>
+Gestion d'events clavier pour afficher/cacher les hitboxes et les zones.</div>
+
+            <h2>Technologies utilisees</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
                 <span class="tech-tag">CSFML</span>
-                <span class="tech-tag">2D Graphics</span>
-                <span class="tech-tag">Collision Detection</span>
-                <span class="tech-tag">Quadtree</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/myradar" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">2D Rendering</span>
+                <span class="tech-tag">Makefile</span>
             </div>
         </div>
     </div>

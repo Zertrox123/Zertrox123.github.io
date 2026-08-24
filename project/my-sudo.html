@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Sudo - Détails</title>
+    <title>my_sudo - Details</title>
     <link rel="stylesheet" href="../static/style.css?v=7">
     <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
@@ -13,35 +13,28 @@
             <a href="../index.html" class="back-link">← Retour au portfolio</a>
         </div>
         <header class="project-header">
-            <h1>My Sudo</h1>
+            <h1>my_sudo</h1>
             <div class="project-meta">
                 <span class="project-date">2025</span>
-                <span class="project-category category-systemes">Sécurité & Systèmes</span>
+                <span class="project-category category-systemes">Systemes Unix</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Recréation de la commande "sudo" permettant l'élévation de privilèges sous Linux.
+            <div class="project-description">Recreation de la commande sudo en C (B-PSU-200).
 
-Fonctionnalités principales :
-- Vérification des droits d'accès dans le fichier de configuration /etc/sudoers
-- Authentification sécurisée de l'utilisateur via la bibliothèque PAM (Pluggable Authentication Modules)
-- Exécution de commandes avec les privilèges root via setuid et setgid tout en isolant l'environnement d'exécution</div>
+Le programme gere l'authentification par mot de passe, l'execution de commandes avec changement d'utilisateur et de groupe (setuid/setgid), la verification des permissions via un fichier de config type sudoers, et le logging des actions.
 
-            <h2>Technologies utilisées</h2>
+Il faut gerer les options -u (utilisateur cible), -g (groupe) et parser correctement le fichier de configuration pour verifier les droits.</div>
+
+            <h2>Technologies utilisees</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
-                <span class="tech-tag">Security</span>
-                <span class="tech-tag">PAM</span>
-                <span class="tech-tag">setuid</span>
-                <span class="tech-tag">Privilege Escalation</span>
-                <span class="tech-tag">Linux</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/mysudo" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">Unix Syscalls</span>
+                <span class="tech-tag">setuid / setgid</span>
+                <span class="tech-tag">Authentication</span>
+                <span class="tech-tag">Makefile</span>
             </div>
         </div>
     </div>

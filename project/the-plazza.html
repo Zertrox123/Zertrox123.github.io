@@ -22,26 +22,22 @@
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Projets de programmation concurrente simulant des systèmes distribués à forte charge sans deadlocks ni race conditions.
+            <div class="project-description">Projets d'ingénierie logicielle axés sur la programmation concurrente, la synchronisation de threads et la communication inter-processus sans deadlocks.
 
-Fonctionnalités principales :
-- The Plazza : Réception centrale répartissant des commandes sur plusieurs processus cuisines enfants via Named Pipes et Sockets de domaine Unix. Thread Pool optimisé avec mutex, sémaphores et variables de condition
-- Panoramix : Modélisation et synchronisation multithread stricte en C/C++
-- Load balancing dynamique et gestion automatisée des ressources</div>
+Détails des projets :
+- The Plazza (C++20) : Simulation distribuée d'une pizzeria. Une réception centrale répartit les commandes sur des processus cuisines enfants via Named Pipes (FIFO) ou sockets UNIX. Chaque cuisine gère un thread pool de cuisiniers, une régénération périodique des stocks et un arrêt automatique en cas d'inactivité prolongée.
+- Panoramix (C) : Résolution du problème des producteurs-consommateurs (druide et villageois) avec threads POSIX, mutex et sémaphores pour arbitrer l'accès à une ressource partagée sans famine ni blocage.</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C++20</span>
+                <span class="tech-tag">C</span>
                 <span class="tech-tag">Multithreading</span>
+                <span class="tech-tag">POSIX Threads</span>
                 <span class="tech-tag">IPC</span>
-                <span class="tech-tag">Pipes</span>
-                <span class="tech-tag">Thread Pools</span>
-                <span class="tech-tag">POSIX</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/theplazza" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">Named Pipes</span>
+                <span class="tech-tag">Mutex</span>
+                <span class="tech-tag">Sémaphores</span>
             </div>
         </div>
     </div>

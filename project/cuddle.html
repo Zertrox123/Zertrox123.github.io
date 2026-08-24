@@ -22,25 +22,23 @@
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Mise en place de pipelines d'intégration continue et d'automatisation de tests qualité avec GitHub Actions.
+            <div class="project-description">Conception et automatisation d'un pipeline d'intégration continue (CI/CD) complet avec GitHub Actions pour garantir la conformité et la qualité du code.
 
-Fonctionnalités principales :
-- Workflow GitHub Actions exécuté à chaque push et pull request
-- Vérification stricte des normes de codage (coding style linter) et compilation sécurisée
-- Exécution automatisée de tests unitaires et d'intégration avec rapports de couverture de code</div>
+Structure du pipeline (jobs séquentiels) :
+- Vérification de la norme de codage : Exécution de l'analyseur de style officiel sous conteneur Docker et génération d'annotations d'erreurs directement sur les commits et pull requests.
+- Contrôle de compilation : Compilation du projet avec Makefile sous conteneur Docker (Epitest), validation des règles clean et détection des exécutables requis avec timeout.
+- Exécution des tests : Lancement automatique des suites de tests unitaires (make tests_run) avec gestion des temps limites.
+- Déploiement miroir : Synchronisation automatique vers le dépôt miroir distant via clé SSH sécurisée.</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
                 <span class="tech-tag">GitHub Actions</span>
                 <span class="tech-tag">CI/CD</span>
-                <span class="tech-tag">Testing</span>
-                <span class="tech-tag">Code Quality</span>
-                <span class="tech-tag">Automation</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/cuddle" class="project-link category-web_outils" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Bash</span>
+                <span class="tech-tag">Makefile</span>
+                <span class="tech-tag">Automatisation</span>
+                <span class="tech-tag">Qualité Logicielle</span>
             </div>
         </div>
     </div>

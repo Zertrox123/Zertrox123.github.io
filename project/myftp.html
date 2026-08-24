@@ -22,12 +22,12 @@
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Implémentation complète d'un serveur de transfert de fichiers respectant la spécification RFC 959.
+            <div class="project-description">Serveur de transfert de fichiers (FTP) développé en langage C respectant les spécifications de la RFC 959.
 
 Fonctionnalités principales :
-- Connexion de contrôle (port 21) et connexions de données dynamiques (modes PASV et PORT)
-- Implémentation des commandes standard : USER, PASS, CWD, CDUP, QUIT, DELE, PWD, PASV, PORT, HELP, NOOP, RETR, STOR, LIST
-- Gestion des utilisateurs et isolation sécurisée des répertoires</div>
+- Gestion de la connexion de commande sur le port spécifié et ouverture dynamique de sockets de données en mode actif (PORT) et passif (PASV).
+- Support des commandes FTP standard : USER, PASS, CWD, CDUP, QUIT, DELE, PWD, PASV, PORT, HELP, NOOP, RETR, STOR, LIST.
+- Authentification des utilisateurs, gestion des permissions de lecture/écriture et contrôle strict des chemins d'accès pour éviter les traversées de répertoires non autorisées.</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
@@ -35,12 +35,8 @@ Fonctionnalités principales :
                 <span class="tech-tag">RFC 959</span>
                 <span class="tech-tag">TCP/IP</span>
                 <span class="tech-tag">Sockets</span>
+                <span class="tech-tag">Multiplexage</span>
                 <span class="tech-tag">Unix</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/myftp" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
             </div>
         </div>
     </div>

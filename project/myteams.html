@@ -22,26 +22,21 @@
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Développement d'un serveur et client de communication collaborative multi-utilisateurs.
+            <div class="project-description">Plateforme de messagerie instantanée collaborative multi-utilisateurs (style Slack / Microsoft Teams) basée sur une architecture client-serveur TCP.
 
-Fonctionnalités principales :
-- Serveur asynchrone non-bloquant gérant de multiples connexions simultanées avec select/poll
-- Architecture : Équipes (Teams), Canaux (Channels), Fils de discussion (Threads) et Messages privés (DMs)
-- Protocole réseau binaire sur mesure et persistance des données sur disque</div>
+Architecture du système :
+- Serveur en Rust : Gestion réseau asynchrone non-bloquante pour accueillir plusieurs clients en simultané, structuration hiérarchique des données (équipes, canaux, threads, commentaires, messages privés) et persistance sur disque.
+- Client CLI en C++20 : Interface interactive en ligne de commande permettant de s'authentifier, créer et rejoindre des canaux, échanger des messages en direct et recevoir les notifications d'événements.</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
-                <span class="tech-tag">C</span>
+                <span class="tech-tag">Rust</span>
+                <span class="tech-tag">C++20</span>
                 <span class="tech-tag">TCP/IP</span>
                 <span class="tech-tag">Sockets</span>
-                <span class="tech-tag">select</span>
-                <span class="tech-tag">I/O Multiplexing</span>
-                <span class="tech-tag">Unix</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/myteams" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">CLI</span>
+                <span class="tech-tag">Protocole Réseau</span>
+                <span class="tech-tag">Sérialisation</span>
             </div>
         </div>
     </div>

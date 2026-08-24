@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Top - Détails</title>
+    <title>my_top - Details</title>
     <link rel="stylesheet" href="../static/style.css?v=7">
     <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
@@ -13,34 +13,28 @@
             <a href="../index.html" class="back-link">← Retour au portfolio</a>
         </div>
         <header class="project-header">
-            <h1>My Top</h1>
+            <h1>my_top</h1>
             <div class="project-meta">
                 <span class="project-date">2025</span>
-                <span class="project-category category-systemes">Systèmes Unix</span>
+                <span class="project-category category-systemes">Systemes Unix</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Recréation de la commande Unix "top" permettant de monitorer en temps réel les processus et les ressources système.
+            <div class="project-description">Recreation de la commande top en C (B-PSU-200).
 
-Fonctionnalités principales :
-- Parsing direct du pseudo-système de fichiers /proc (stat, status, meminfo, uptime)
-- Affichage dynamique de l'usage CPU, de la consommation RAM et du nombre de threads par processus
-- Interface ncurses rafraîchie à intervalle régulier avec options de tri par PID, CPU% et mémoire</div>
+Le programme parse /proc en continu pour afficher les processus en cours, l'usage CPU et la consommation memoire. Interface ncurses avec rafraichissement periodique et possibilite de trier par PID, CPU ou memoire.
 
-            <h2>Technologies utilisées</h2>
+Gestion des calculs de pourcentage CPU entre deux intervalles et parsing de /proc/stat, /proc/meminfo et /proc/[pid]/status.</div>
+
+            <h2>Technologies utilisees</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
-                <span class="tech-tag">Unix</span>
-                <span class="tech-tag">/proc</span>
                 <span class="tech-tag">ncurses</span>
-                <span class="tech-tag">System Monitoring</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/mytop" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">/proc filesystem</span>
+                <span class="tech-tag">Unix</span>
+                <span class="tech-tag">Makefile</span>
             </div>
         </div>
     </div>

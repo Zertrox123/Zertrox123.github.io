@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minishell 1 - Détails</title>
+    <title>Minishell 1 - Details</title>
     <link rel="stylesheet" href="../static/style.css?v=7">
     <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
@@ -16,31 +16,24 @@
             <h1>Minishell 1</h1>
             <div class="project-meta">
                 <span class="project-date">2024</span>
-                <span class="project-category category-systemes">Systèmes Unix</span>
+                <span class="project-category category-systemes">Systemes Unix</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Premier interpréteur de commandes Unix développé en langage C (B-PSU-100).
+            <div class="project-description">Premier shell Unix en C (B-PSU-100).
 
-Fonctionnalités principales :
-- Parsing basique de ligne de commande et recherche d'exécutables dans la variable d'environnement PATH
-- Exécution par création de processus enfants (fork/execve)
-- Implémentation des commandes internes : cd, setenv, unsetenv, env, exit</div>
+Le programme lit les commandes utilisateur, les parse et les execute via fork/execve. Gestion de la variable PATH pour trouver les executables, et implementation des builtins : cd, setenv, unsetenv, env et exit.
 
-            <h2>Technologies utilisées</h2>
+C'est la base avant minishell2 : pas de pipes ni de redirections, mais ca pose les fondations de la gestion de processus Unix.</div>
+
+            <h2>Technologies utilisees</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
+                <span class="tech-tag">fork / execve</span>
                 <span class="tech-tag">Unix</span>
-                <span class="tech-tag">fork</span>
-                <span class="tech-tag">execve</span>
-                <span class="tech-tag">POSIX</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/minishell1" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">Makefile</span>
             </div>
         </div>
     </div>

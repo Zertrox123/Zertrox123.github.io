@@ -22,27 +22,23 @@
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Interpréteur de commandes Unix complet en langage C.
+            <div class="project-description">Interpréteur de commandes Unix complet (shell POSIX) développé en langage C.
 
 Fonctionnalités principales :
-- Prompt interactif avec historique et parsing de ligne de commande
-- Exécution des commandes via fork, execve et waitpid
-- Gestion des pipes multiples (|), redirections (<, >, >>, <<) et séparateurs (; , &&, ||)
-- Builtins internes : cd, env, setenv, unsetenv, exit, echo, export, alias
-- Gestion des signaux Unix et libération intégrale de la mémoire</div>
+- Exécution des commandes système avec résolution dynamique des chemins via la variable d'environnement PATH (fork, execve, waitpid).
+- Gestion des pipes multiples (|), des redirections d'entrées et sorties (&lt;, &gt;, &gt;&gt;, &lt;&lt;) et des enchaînements logiques (; , &amp;&amp;, ||).
+- Implémentation des builtins internes : cd, env, setenv, unsetenv, exit, echo.
+- Gestion des signaux Unix (Ctrl+C, signaux d'erreur système) et libération rigoureuse de la mémoire.</div>
 
             <h2>Technologies utilisées</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
                 <span class="tech-tag">Unix</span>
-                <span class="tech-tag">Pipes</span>
+                <span class="tech-tag">POSIX</span>
                 <span class="tech-tag">Process Management</span>
-                <span class="tech-tag">IPC</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/minishell2" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">Pipes</span>
+                <span class="tech-tag">Redirections</span>
+                <span class="tech-tag">Signaux</span>
             </div>
         </div>
     </div>

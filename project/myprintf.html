@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyPrintf - Détails</title>
+    <title>my_printf - Details</title>
     <link rel="stylesheet" href="../static/style.css?v=7">
     <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
@@ -13,34 +13,27 @@
             <a href="../index.html" class="back-link">← Retour au portfolio</a>
         </div>
         <header class="project-header">
-            <h1>MyPrintf</h1>
+            <h1>my_printf</h1>
             <div class="project-meta">
                 <span class="project-date">2024</span>
-                <span class="project-category category-systemes">Systèmes & Libc</span>
+                <span class="project-category category-systemes">Fondamentaux &amp; C</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Réimplémentation complète de la fonction printf de la bibliothèque standard C (B-CPE-100).
+            <div class="project-description">Reimplementation de la fonction printf de la libc en C (B-CPE-100).
 
-Fonctionnalités principales :
-- Gestion des spécificateurs de conversion : %d, %i, %s, %c, %u, %o, %x, %X, %p, %b
-- Gestion des drapeaux (+, -, #, 0, espace), de la largeur de champ et de la précision
-- Manipulation de pointeurs et listes d'arguments variables via stdarg (va_start, va_arg, va_end)</div>
+Gestion des conversions %d, %i, %s, %c, %o, %u, %x, %X, %p et %% avec les flags de formatage (-, +, espace, 0, #) et la largeur de champ. Utilisation de va_list / va_arg pour gerer les arguments variadiques.
 
-            <h2>Technologies utilisées</h2>
+C'est un des premiers vrais projets de la piscine, ca oblige a comprendre comment marchent les arguments variables et le formatage bas niveau.</div>
+
+            <h2>Technologies utilisees</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
                 <span class="tech-tag">Variadic Functions</span>
-                <span class="tech-tag">stdarg</span>
-                <span class="tech-tag">Formatting</span>
-                <span class="tech-tag">Libc</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/myprintf" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">write</span>
+                <span class="tech-tag">Makefile</span>
             </div>
         </div>
     </div>

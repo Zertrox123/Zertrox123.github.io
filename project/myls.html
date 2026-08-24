@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My LS - Détails</title>
+    <title>MyLS - Details</title>
     <link rel="stylesheet" href="../static/style.css?v=7">
     <link rel="stylesheet" href="../static/responsive.css?v=7">
 </head>
@@ -13,34 +13,27 @@
             <a href="../index.html" class="back-link">← Retour au portfolio</a>
         </div>
         <header class="project-header">
-            <h1>My LS</h1>
+            <h1>MyLS</h1>
             <div class="project-meta">
-                <span class="project-date">2024</span>
-                <span class="project-category category-systemes">Systèmes Unix</span>
+                <span class="project-date">2025</span>
+                <span class="project-category category-systemes">Systemes Unix</span>
             </div>
         </header>
 
         <div class="project-content">
             <h2>Description du projet</h2>
-            <div class="project-description">Recréation intégrale de la commande Unix "ls" en langage C.
+            <div class="project-description">Recreation de la commande ls en C (B-PSU-100).
 
-Fonctionnalités principales :
-- Parsing des métadonnées du système de fichiers via stat et lstat
-- Support des options : -l, -a, -R, -d, -r, -t
-- Gestion des droits d'accès, liens symboliques, inodes et formatage colonne</div>
+Le programme reproduit le comportement de ls avec la gestion des options -l, -a, -R, -r, -t et -d. Lecture des repertoires avec opendir/readdir, recuperation des infos fichiers avec stat, affichage des permissions, liens, proprietaires, tailles et dates de modification.
 
-            <h2>Technologies utilisées</h2>
+La partie la plus technique c'est le tri et l'affichage colonne en mode -l avec le bon formatage.</div>
+
+            <h2>Technologies utilisees</h2>
             <div class="tech-tags">
                 <span class="tech-tag">C</span>
-                <span class="tech-tag">Unix</span>
-                <span class="tech-tag">stat</span>
-                <span class="tech-tag">Filesystem</span>
-                <span class="tech-tag">POSIX</span>
-            </div>
-
-            <h2>Liens</h2>
-            <div class="project-links">
-                <a href="https://github.com/Zertrox123/myls" class="project-link category-systemes" target="_blank">Voir sur GitHub</a>
+                <span class="tech-tag">Unix Syscalls</span>
+                <span class="tech-tag">stat / dirent</span>
+                <span class="tech-tag">Makefile</span>
             </div>
         </div>
     </div>
