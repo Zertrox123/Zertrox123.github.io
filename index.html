@@ -186,24 +186,32 @@
         </span>
     </p>
 
-    <!-- Category Filter Tabs & Language Filter -->
+    <!-- Category Filter Tabs & Filter Dropdown -->
     <nav class="category-nav">
         <div class="nav-tabs-group">
             <button class="nav-tab active" data-category="main">Projets principaux <span id="count-main">(8)</span></button>
             <button class="nav-tab" data-category="tek1">Projet année 1 <span id="count-tek1">(18)</span></button>
             <button class="nav-tab" data-category="tek2">Projet année 2 <span id="count-tek2">(15)</span></button>
             <button class="nav-tab" data-category="perso">Projet perso <span id="count-perso">(10)</span></button>
-        </div>
-        <div class="lang-filter-wrapper">
-            <label for="lang-select">Filtrer par :</label>
-            <select id="lang-select" class="lang-select">
-                <option value="all">Tous les langages</option>
-                <option value="c">C</option>
-                <option value="cpp">C++</option>
-                <option value="python">Python</option>
-                <option value="rust">Rust</option>
-                <option value="js">JavaScript / Web</option>
-            </select>
+
+            <!-- Filter Dropdown Button -->
+            <div class="filter-dropdown-container">
+                <button type="button" class="nav-tab filter-btn" id="filterToggleBtn" title="Filtrer par langage">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                    <span id="filterLabel">Filtre</span>
+                    <span class="dropdown-arrow">▾</span>
+                </button>
+                <div class="filter-dropdown-menu" id="filterDropdownMenu">
+                    <div class="filter-option active" data-lang="all">Tous les langages</div>
+                    <div class="filter-option" data-lang="c">C</div>
+                    <div class="filter-option" data-lang="cpp">C++</div>
+                    <div class="filter-option" data-lang="python">Python</div>
+                    <div class="filter-option" data-lang="rust">Rust</div>
+                    <div class="filter-option" data-lang="js">JavaScript / Web</div>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -485,10 +493,13 @@
     // ==========================================
     // CATEGORY & LANGUAGE FILTER
     // ==========================================
-    const navTabs = document.querySelectorAll('.nav-tab');
+    const categoryTabs = document.querySelectorAll('.nav-tab[data-category]');
     const projectSections = document.querySelectorAll('.project-section');
     const projectCards = document.querySelectorAll('.project-card');
-    const langSelect = document.getElementById('lang-select');
+    const filterToggleBtn = document.getElementById('filterToggleBtn');
+    const filterDropdownMenu = document.getElementById('filterDropdownMenu');
+    const filterOptions = document.querySelectorAll('.filter-option');
+    const filterLabel = document.getElementById('filterLabel');
 
     let currentCategory = 'main';
     let currentLang = 'all';
@@ -548,25 +559,53 @@
         }
     }
 
-    navTabs.forEach(tab => {
+    categoryTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             currentCategory = tab.getAttribute('data-category');
-            navTabs.forEach(t => t.classList.toggle('active', t === tab));
+            categoryTabs.forEach(t => t.classList.toggle('active', t === tab));
             applyFilters();
         });
     });
 
-    if (langSelect) {
-        langSelect.addEventListener('change', () => {
-            currentLang = langSelect.value;
-            applyFilters();
+    // Toggle filter dropdown menu
+    if (filterToggleBtn && filterDropdownMenu) {
+        filterToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = filterDropdownMenu.classList.toggle('show');
+            filterToggleBtn.classList.toggle('open', isOpen);
+        });
+
+        filterOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentLang = option.getAttribute('data-lang');
+                filterOptions.forEach(opt => opt.classList.toggle('active', opt === option));
+                
+                if (currentLang === 'all') {
+                    filterLabel.textContent = 'Filtre';
+                    filterToggleBtn.classList.remove('active');
+                } else {
+                    filterLabel.textContent = `Filtre: ${option.textContent.trim()}`;
+                    filterToggleBtn.classList.add('active');
+                }
+
+                filterDropdownMenu.classList.remove('show');
+                filterToggleBtn.classList.remove('open');
+                applyFilters();
+            });
+        });
+
+        // Close on click outside
+        document.addEventListener('click', () => {
+            filterDropdownMenu.classList.remove('show');
+            filterToggleBtn.classList.remove('open');
         });
     }
 
     const currentHash = window.location.hash.replace('#', '');
     if (['main', 'tek1', 'tek2', 'perso'].includes(currentHash)) {
         currentCategory = currentHash;
-        navTabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-category') === currentCategory));
+        categoryTabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-category') === currentCategory));
     }
 
     applyFilters();
