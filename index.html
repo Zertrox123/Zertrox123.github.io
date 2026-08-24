@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Zertrox123</title>
-    <link rel="stylesheet" href="static/style.css?v=5">
-    <link rel="stylesheet" href="static/responsive.css?v=5">
+    <link rel="stylesheet" href="static/style.css?v=6">
+    <link rel="stylesheet" href="static/responsive.css?v=6">
     <style>
     /* ==========================================
        MAIN HEADER & CRAZY SWITCH
@@ -188,7 +188,7 @@
 
     <!-- Category Filter Tabs -->
     <nav class="category-nav">
-        <button class="nav-tab active" data-category="all">Tous les projets</button>
+        <button class="nav-tab active" data-category="main">Projets principaux</button>
         <button class="nav-tab" data-category="tek1">Projet année 1 (tek 1)</button>
         <button class="nav-tab" data-category="tek2">Projet année 2 (tek 2)</button>
         <button class="nav-tab" data-category="perso">Projet perso</button>
@@ -197,23 +197,23 @@
     <section class="project-section" data-section="systemes">
         <h2>Systèmes & Concurrence</h2>
         <div class="projects-container">
-            <a href="project/zappy.html" class="project-card" data-year="tek2">
+            <a href="project/zappy.html" class="project-card" data-year="tek2" data-featured="true">
                 <h3>Zappy</h3>
                 <p>Jeu en réseau distribué : Serveur TCP en C, IA en C++/Python et client graphique</p>
             </a>
-            <a href="project/the-plazza.html" class="project-card" data-year="tek2">
+            <a href="project/the-plazza.html" class="project-card" data-year="tek2" data-featured="true">
                 <h3>The Plazza & Panoramix</h3>
                 <p>Moteur de simulation haute concurrence en C++20 avec processus, IPC et Thread Pools</p>
             </a>
-            <a href="project/corewar.html" class="project-card" data-year="tek2">
+            <a href="project/corewar.html" class="project-card" data-year="tek2" data-featured="true">
                 <h3>Corewar</h3>
                 <p>Machine virtuelle, ordonnanceur de processus et assembleur bytecode en C</p>
             </a>
-            <a href="project/myteams.html" class="project-card" data-year="tek2">
+            <a href="project/myteams.html" class="project-card" data-year="tek2" data-featured="true">
                 <h3>MyTeams</h3>
                 <p>Plateforme collaborative distribuée multi-clients en C avec protocole binaire TCP</p>
             </a>
-            <a href="project/myftp.html" class="project-card" data-year="tek2">
+            <a href="project/myftp.html" class="project-card" data-year="tek2" data-featured="true">
                 <h3>MyFTP</h3>
                 <p>Serveur FTP asynchrone conforme à la norme RFC 959 en C</p>
             </a>
@@ -229,23 +229,79 @@
                 <h3>My Sudo</h3>
                 <p>Recréation de la commande "Sudo" avec gestion des privilèges et authentification</p>
             </a>
+            <a href="project/myradar.html" class="project-card" data-year="tek1">
+                <h3>My Radar</h3>
+                <p>Simulation graphique de contrôle aérien avec détection de collisions en C CSFML</p>
+            </a>
+            <a href="project/myworld.html" class="project-card" data-year="tek1">
+                <h3>My World</h3>
+                <p>Moteur de rendu de terrain 3D isométrique avec terraforming en temps réel</p>
+            </a>
+            <a href="project/myls.html" class="project-card" data-year="tek1">
+                <h3>My LS</h3>
+                <p>Recréation complète de la commande Unix "ls" avec options et métadonnées fichiers</p>
+            </a>
+            <a href="project/navy.html" class="project-card" data-year="tek1">
+                <h3>Navy</h3>
+                <p>Bataille navale multijoueur en terminal communiquant exclusivement par signaux Unix</p>
+            </a>
+            <a href="project/sokoban.html" class="project-card" data-year="tek1">
+                <h3>Sokoban</h3>
+                <p>Jeu de réflexion Sokoban développé en C avec la bibliothèque ncurses</p>
+            </a>
+            <a href="project/need4stek.html" class="project-card" data-year="tek1">
+                <h3>Need4Stek</h3>
+                <p>Algorithme de conduite autonome de voiture sur circuit via capteur LiDAR</p>
+            </a>
+            <a href="project/secured.html" class="project-card" data-year="tek1">
+                <h3>Secured</h3>
+                <p>Table de hachage associative optimisée et sécurisée en langage C</p>
+            </a>
+            <a href="project/settingup.html" class="project-card" data-year="tek1">
+                <h3>Setting Up (BSQ)</h3>
+                <p>Algorithme d'optimisation 2D pour localiser le plus grand carré dans une grille</p>
+            </a>
+            <a href="https://github.com/Zertrox123/minishell1" class="project-card" data-year="tek1" target="_blank">
+                <h3>Minishell 1</h3>
+                <p>Interpréteur de commandes Unix initial avec exécution et gestion des variables</p>
+            </a>
+            <a href="https://github.com/Zertrox123/myprintf" class="project-card" data-year="tek1" target="_blank">
+                <h3>MyPrintf</h3>
+                <p>Réimplémentation complète de la fonction printf de la libc en C</p>
+            </a>
+            <a href="https://github.com/Zertrox123/organized" class="project-card" data-year="tek1" target="_blank">
+                <h3>Organized</h3>
+                <p>Gestionnaire d'inventaire avec listes chaînées et algorithmes de tri dynamique</p>
+            </a>
+            <a href="https://github.com/Zertrox123/101pong" class="project-card" data-year="tek1" target="_blank">
+                <h3>Projets Mathématiques</h3>
+                <p>Calculs de trajectoires 3D, matrices, cryptographie et analyse (101 à 105)</p>
+            </a>
+            <a href="https://github.com/Zertrox123/amazed" class="project-card" data-year="tek1" target="_blank">
+                <h3>A-Maze-D</h3>
+                <p>Algorithme de résolution de labyrinthe et recherche de chemin optimal</p>
+            </a>
+            <a href="https://github.com/Zertrox123/popeye" class="project-card" data-year="tek1" target="_blank">
+                <h3>Popeye & RobotFactory</h3>
+                <p>Conteneurisation d'architectures applicatives et microservices avec Docker</p>
+            </a>
         </div>
     </section>
 
     <section class="project-section" data-section="ia">
         <h2>Intelligence Artificielle & Data</h2>
         <div class="projects-container">
-            <a href="project/persona-ai.html" class="project-card" data-year="tek2">
+            <a href="project/persona-ai.html" class="project-card" data-year="tek2" data-featured="true">
                 <h3>Persona AI</h3>
                 <p>Agents conversationnels et modèles décisionnels basés sur le NLP</p>
+            </a>
+            <a href="project/cvrie.html" class="project-card" data-year="tek2" data-featured="true">
+                <h3>CVRIE (Computer Vision)</h3>
+                <p>Reconnaissance et extraction d'informations par vision par ordinateur</p>
             </a>
             <a href="project/starttrek-ai.html" class="project-card" data-year="tek2">
                 <h3>Star Trek AI</h3>
                 <p>Agent décisionnel autonome et navigation spatiale algorithmique</p>
-            </a>
-            <a href="project/cvrie.html" class="project-card" data-year="tek2">
-                <h3>CVRIE (Computer Vision)</h3>
-                <p>Reconnaissance et extraction d'informations par vision par ordinateur</p>
             </a>
             <a href="project/tardis.html" class="project-card" data-year="tek2">
                 <h3>Tardis AI</h3>
@@ -269,17 +325,25 @@
                 <h3>My Hunter</h3>
                 <p>Mini-jeu graphique 2D en C avec la bibliothèque CSFML</p>
             </a>
+            <a href="https://github.com/Zertrox123/pdgrush4" class="project-card" data-year="tek2" target="_blank">
+                <h3>PDG Rush 4</h3>
+                <p>Implémentation d'un paradigme orienté objet dynamique en C pur</p>
+            </a>
+            <a href="https://github.com/Zertrox123/cuddle" class="project-card" data-year="tek2" target="_blank">
+                <h3>Cuddle & Chocolatine</h3>
+                <p>Pipeline CI/CD automatisé avec GitHub Actions et workflow de tests d'intégration</p>
+            </a>
         </div>
     </section>
 
     <section class="project-section" data-section="perso">
         <h2>Projets Perso</h2>
         <div class="projects-container">
-            <a href="project/my_portfolio.html" class="project-card" data-year="perso">
+            <a href="project/my_portfolio.html" class="project-card" data-year="perso" data-featured="true">
                 <h3>Portfolio Web en Rust</h3>
                 <p>Application web de portfolio développée en Rust avec Rocket et Tera</p>
             </a>
-            <a href="project/proxyflow-project.html" class="project-card" data-year="perso">
+            <a href="project/proxyflow-project.html" class="project-card" data-year="perso" data-featured="true">
                 <h3>ProxyFlow</h3>
                 <p>Outil de gestion, routage et analyse de flux réseau proxy</p>
             </a>
@@ -294,6 +358,26 @@
             <a href="project/geometry-dash.html" class="project-card" data-year="perso">
                 <h3>Geometry Dash Recorder</h3>
                 <p>Enregistreur et analyseur automatique de parties avec vision par ordinateur</p>
+            </a>
+            <a href="project/rust-vm.html" class="project-card" data-year="perso">
+                <h3>Rust VM</h3>
+                <p>Interpréteur de bytecode et machine virtuelle basée sur registres en Rust</p>
+            </a>
+            <a href="project/local-ai.html" class="project-card" data-year="perso">
+                <h3>Local AI</h3>
+                <p>Plateforme locale d'inférence et d'orchestration de modèles LLM hors-ligne</p>
+            </a>
+            <a href="project/minecraft-ai.html" class="project-card" data-year="perso">
+                <h3>Minecraft AI</h3>
+                <p>Agent autonome pour environnement voxel avec pathfinding 3D et planification</p>
+            </a>
+            <a href="project/anti-ux.html" class="project-card" data-year="perso">
+                <h3>Anti-UX</h3>
+                <p>Application web interactive explorant les dark patterns et interfaces inversées</p>
+            </a>
+            <a href="https://github.com/Zertrox123/hackathon-crypto" class="project-card" data-year="perso" target="_blank">
+                <h3>Hackathon Crypto</h3>
+                <p>Projet de sécurité informatique et cryptanalyse développé en équipe</p>
             </a>
         </div>
     </section>
@@ -370,7 +454,6 @@
     // CATEGORY NAVIGATOR / FILTER
     // ==========================================
     const navTabs = document.querySelectorAll('.nav-tab');
-    const projectCards = document.querySelectorAll('.project-card');
     const projectSections = document.querySelectorAll('.project-section');
 
     function filterCategory(category) {
@@ -388,7 +471,20 @@
 
             cards.forEach(card => {
                 const year = card.getAttribute('data-year');
-                if (category === 'all' || year === category) {
+                const isFeatured = card.getAttribute('data-featured') === 'true';
+
+                let shouldShow = false;
+                if (category === 'main') {
+                    shouldShow = isFeatured;
+                } else if (category === 'tek1') {
+                    shouldShow = (year === 'tek1');
+                } else if (category === 'tek2') {
+                    shouldShow = (year === 'tek2');
+                } else if (category === 'perso') {
+                    shouldShow = (year === 'perso');
+                }
+
+                if (shouldShow) {
                     card.style.display = '';
                     sectionVisibleCards++;
                 } else {
@@ -396,11 +492,7 @@
                 }
             });
 
-            if (category === 'all') {
-                section.style.display = '';
-            } else {
-                section.style.display = (sectionVisibleCards > 0) ? '' : 'none';
-            }
+            section.style.display = (sectionVisibleCards > 0) ? '' : 'none';
         });
 
         if (history.replaceState) {
@@ -415,9 +507,12 @@
         });
     });
 
+    // Start with "main" (Projets principaux) or check hash
     const currentHash = window.location.hash.replace('#', '');
-    if (['all', 'tek1', 'tek2', 'perso'].includes(currentHash)) {
+    if (['main', 'tek1', 'tek2', 'perso'].includes(currentHash)) {
         filterCategory(currentHash);
+    } else {
+        filterCategory('main');
     }
 
     // ==========================================
