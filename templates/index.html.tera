@@ -317,10 +317,10 @@
 
     
     <nav class="category-nav">
-        <button class="nav-tab active" data-category="main">Projets principaux <span id="count-main">(9)</span></button>
+        <button class="nav-tab active" data-category="main">Projets principaux <span id="count-main">(8)</span></button>
         <button class="nav-tab" data-category="tek1">Projet année 1 <span id="count-tek1">(18)</span></button>
         <button class="nav-tab" data-category="tek2">Projet année 2 <span id="count-tek2">(15)</span></button>
-        <button class="nav-tab" data-category="perso">Projet perso <span id="count-perso">(10)</span></button>
+        <button class="nav-tab" data-category="perso">Projet perso <span id="count-perso">(9)</span></button>
 
         
         <div class="filter-dropdown-container">
@@ -484,12 +484,8 @@
         <h2>Web, Backend & Réseau</h2>
         <div class="projects-container">
             <a href="/project/my_portfolio" class="project-card" data-year="perso" data-featured="true" data-lang="rust,js,web">
-                <h3>Portfolio Web en Rust</h3>
-                <p>Application web de portfolio développée en Rust avec Rocket et Tera</p>
-            </a>
-            <a href="/project/proxyflow-project" class="project-card" data-year="perso" data-featured="true" data-lang="rust,python,js,web">
-                <h3>ProxyFlow</h3>
-                <p>Outil de gestion, routage et analyse de flux réseau proxy</p>
+                <h3>Portfolio web</h3>
+                <p>Site portfolio développé en Rust avec Rocket, Tera et interface web responsive</p>
             </a>
             <a href="/project/epytodo" class="project-card" data-year="tek2" data-lang="js,web">
                 <h3>EpyTodo</h3>

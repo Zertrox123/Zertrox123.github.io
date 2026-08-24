@@ -239,34 +239,20 @@
   },
   {
     "id": "my_portfolio",
-    "name": "Portfolio Web en Rust",
-    "description": "Application web de portfolio développée en Rust avec Rocket et Tera",
+    "name": "Portfolio web",
+    "description": "Site portfolio développé en Rust avec Rocket, Tera et interface web responsive",
     "category": "personnel",
-    "detailed_description": "Conception d'un portfolio complet et performant en langage Rust avec le framework web Rocket.\n\nFonctionnalités principales :\n    - Routes asynchrones et moteur de templates dynamiques Tera.\n    - Espace d'administration pour la gestion dynamique des projets.\n    - Interface utilisateur moderne avec Crazy Mode et rendu responsive.",
+    "detailed_description": "Site portfolio personnel développé avec un backend en Rust (Rocket et Tera) et une interface web responsive.\n\nFonctionnalités principales :\n    - Serveur HTTP en Rust avec rendu de templates Tera et routing dynamique.\n    - Espace d'administration pour la gestion des projets.\n    - Interface responsive avec système de filtres par catégorie et par langage.",
     "technologies": [
       "Rust",
       "Rocket",
       "Tera",
-      "HTML",
-      "CSS"
-    ],
-    "date": "2025",
-    "github": "https://github.com/Zertrox123"
-  },
-  {
-    "id": "proxyflow-project",
-    "name": "ProxyFlow",
-    "description": "Outil de gestion, routage et analyse de flux réseau proxy",
-    "category": "personnel",
-    "detailed_description": "Projet d'ingénierie réseau permettant d'intercepter, analyser et router le trafic applicatif à travers des tunnels proxy sécurisés avec journalisation détaillée des métriques de débit et de latence.",
-    "technologies": [
-      "Python",
-      "Networking",
-      "AsyncIO",
-      "Proxy"
+      "HTML5",
+      "CSS3",
+      "JavaScript"
     ],
     "date": "2026",
-    "github": "https://github.com/Zertrox123"
+    "github": "https://github.com/Zertrox123/Zertrox123.github.io"
   },
   {
     "id": "cinedle",
