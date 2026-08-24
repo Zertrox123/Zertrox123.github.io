@@ -8,46 +8,21 @@
     <link rel="stylesheet" href="static/responsive.css">
     <style>
     /* ==========================================
-       WALKING DUCK ANIMATION (INLINE FOR ZERO CACHE)
+       RANDOM 2D WANDERING DUCK ANIMATION
        ========================================== */
     #duckContainer {
         position: fixed;
-        bottom: 25px;
-        right: -80px;
         z-index: 99999;
         cursor: pointer;
         user-select: none;
-        animation: duck-walk-horizontal 22s linear infinite;
         pointer-events: auto;
-    }
-
-    @keyframes duck-walk-horizontal {
-        0% {
-            right: -80px;
-            transform: scaleX(1);
-        }
-        48% {
-            right: calc(100vw + 20px);
-            transform: scaleX(1);
-        }
-        50% {
-            right: calc(100vw + 20px);
-            transform: scaleX(-1);
-        }
-        98% {
-            right: -80px;
-            transform: scaleX(-1);
-        }
-        100% {
-            right: -80px;
-            transform: scaleX(1);
-        }
+        will-change: left, top, transform;
     }
 
     .duck-sprite {
         display: inline-block;
-        animation: duck-waddle 0.45s ease-in-out infinite alternate;
-        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+        animation: duck-waddle 0.4s ease-in-out infinite alternate;
+        filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
     }
 
     @keyframes duck-waddle {
@@ -200,18 +175,25 @@
         </a>
     </div>
 
-    <!-- Walking Duck across the screen -->
+    <!-- Walking Duck across the screen at random Y coordinate -->
     <div id="duckContainer" title="Clique-moi ! 🦆">
         <span class="duck-bubble" id="duckBubble">Coin coin ! 🦆</span>
         <div class="duck-sprite">
             <svg viewBox="0 0 64 64" width="56" height="56" style="display: block;">
+                <!-- Corps du canard -->
                 <ellipse cx="28" cy="42" rx="20" ry="14" fill="#facc15" />
+                <!-- Queue -->
                 <path d="M10 40 Q4 32 8 28 Q14 34 18 38 Z" fill="#facc15" />
+                <!-- Aile -->
                 <ellipse cx="26" cy="42" rx="10" ry="6" fill="#eab308" />
+                <!-- Tête -->
                 <circle cx="44" cy="24" r="12" fill="#facc15" />
+                <!-- Oeil -->
                 <circle cx="48" cy="22" r="2.5" fill="#1e293b" />
                 <circle cx="49" cy="21" r="0.8" fill="#ffffff" />
+                <!-- Bec -->
                 <path d="M54 24 Q64 26 55 30 Z" fill="#f97316" />
+                <!-- Pattes / Ombre -->
                 <ellipse cx="30" cy="56" rx="14" ry="2" fill="rgba(0, 0, 0, 0.3)" />
             </svg>
         </div>
@@ -249,17 +231,59 @@
         }
     });
 
-    // Duck Click Interaction
-    const duck = document.getElementById('duckContainer');
-    const bubble = document.getElementById('duckBubble');
-    if (duck && bubble) {
+    // Wandering Duck Animation with Random Y Coordinate across whole screen
+    (function() {
+        const duck = document.getElementById('duckContainer');
+        const bubble = document.getElementById('duckBubble');
+        if (!duck) return;
+
+        let posX = window.innerWidth + 80;
+        let posY = Math.random() * (window.innerHeight - 150) + 40;
+        let direction = -1; // -1: left, 1: right
+        let speed = 2.4;
+
+        duck.style.top = posY + 'px';
+        duck.style.left = posX + 'px';
+
+        function setRandomY() {
+            const maxY = Math.max(100, window.innerHeight - 120);
+            posY = Math.random() * (maxY - 40) + 40;
+            duck.style.top = posY + 'px';
+        }
+
+        function animateDuck() {
+            posX += direction * speed;
+            duck.style.left = posX + 'px';
+
+            if (direction === -1 && posX < -100) {
+                direction = 1;
+                duck.style.transform = 'scaleX(-1)';
+                setRandomY();
+            } else if (direction === 1 && posX > window.innerWidth + 80) {
+                direction = -1;
+                duck.style.transform = 'scaleX(1)';
+                setRandomY();
+            }
+
+            requestAnimationFrame(animateDuck);
+        }
+
+        requestAnimationFrame(animateDuck);
+
+        // Click interaction
         duck.addEventListener('click', () => {
-            bubble.style.display = 'block';
-            setTimeout(() => {
-                bubble.style.display = 'none';
-            }, 2000);
+            if (bubble) {
+                bubble.style.display = 'block';
+                setTimeout(() => {
+                    bubble.style.display = 'none';
+                }, 2000);
+            }
         });
-    }
+
+        window.addEventListener('resize', () => {
+            if (posY > window.innerHeight - 100) setRandomY();
+        });
+    })();
     </script>
 </body>
 </html>
