@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zertrox123 | Portfolio</title>
+  <meta name="description" content="Portfolio de Zertrox123 - Développeur Systèmes, C / C++, Réseaux et Intelligence Artificielle." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Glow Effects -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Sticky Glass Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="prompt-prefix">~/</span>Portfolio_<span class="accent">dev</span>
+      </a>
+      
+      <div class="nav-right">
+        <!-- Crazy Mode Switch -->
+        <div class="crazy-switch-box" title="Activer / Désactiver le Crazy Mode">
+          <label class="switch">
+            <input type="checkbox" id="crazyToggle" />
+            <span class="slider round"></span>
+          </label>
+          <span class="switch-label">Crazy Mode</span>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#about">À Propos</a>
+          <a href="#skills">Compétences</a>
+          <a href="#projects">Projets</a>
+          <a href="#terminal">Terminal</a>
+          <a href="#contact" class="btn-nav">Contact</a>
+        </nav>
+
+        <button class="mobile-menu-btn" aria-label="Toggle menu" id="mobileMenuBtn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>Disponible pour des opportunités Software Engineering & Systèmes</span>
+        </div>
+
+        <h1 class="hero-title">
+          Salut, je suis <span class="gradient-text">Zertrox123</span>
+        </h1>
+
+        <div class="ticker-box">
+          <span class="ticker-label">Étudiant & Développeur passionné par :</span>
+          <span class="ticker-word" id="tickerWord">C / C++20</span>
+        </div>
+
+        <p class="hero-subtitle">
+          Spécialisé dans le développement système bas-niveau, les architectures logicielles haute concurrence, la programmation réseau asynchrone et les modèles d'intelligence artificielle.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">Explorer les Projets</a>
+          <a href="#contact" class="btn btn-secondary">Me Contacter</a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/Zertrox123" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+          <span class="sep">&bull;</span>
+          <a href="https://www.linkedin.com/in/omar-joudi/?locale=en" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+          <span class="sep">&bull;</span>
+          <a href="mailto:omar.joudi@epitech.eu" class="social-link">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01. Profil</span>
+          <h2 class="section-title">Domaines d'Expertise</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="card about-card">
+            <div class="card-icon-box">
+              <span class="code-icon">0x01</span>
+            </div>
+            <h3>Systèmes & Bas-Niveau</h3>
+            <p>
+              Maîtrise approfondie des appels système Unix/Linux, de la gestion manuelle de la mémoire, des registres et de la programmation haute performance en C, C++20 et Rust.
+            </p>
+          </div>
+
+          <div class="card about-card">
+            <div class="card-icon-box">
+              <span class="code-icon">0x02</span>
+            </div>
+            <h3>Concurrence & Protocoles Réseau</h3>
+            <p>
+              Conception d'architectures distribuées, gestion multi-processus, thread pools sans deadlock (IPC, sockets, mutex), et multiplexage d'E/S asynchrone (<code>poll</code>, <code>select</code>).
+            </p>
+          </div>
+
+          <div class="card about-card">
+            <div class="card-icon-box">
+              <span class="code-icon">0x03</span>
+            </div>
+            <h3>Intelligence Artificielle & Data</h3>
+            <p>
+              Développement de pipelines de machine learning supervisé, modèles prédictifs et réseaux neuronaux avec Python, PyTorch, Scikit-Learn et Pandas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02. Stack</span>
+          <h2 class="section-title">Arsenal Technique</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="card skill-group">
+            <h3>Langages</h3>
+            <div class="tags-container">
+              <span class="tag tag-accent">C</span>
+              <span class="tag tag-accent">C++20</span>
+              <span class="tag tag-accent">Rust</span>
+              <span class="tag tag-accent">Python</span>
+              <span class="tag">x86_64 ASM</span>
+              <span class="tag">Bash</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="card skill-group">
+            <h3>Systèmes & Concurrence</h3>
+            <div class="tags-container">
+              <span class="tag">Linux / POSIX</span>
+              <span class="tag">Multithreading</span>
+              <span class="tag">Thread Pools</span>
+              <span class="tag">IPC (Pipes, Sockets)</span>
+              <span class="tag">I/O Multiplexing</span>
+              <span class="tag">Gestion Mémoire</span>
+            </div>
+          </div>
+
+          <div class="card skill-group">
+            <h3>IA & Data Science</h3>
+            <div class="tags-container">
+              <span class="tag">PyTorch</span>
+              <span class="tag">Scikit-Learn</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Machine Learning</span>
+            </div>
+          </div>
+
+          <div class="card skill-group">
+            <h3>Outils & DevOps</h3>
+            <div class="tags-container">
+              <span class="tag">Git</span>
+              <span class="tag">Docker</span>
+              <span class="tag">GDB</span>
+              <span class="tag">Valgrind</span>
+              <span class="tag">CMake</span>
+              <span class="tag">Makefile</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Neovim</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03. Projets</span>
+          <h2 class="section-title">Réalisations & Code</h2>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">Tous les Projets</button>
+          <button class="filter-btn" data-filter="scolaire">Projets Scolaires</button>
+          <button class="filter-btn" data-filter="personnel">Projets Personnels</button>
+          <button class="filter-btn" data-filter="system">Systèmes & C/C++</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Les projets seront injectés dynamiquement par script.js avec les données complètes -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Terminal Section -->
+    <section id="terminal" class="section bg-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04. Interactif</span>
+          <h2 class="section-title">Terminal Intégré</h2>
+        </div>
+
+        <div class="terminal-wrapper">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">guest@zertrox123: ~ (bash)</div>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="terminal-line text-muted">Tapez <span class="cmd-highlight">help</span> ou cliquez sur une commande rapide :</div>
+            <div class="terminal-suggestions">
+              <button class="term-btn" data-cmd="skills">skills</button>
+              <button class="term-btn" data-cmd="projects">projects</button>
+              <button class="term-btn" data-cmd="about">about</button>
+              <button class="term-btn" data-cmd="contact">contact</button>
+              <button class="term-btn" data-cmd="clear">clear</button>
+            </div>
+            <div class="terminal-output" id="terminalOutput"></div>
+            <div class="terminal-input-row">
+              <span class="prompt-symbol">guest@zertrox:~$</span>
+              <input type="text" id="terminalInput" placeholder="Ex: help, skills, projects..." autocomplete="off" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container contact-container">
+        <div class="section-header">
+          <span class="section-tag">05. Contact</span>
+          <h2 class="section-title">Travaillons Ensemble</h2>
+        </div>
+
+        <p class="contact-desc">
+          N'hésitez pas à me contacter pour toute proposition d'opportunité professionnelle, d'échange technique ou de collaboration sur des projets haute performance.
+        </p>
+
+        <div class="email-box">
+          <span class="email-text" id="emailText">omar.joudi@epitech.eu</span>
+          <button class="btn btn-sm" id="copyEmailBtn">Copier l'Email</button>
+        </div>
+
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/omar-joudi/?locale=en" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Profil LinkedIn
+          </a>
+          <a href="https://github.com/Zertrox123" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Profil GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Modal Details -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      <div class="modal-header">
+        <span class="modal-category" id="modalCategory">Projet</span>
+        <h2 class="modal-title" id="modalTitle">Titre du Projet</h2>
+        <div class="modal-meta">
+          <span id="modalDate">Année</span> &bull; 
+          <span id="modalTechs">Technologies</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p id="modalDescription" class="modal-description"></p>
+      </div>
+      <div class="modal-footer">
+        <a href="https://github.com/Zertrox123" target="_blank" rel="noopener noreferrer" id="modalGithubLink" class="btn btn-primary">
+          Voir sur GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; <span id="year"></span> Zertrox123. Portfolio statique haute performance hébergé sur GitHub Pages.</p>
+      <a href="#hero" class="back-to-top">Retour en haut &uarr;</a>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Email copié dans le presse-papier !</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
