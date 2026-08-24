@@ -465,15 +465,15 @@
     <section class="project-section" data-section="web">
         <h2>Web, Backend & Réseau</h2>
         <div class="projects-container">
-            <a href="/project/my_portfolio" class="project-card" data-year="perso" data-featured="true" data-lang="rust">
+            <a href="/project/my_portfolio" class="project-card" data-year="perso" data-featured="true" data-lang="rust,js,web">
                 <h3>Portfolio Web en Rust</h3>
                 <p>Application web de portfolio développée en Rust avec Rocket et Tera</p>
             </a>
-            <a href="/project/proxyflow-project" class="project-card" data-year="perso" data-featured="true" data-lang="rust,python">
+            <a href="/project/proxyflow-project" class="project-card" data-year="perso" data-featured="true" data-lang="rust,python,js,web">
                 <h3>ProxyFlow</h3>
                 <p>Outil de gestion, routage et analyse de flux réseau proxy</p>
             </a>
-            <a href="/project/epytodo" class="project-card" data-year="tek2" data-lang="js">
+            <a href="/project/epytodo" class="project-card" data-year="tek2" data-lang="js,web">
                 <h3>EpyTodo</h3>
                 <p>API REST web backend et gestion de tâches avec base de données MySQL</p>
             </a>
@@ -520,7 +520,7 @@
                 <h3>Rust VM</h3>
                 <p>Interpréteur de bytecode et machine virtuelle basée sur registres en Rust</p>
             </a>
-            <a href="/project/anti-ux" class="project-card" data-year="perso" data-lang="js">
+            <a href="/project/anti-ux" class="project-card" data-year="perso" data-lang="js,web">
                 <h3>Anti-UX</h3>
                 <p>Application web interactive explorant les dark patterns et interfaces inversées</p>
             </a>
@@ -530,6 +530,11 @@
             </a>
         </div>
     </section>
+
+    <!-- Message si aucun projet ne correspond au filtre -->
+    <div id="no-projects-msg" style="display: none; text-align: center; color: #8b949e; padding: 3.5rem 1rem; font-family: 'Fira Code', monospace; font-size: 0.95rem; border: 1px dashed #30363d; border-radius: 8px; margin: 2rem 0;">
+        Aucun projet ne correspond à ce filtre pour cette catégorie.
+    </div>
 
     <!-- Walking Duck across the screen at random Y coordinate -->
     <div id="duckContainer" title="Clique-moi !">
@@ -614,6 +619,7 @@
     let currentLang = 'all';
 
     function applyFilters() {
+        let totalVisibleCards = 0;
         let countMain = 0;
         let countTek1 = 0;
         let countTek2 = 0;
@@ -633,11 +639,14 @@
                                  (currentCategory === 'tek2' && year === 'tek2') ||
                                  (currentCategory === 'perso' && year === 'perso');
 
-                const matchLang = (currentLang === 'all') || cardLangs.includes(currentLang);
+                const matchLang = (currentLang === 'all') || 
+                                  cardLangs.includes(currentLang) ||
+                                  (currentLang === 'js' && (cardLangs.includes('web') || cardLangs.includes('javascript')));
 
                 if (matchCat && matchLang) {
                     card.style.display = '';
                     sectionVisibleCards++;
+                    totalVisibleCards++;
                 } else {
                     card.style.display = 'none';
                 }
@@ -652,6 +661,11 @@
 
             section.style.display = (sectionVisibleCards > 0) ? '' : 'none';
         });
+
+        const noProjectsMsg = document.getElementById('no-projects-msg');
+        if (noProjectsMsg) {
+            noProjectsMsg.style.display = (totalVisibleCards === 0) ? 'block' : 'none';
+        }
 
         const elMain = document.getElementById('count-main');
         const elTek1 = document.getElementById('count-tek1');
