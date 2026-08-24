@@ -133,15 +133,15 @@
   {
     "id": "persona-ai",
     "name": "Persona AI",
-    "description": "Agents conversationnels et modèles décisionnels basés sur le NLP",
+    "description": "Agents conversationnels et automatisation de workflows intelligents",
     "category": "ia",
-    "detailed_description": "Projet d'intelligence artificielle (G-AIA-410) axé sur la création d'agents intelligents autonomes capables d'interagir et de prendre des décisions selon un profil de personnalité prédéfini.\n\nFonctionnalités principales :\n    - Intégration de modèles de traitement du langage naturel (NLP) pour analyser les intentions et le contexte.\n    - Arbres de décisions et gestion de mémoire contextuelle pour les interactions longues.\n    - Évaluation des réponses générées et ajustement de cohérence comportementale.",
+    "detailed_description": "Projet d'intelligence artificielle axé sur la création d'agents conversationnels autonomes et l'automatisation de workflows avec n8n et OpenAI.\n\nFonctionnalités principales :\n    - Agents avec mémoire contextuelle, adaptation dynamique du ton et routage d'intentions.\n    - Workflow automatisé de curation d'actualités et génération de newsletters personnalisées.\n    - Gestion des utilisateurs et planification via base PostgreSQL et API Gmail.",
     "technologies": [
-      "Python",
-      "NLP",
-      "AI",
-      "PyTorch",
-      "Scikit-Learn"
+      "n8n",
+      "OpenAI GPT",
+      "PostgreSQL",
+      "Agents IA",
+      "Automatisation"
     ],
     "date": "2026",
     "github": "https://github.com/Zertrox123"
