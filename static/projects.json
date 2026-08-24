@@ -148,15 +148,16 @@
   {
     "id": "starttrek-ai",
     "name": "Star Trek AI",
-    "description": "Agent décisionnel autonome et navigation spatiale algorithmique",
+    "description": "Agent décisionnel autonome et navigation spatiale algorythmique",
     "category": "ia",
-    "detailed_description": "Projet d'intelligence artificielle (G-AIA-401) implémentant des algorithmes heuristiques et de recherche pour guider un vaisseau autonome dans un univers dynamique et hostile.\n\nFonctionnalités principales :\n    - Algorithmes de pathfinding (A*, Dijkstra) et évitement d'obstacles en temps réel.\n    - Prise de décision sous contraintes énergétiques et gestion optimale des ressources.\n    - Stratégies d'évaluation tactique et simulations prédictives.",
+    "detailed_description": "Projet d'intelligence artificielle centré sur l'apprentissage par renforcement pour entraîner des agents autonomes sur des environnements de simulation physique.\n\nFonctionnalités principales :\n    - Deep Q-Network (DQN) avec Keras / TensorFlow.\n    - Q-Learning et SARSA pour comparer la vitesse d'apprentissage.\n    - Entraînement sur environnements Gymnasium (LunarLander, CartPole).",
     "technologies": [
       "Python",
-      "AI",
-      "Pathfinding",
-      "Heuristics",
-      "Algorithms"
+      "Keras",
+      "TensorFlow",
+      "Gymnasium",
+      "DQN",
+      "Q-Learning"
     ],
     "date": "2026",
     "github": "https://github.com/Zertrox123"
@@ -164,14 +165,16 @@
   {
     "id": "cvrie",
     "name": "CVRIE (Computer Vision)",
-    "description": "Reconnaissance et extraction d'informations par vision par ordinateur",
+    "description": "Classification d'images médicales et analyse de données par clustering",
     "category": "ia",
-    "detailed_description": "Projet d'intelligence artificielle (G-AIA-400) spécialisé dans le traitement d'images et la reconnaissance de formes.\n\nFonctionnalités principales :\n    - Traitement d'images numériques (filtrage, détection de contours, seuillage adaptatif) avec OpenCV.\n    - Extraction automatique de zones d'intérêt et classification d'éléments visuels.\n    - Pipelines de prétraitement pour optimiser la précision des modèles de détection.",
+    "detailed_description": "Projet d'intelligence artificielle appliquée combinant classification d'images médicales et analyse de données par clustering.\n\nFonctionnalités principales :\n    - Classification d'images médicales PneumoniaMNIST avec scikit-learn (Régression Logistique, Random Forest, SVM).\n    - Normalisation des données et optimisation du seuil de décision.\n    - Analyse exploratoire et regroupement automatique par clustering (K-Means).",
     "technologies": [
       "Python",
-      "OpenCV",
-      "Computer Vision",
-      "NumPy"
+      "scikit-learn",
+      "NumPy",
+      "pandas",
+      "Machine Learning",
+      "Computer Vision"
     ],
     "date": "2026",
     "github": "https://github.com/Zertrox123"

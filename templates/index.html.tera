@@ -352,27 +352,27 @@
             </a>
             <a href="/project/the-plazza" class="project-card" data-year="tek2" data-featured="true" data-lang="cpp">
                 <h3>The Plazza & Panoramix</h3>
-                <p>Moteur de simulation haute concurrence en C++20 avec processus, IPC et Thread Pools</p>
+                <p>Simulation en C++20 et C avec multi-threading et communication inter-processus</p>
             </a>
             <a href="/project/corewar" class="project-card" data-year="tek2" data-featured="true" data-lang="c">
                 <h3>Corewar</h3>
-                <p>Machine virtuelle, ordonnanceur de processus et assembleur bytecode en C</p>
+                <p>Machine virtuelle en C avec cycles d'exécution et assembleur bytecode</p>
             </a>
             <a href="/project/myteams" class="project-card" data-year="tek2" data-featured="true" data-lang="c">
                 <h3>MyTeams</h3>
-                <p>Plateforme collaborative distribuée multi-clients en C avec protocole binaire TCP</p>
+                <p>Plateforme collaborative multi-clients en Rust/C++ avec protocole réseau TCP</p>
             </a>
             <a href="/project/myftp" class="project-card" data-year="tek2" data-featured="true" data-lang="c">
                 <h3>MyFTP</h3>
-                <p>Serveur FTP asynchrone conforme à la norme RFC 959 en C</p>
+                <p>Serveur FTP en C conforme à la norme RFC 959 avec gestion multi-clients</p>
             </a>
             <a href="/project/minishell" class="project-card" data-year="tek2" data-lang="c">
                 <h3>Minishell 2</h3>
                 <p>Reproduction d'un shell Unix (Bash/Zsh) avec pipes, redirections et opérateurs logiques</p>
             </a>
-            <a href="/project/pdgrush4" class="project-card" data-year="tek2" data-lang="c">
+            <a href="/project/pdgrush4" class="project-card" data-year="tek2" data-lang="cpp">
                 <h3>PDG Rush 4</h3>
-                <p>Implémentation d'un paradigme orienté objet dynamique en C pur</p>
+                <p>Moniteur de ressources système en C++20 avec interface NCurses et SFML</p>
             </a>
             <a href="/project/my-top" class="project-card" data-year="tek1" data-lang="c">
                 <h3>My Top</h3>
@@ -458,7 +458,7 @@
             </a>
             <a href="/project/myworld" class="project-card" data-year="tek1" data-lang="c">
                 <h3>My World</h3>
-                <p>Moteur de rendu de terrain 3D isométrique avec terraforming en temps réel</p>
+                <p>Éditeur de terrain isométrique en C avec rendu CSFML en temps réel</p>
             </a>
             <a href="/project/sokoban" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Sokoban</h3>
@@ -504,7 +504,7 @@
             </a>
             <a href="/project/piscine-c" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Exercices d'apprentissage (Piscine C)</h3>
-                <p>Immersion intensive : 13 journées (Days 01 à 13), Stumpers, Makefiles et structures de données</p>
+                <p>Immersion intensive en C : gestion de la mémoire, pointeurs, structures et Makefiles</p>
             </a>
             <a href="/project/amazed" class="project-card" data-year="tek1" data-lang="c">
                 <h3>A-Maze-D</h3>
@@ -512,7 +512,7 @@
             </a>
             <a href="/project/maths" class="project-card" data-year="tek1" data-lang="python,c">
                 <h3>Projets Mathématiques</h3>
-                <p>Calculs de trajectoires 3D, matrices, cryptographie et analyse (101 à 105)</p>
+                <p>Calculs de trajectoires, matrices, cryptographie et analyse (101 à 105)</p>
             </a>
             <a href="/project/popeye" class="project-card" data-year="tek1" data-lang="c">
                 <h3>Popeye & RobotFactory</h3>
@@ -520,11 +520,11 @@
             </a>
             <a href="/project/piscine-cpp" class="project-card" data-year="tek2" data-lang="cpp">
                 <h3>Exercices d'apprentissage (Piscine C++)</h3>
-                <p>Immersion avancée : POO C++20, STL, smart pointers, templates et paradigmes déclaratifs</p>
+                <p>Immersion intensive en C++ : POO, templates, conteneurs STL et smart pointers</p>
             </a>
-            <a href="/project/codewash" class="project-card" data-year="tek2" data-lang="python">
+            <a href="/project/codewash" class="project-card" data-year="tek2" data-lang="js,web">
                 <h3>CodeWash</h3>
-                <p>Outil d'analyse statique, conformité et refactoring de code source</p>
+                <p>Application desktop et web en React 19, Vite, Electron et Tailwind CSS</p>
             </a>
             <a href="/project/cuddle" class="project-card" data-year="tek2" data-lang="c">
                 <h3>Cuddle & Chocolatine</h3>
@@ -532,7 +532,7 @@
             </a>
             <a href="/project/rust-vm" class="project-card" data-year="perso" data-lang="rust">
                 <h3>Rust VM</h3>
-                <p>Interpréteur de bytecode et machine virtuelle basée sur registres en Rust</p>
+                <p>Machine virtuelle à pile et interpréteur de bytecode en Rust avec sécurités</p>
             </a>
             <a href="/project/anti-ux" class="project-card" data-year="perso" data-lang="js,web">
                 <h3>Anti-UX</h3>
